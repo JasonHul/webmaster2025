@@ -21,7 +21,7 @@ a {
 
 /* Header */
 header {
-    background: #333;
+    background: #38bd83;
     color: #fff;
     padding: 1rem 0;
 }
@@ -35,13 +35,13 @@ header nav ul {
     gap: 1rem;
 }
 header nav ul li a:hover {
-    color: #f4a261;
+    color: #38bd83;
 }
 
 /* Hero Section */
 .hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
-    color: #fff;
+    background: url('placeholder.jpg') no-repeat center center/cover;
+    color: #38bd83;
     height: 60vh;
     display: flex;
     align-items: center;
@@ -56,8 +56,10 @@ header nav ul li a:hover {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }
+
+
 .button {
-    background: #f4a261;
+    background: #38bd83;
     padding: 0.8rem 1.5rem;
     color: #fff;
     border: none;
@@ -65,7 +67,7 @@ header nav ul li a:hover {
     border-radius: 5px;
 }
 .button:hover {
-    background: #e76f51;
+    background: #38bd83;
 }
 
 /* Menu Section */
@@ -100,7 +102,7 @@ header nav ul li a:hover {
     font-size: 1.2rem;
 }
 .price {
-    color: #e76f51;
+    color: #38bd83;
     font-weight: bold;
 }
 
@@ -139,7 +141,7 @@ header nav ul li a:hover {
     width: 100%;
 }
 .contact button {
-    background: #f4a261;
+    background: #38bd83;
     padding: 0.8rem;
     border: none;
     cursor: pointer;
@@ -147,7 +149,7 @@ header nav ul li a:hover {
     border-radius: 5px;
 }
 .contact button:hover {
-    background: #e76f51;
+    background: #40d795;
 }
 
 /* Footer */
