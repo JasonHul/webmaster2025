@@ -11,6 +11,24 @@
     <!-- Header and Hero Section -->
     <header>
         <div class="container">
+            
+        </div>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a  href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <!--todo: make pages for these links-->
+          
+        <div id="main">
+            <div class="menuicon" onclick="menuChange(this); move();">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
             <h1 class="logo">Restaurant Name</h1>
             <nav>
                 <ul>
@@ -22,17 +40,45 @@
                 </ul>
             </nav>
         </div>
-    </header>
-
-    <section id="hero" class="hero">
+        <!--TODO: Make logo for website and put into here-->
+        <img src="image.png" alt="image" onclick="location.href = 'index.html';" id="homelogo">
         
+        <script>
+        var isOpen = false;
+        function menuChange(x) {
+        x.classList.toggle("change");
+        }
+        
+        function openNav() {
+        document.getElementById("mySidenav").style.width = "310px";
+        }
+        
+        function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        }
+        
+        //Closes and opens drawer
+        function move() {
+            if (isOpen) {
+                closeNav();
+                isOpen = false;
+            } else {
+                openNav();
+                isOpen = true;
+            }
+        }
+        </script>
+</header>
 
-        <div class="hero-text">
-            <h2>Welcome to Restaurant Name</h2>
-            <p>Discover delicious, fresh food and excellent service</p>
-            <a href="#menu" class="button">Explore Menu</a>
-            
-        </div>
+<section id="hero" class="hero">
+    
+
+    <div class="hero-text">
+        <h2>Welcome to Restaurant Name</h2>
+        <p>Discover delicious, fresh food and excellent service</p>
+        <a href="#menu" class="button">Explore Menu</a>
+        
+    </div>
     </section>
 
     <!-- Menu Section -->
