@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Name</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js/global.js"></script>
 </head>
 <body>
 
@@ -24,7 +25,7 @@
           <!--todo: make pages for these links-->
           
         <div id="main">
-            <div class="menuicon" onclick="menuChange(this); move();">
+            <div class="menuicon">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
@@ -40,33 +41,8 @@
             </nav>
         </div>
         <!--TODO: Make logo for website and put into here-->
-        <img src="images/templogo.png" alt="image" onclick="location.href = 'index.html';" id="homelogo">
+        <img src="images/templogo.png" alt="image" onclick="location.href = 'index.html'" id="homelogo">
         <!-- current link: https://pixabay.com/vectors/eco-icon-logo-leaf-friendly-green-5465432/ -->
-        <script>
-        var isOpen = false;
-        function menuChange(x) {
-        x.classList.toggle("change");
-        }
-        
-        function openNav() {
-        document.getElementById("mySidenav").style.width = "310px";
-        }
-        
-        function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        }
-        
-        //Closes and opens drawer
-        function move() {
-            if (isOpen) {
-                closeNav();
-                isOpen = false;
-            } else {
-                openNav();
-                isOpen = true;
-            }
-        }
-        </script>
 </header>
 
 <section id="hero" class="hero">
