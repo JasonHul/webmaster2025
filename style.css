@@ -25,10 +25,6 @@ header {
     color: #fff;
     padding: 1rem 0;
 }
-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
 header nav ul {
     list-style: none;
     display: flex;
@@ -42,14 +38,32 @@ header nav ul li a:hover {
     position: absolute;
     transition: margin-left .5s;
     cursor: pointer;
-    width: 200px;
-    left: 100px;
-    top:12px;
+    width: 100px;
+    left: 50px;
+    top:-15px;
   }
+
+.brandname {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    
+}
+
+.mainlinks {
+    position: relative;
+    left: 120px;
+    display: inline-block;
+}
 
 /*side bar */
 .menuicon {
+    position: relative;
     cursor: pointer;
+    display: inline-block;
+    left: 10px;
+    
 }
 .menuicon :hover {
     background-color: #8affcc;
@@ -80,7 +94,7 @@ header nav ul li a:hover {
   }
   
   .sidenav {
-    height: calc(100% - 110px);
+    height: calc(100% - 73px);
     bottom: 0;
     width: 0;
     position: fixed;
