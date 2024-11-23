@@ -43,21 +43,13 @@ header nav ul li a:hover {
     top:-15px;
   }
 
-.brandname {
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: inline-block;
-    position: relative;
-    
-}
-
 .mainlinks {
     position: relative;
     left: 120px;
     display: inline-block;
 }
 
-/*side bar */
+/*Sidenav - side bar */
 .menuicon {
     position: relative;
     cursor: pointer;
