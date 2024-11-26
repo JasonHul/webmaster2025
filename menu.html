@@ -3,21 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <script src="js/global.js"></script>
     <title>Menu</title>
 </head>
 <body>
-    <header class ="header">
-        <img src="images/templogo.png" alt="image" onclick="location.href = 'index.html'" id="homelogo" width = 100px class="logo"> 
+    <header>
+        <div class="container">
+            
+        </div>
 
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#menu">Menu</a>
-            <a href="#order">Order</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+        <div id="mySidenav" class="sidenav">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a  href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <!--todo: make pages for these links-->
+          
+        <div id="main">
+            <div class="menuicon">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <nav class ="mainlinks">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="order.html">Order</a></li> <!--TODO: Add page for dine-in and carry out-->
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--TODO: Make logo for website and put into here-->
+        <img src="images/templogo.png" alt="image" onclick="location.href = 'index.html'" id="homelogo">
+        <!-- current link: https://pixabay.com/vectors/eco-icon-logo-leaf-friendly-green-5465432/ -->
+</header>
 
 </body>
 <script src="js/script.js"></script>
