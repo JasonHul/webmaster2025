@@ -55,8 +55,9 @@ header nav ul li a:hover {
     cursor: pointer;
     display: inline-block;
     left: 10px;
-    
+    visibility: hidden; 
 }
+
 .menuicon :hover {
     background-color: #8affcc;
   }
@@ -114,6 +115,18 @@ header nav ul li a:hover {
     color: #8e8e8e;
   }
   
+@media screen and (max-width: 1100px) {
+    header {
+        padding-bottom: 16px;
+    }
+    .menuicon {
+      visibility: visible;
+    }
+    .mainlinks {
+        display: none;
+
+    }
+}
 
 /* Hero Section */
 .hero {
