@@ -61,7 +61,8 @@ body {
     width: 100%
 }
 
-/* The stuff under the header */
+/* HERO */
+
 .hero {
     position: relative;
     height: 100vh; 
@@ -106,7 +107,52 @@ body {
     font-size: 1.3rem;
     margin-bottom: 30px;
     color:rgb(131, 255, 120);
-
-    
 }
 
+/* MENU */
+
+section{
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 370px;
+    overflow:hidden;
+}
+
+.item {
+    position: absolute;
+    width: 200px;
+    height: 320px;
+    text-align: justify;
+    background-color: rgb(131, 255, 120);
+    border-radius: 10px;
+    padding: 20px;
+    transition: .5s;
+    left: calc(50% - 110px);
+    top: 0;
+}
+
+#next, #prev {
+    position: absolute;
+    top: 40%;
+    color:aqua;
+    background-color: transparent;
+    border: none;
+    font-size: xx-large;
+    font-weight: bold;
+    left: 50px;
+}
+
+#next {
+    left: unset;
+    right: 50px;
+
+}
