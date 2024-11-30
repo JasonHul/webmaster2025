@@ -112,7 +112,6 @@ body {
 /* MENU */
 
 section{
-    min-height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -129,15 +128,31 @@ section{
 
 .item {
     position: absolute;
-    width: 200px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
     text-align: justify;
     background-color: rgb(131, 255, 120);
     border-radius: 10px;
-    padding: 20px;
     transition: .5s;
     left: calc(50% - 110px);
     top: 0;
+}
+
+.item h1 {
+    position: absolute;
+    text-align: center;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 10%;
+    color: #fff;
+    font-weight: 200px;
+    font-size: 20px;
+}
+
+.item img{
+    border-radius: 10px;
+    left: ;
 }
 
 #next, #prev {
