@@ -108,15 +108,59 @@ body {
 }
 
 /* MENU */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
 
 section{
     margin: 0;
+    margin-top: -120px;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
 }
 
+/*FEATURED ITEM*/
+.featured-item{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.featured-item h2{
+    margin-bottom: 20px;
+    font-size: 50px;  
+}
+
+.featured-content {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.featured-about {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    font-size: 30px;
+}
+
+.featured-pic {
+    flex: 0 0 auto;
+}
+
+.featured-pic img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    margin: 15px;
+}
+
+ /* MENU SLIDER STUFF */
 .slider {
     position: relative;
     width: 100%;
