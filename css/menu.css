@@ -159,6 +159,36 @@ section{
     height: auto;
     margin: 15px;
 }
+/* MENU SELECTION STUFF */
+.menu-selection {
+    width: 500px;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgb(30, 219, 109);
+    border-radius: 25px;
+}
+
+.menu-selection-buttons {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.menu-selection-buttons button{
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+    color: #fff;
+    background-color: #28ff7a9f;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.103);
+}
 
  /* MENU SLIDER STUFF */
 .slider {
