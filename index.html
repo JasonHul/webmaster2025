@@ -1,111 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="images/templogo.png">
-        <title>Restaurant Name</title>
-        <link rel="stylesheet" href="css/style.css">
-        <script src="js/global.js"></script>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Home</title>
+</head>
+<body>
+    <!--HEADER SECTION-->
+    <header class="header">
+        <img src="images/templogo.png" alt="image" onclick="location.href = 'index.html'" id="homelogo" width="100px" class="logo">
 
-        <!-- Header and Hero Section -->
-        <header>
-            <div class="container">
-                
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!--HERO SECTION-->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Big Booty Bitches</h1>
+            <p>Savor the taste of sustainability and flavor.</p>
+            <button onclick="location.href='menu.html'">Explore Our Menu</button>
+        </div>
+        <div class="hero-image">
+            <img src="images/home_hero.jpg" alt="Restaurant Hero">
+        </div>
+    </section>
+
+    <!--HIGHLIGHTS SECTION-->
+    <section class="highlights">
+        <h2>Our Highlights</h2>
+        <div class="highlight-grid">
+            <div class="highlight-item">
+                <img src="images/highlight_dish1.jpg" alt="Dish">
+                <h3>Signature Dishes</h3>
+                <p>Experience our culinary creations crafted with care and passion.</p>
             </div>
-
-            <div id="mySidenav" class="sidenav">
-                <a href="index.html">Home</a>
-                <a href="menu.html">Menu</a>
-                <a href="order.html">Order</a>
-                <a  href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+            <div class="highlight-item">
+                <img src="images/highlight_dish2.jpg" alt="Drink">
+                <h3>Refreshing Drinks</h3>
+                <p>Quench your thirst with our house-made beverages.</p>
             </div>
-            <!--todo: make pages for these links-->
-            
-            <div id="main">
-                <div class="menuicon">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div>
-                <nav class ="mainlinks">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="order.html">Order</a></li> <!--TODO: Add page for dine-in and carry out-->
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+            <div class="highlight-item">
+                <img src="images/highlight_dish3.jpg" alt="Ambiance">
+                <h3>Inviting Ambiance</h3>
+                <p>Dine in a space designed to make you feel at home.</p>
             </div>
-            <!--TODO: Make logo for website and put into here-->
-            <img src="images/templogo.png" alt="image" onclick="location.href = 'index.html'" id="homelogo">
-            <!-- current link: https://pixabay.com/vectors/eco-icon-logo-leaf-friendly-green-5465432/ -->
-        </header>
+        </div>
+    </section>
 
-        <section id="hero" class="hero">
-            
-
-            <div class="hero-text">
-                <h2>Welcome to Restaurant Name</h2>
-                <p>Discover delicious, fresh food and excellent service</p>
-                <a href="#menu" class="button">Explore Menu</a>
-                
+    <!--SPECIALS SECTION-->
+    <section class="specials">
+        <h2>Today’s Specials</h2>
+        <div class="specials-content">
+            <div class="special">
+                <img src="images/special1.jpg" alt="Special Dish">
+                <h3>Grilled Veggie Platter</h3>
+                <p>A flavorful medley of locally sourced vegetables.</p>
             </div>
-            </section>
+            <div class="special">
+                <img src="images/special2.jpg" alt="Special Drink">
+                <h3>Berry Bliss Smoothie</h3>
+                <p>Perfectly blended with seasonal berries and a touch of honey.</p>
+            </div>
+        </div>
+    </section>
 
-            <!-- Menu Section -->
-            <section id="menu" class="menu">
-                <div class="container">
-                    <h2>Our Menu</h2>
-                    <p class="section-description">Freshly prepared meals for every taste</p>
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <h3>Dish Name 1</h3>
-                            <p>Description of the dish.</p>
-                            <span class="price">$15</span>
-                        </div>
-                        <div class="menu-item">
-                            <h3>Dish Name 2</h3>
-                            <p>Description of the dish.</p>
-                            <span class="price">$18</span>
-                        </div>
-                        <!-- Add more dishes as needed -->
-                    </div>
-                </div>
-            </section>
+    <!--TESTIMONIALS SECTION-->
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"The food here is simply amazing. I’ve never tasted anything like it!"</p>
+                <h4>- Sarah L.</h4>
+            </div>
+            <div class="testimonial">
+                <p>"An unforgettable dining experience. The staff is so friendly."</p>
+                <h4>- Jake M.</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Love the sustainable approach and the unique flavors!"</p>
+                <h4>- Priya R.</h4>
+            </div>
+        </div>
+    </section>
 
-            <!-- About Section -->
-            <section id="about" class="about">
-                <div class="container">
-                    <h2>About Us</h2>
-                    <p>We are passionate about delivering the best food experience. Our chefs use only the freshest ingredients to create meals that will delight your taste buds.</p>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="contact">
-                <div class="container">
-                    <h2>Contact Us</h2>
-                    <p>1234 Food Street, City, State, 12345</p>
-                    <p>Email: info@restaurant.com | Phone: (123) 456-7890</p>
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Message" required></textarea>
-                        <button type="submit">Send Message</button>
-                    </form>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer>
-                <p>&copy; 2024 Restaurant Name. All Rights Reserved.</p>
-            </footer>
-
-        <script src="js/script.js"></script>
-    </body>
+    <!--FOOTER-->
+    <footer>
+        <div class="header-info">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="header-about">
+            <p>Copyright © Big Booty Bitches 2025. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>
