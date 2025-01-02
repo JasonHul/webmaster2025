@@ -3,47 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <script src="js/global.js"></script>
-    <script></script>
+    <link rel="stylesheet" href="css/about.css">
     <title>About Us</title>
 </head>
 <body>
-    <header>
-        <div class="container">
-            
-        </div>
+    <!--HEADER SECTION-->
+    <header class="header">
+        <img src="images/templogo.png" alt="image" onclick="location.href = 'index.html'" id="homelogo" width="100px" class="logo">
 
-        <div id="mySidenav" class="sidenav">
+        <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="menu.html">Menu</a>
             <a href="order.html">Order</a>
-            <a  href="about.html">About</a>
+            <a href="about.html" class="active">About</a>
             <a href="contact.html">Contact</a>
-          </div>
-          <!--todo: make pages for these links-->
-          
-        <div id="main">
-            <div class="menuicon">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-            <nav class ="mainlinks">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="order.html">Order</a></li> <!--TODO: Add page for dine-in and carry out-->
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-        <!--TODO: Make logo for website and put into here-->
-        <img src="images/templogo.png" alt="image" onclick="location.href = 'index.html'" id="homelogo">
-        <!-- current link: https://pixabay.com/vectors/eco-icon-logo-leaf-friendly-green-5465432/ -->
+        </nav>
     </header>
-    
+
+    <!--HERO SECTION-->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About Us</h1>
+            <p>Discover the story behind your favorite dishes.</p>
+        </div>
+
+        <div class="about-hero">
+            <img class="heroimage" src="images/planthero.jpg" alt="About Us">
+        </div>
+    </section>
+
+    <!--ABOUT SECTION-->
+    <section class="about">
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>
+                At Big Booty Bitches, our mission is to provide delicious, sustainably sourced meals that bring people together. We are passionate about fresh ingredients, bold flavors, and creating a welcoming environment for everyone.
+            </p>
+        </div>
+
+        <div class="history">
+            <h2>Our History</h2>
+            <p>
+                Founded in 2020, Big Booty Bitches began as a small, family-owned eatery with a vision for reimagining comfort food. Over the years, we have grown into a beloved destination for food enthusiasts while staying true to our roots.
+            </p>
+            <img src="images/about_history.jpg" alt="Restaurant History">
+        </div>
+
+        <div class="team">
+            <h2>Meet the Team</h2>
+            <div class="team-members">
+                <div class="member">
+                    <img src="images/team_member1.jpg" alt="Chef">
+                    <h3>Chef Bella</h3>
+                    <p>Our head chef, Bella, is a culinary artist with a flair for creating innovative dishes inspired by global cuisines.</p>
+                </div>
+                <div class="member">
+                    <img src="images/team_member2.jpg" alt="Manager">
+                    <h3>Manager James</h3>
+                    <p>James ensures everything runs smoothly, from the kitchen to the dining experience.</p>
+                </div>
+                <div class="member">
+                    <img src="images/team_member3.jpg" alt="Barista">
+                    <h3>Barista Chloe</h3>
+                    <p>Chloe crafts the perfect beverages to complement your meal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer>
+        <div class="header-info">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="header-about">
+            <p>Copyright © Big Booty Bitches 2025. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
