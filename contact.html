@@ -1,46 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <script src="js/global.js"></script>
-        <title>Contacts</title>
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contact.css">
+    <title>Contact Us</title>
+</head>
+<body>
+    <!--HEADER SECTION-->
+    <header class="header">
+        <img src="images/templogo.png" alt="image" onclick="location.href = 'index.html'" id="homelogo" width="100px" class="logo">
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <!--HERO SECTION-->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Get in touch!</p>
+        </div>
+
+        <div class="contact-hero">
+            <img class="heroimage" src="images/planthero.jpg" alt="Contact Us">
+        </div>
+    </section>
+
+    <!--CONTACT SECTION-->
+    <section class="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p>We value your feedback and inquiries. Reach us through the form below or visit us in person.</p>
+                <ul>
+                    <li><strong>Phone:</strong> +1 (555) 123-4567</li>
+                    <li><strong>Email:</strong> contact@bigbootybitches.com</li>
+                    <li><strong>Address:</strong> 123 Foodie Lane, Delicious City, FL 12345</li>
+                    <li><strong>Hours:</strong> Mon-Sun: 9 AM - 10 PM</li>
+                </ul>
             </div>
 
-            <div id="mySidenav" class="sidenav">
-                <a href="index.html">Home</a>
-                <a href="menu.html">Menu</a>
-                <a href="order.html">Order</a>
-                <a  href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+            <div class="contact-form">
+                <h2>Contact Form</h2>
+                <form action="submit_form.php" method="POST">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
-            <!--todo: make pages for these links-->
-            
-            <div id="main">
-                <div class="menuicon">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div>
-                <nav class ="mainlinks">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="order.html">Order</a></li> <!--TODO: Add page for dine-in and carry out-->
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <!--TODO: Make logo for website and put into here-->
-            <img src="images/templogo.png" alt="image" onclick="location.href = 'index.html'" id="homelogo">
-            <!-- current link: https://pixabay.com/vectors/eco-icon-logo-leaf-friendly-green-5465432/ -->
-        </header>  
-    </body>
+        </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer>
+        <div class="header-info">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="header-about">
+            <p>Copyright © Big Booty Bitches 2025. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>
