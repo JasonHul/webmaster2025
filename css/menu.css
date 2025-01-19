@@ -30,6 +30,10 @@ body {
     z-index: 1000;
 }
 
+#homelogo:hover {
+    cursor: pointer;
+}
+
 .logo {
     font-size: 32px;
     color: #fff;

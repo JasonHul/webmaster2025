@@ -28,6 +28,10 @@ body {
     z-index: 1000;
 }
 
+#homelogo:hover {
+    cursor: pointer;
+}
+
 .navbar a {
     font-size: 18px;
     color: #fff;
