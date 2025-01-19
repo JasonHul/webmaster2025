@@ -42,15 +42,15 @@
   const getElementVal = (id) => document.getElementById(id).value;
 
   // Fetch data from Firestore
-  // async function fetchData() {
-  //   try {
-  //     const querySnapshot = await db.collection("contactForm").get();
-  //     querySnapshot.forEach((doc) => {
-  //       console.log(doc.id, "=>", doc.data());
-  //     });
-  //   } catch (error) {
-  //     console.log("Error fetching data:", error);
-  //   }
-  // }
+  async function fetchData() {
+    try {
+      const querySnapshot = await db.collection("contactForm").get();
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id, "=>", doc.data());
+      });
+    } catch (error) {
+      console.log("Error fetching data:", error);
+    }
+  }
 
   // fetchData();
