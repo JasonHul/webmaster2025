@@ -1,11 +1,14 @@
+/* GLOBAL STYLES */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
+    background-color: #f3f5e7; /* Soft cream background */
+    color: #2d4023; /* Dark earthy green text */
     min-height: 100vh;
 }
 
@@ -15,13 +18,14 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 0 55px;
-    background: rgba(22, 182, 7, 0.253);
-    backdrop-filter: blur(20px);
+    padding: 15px 55px;
+    background: rgba(56, 143, 76, 0.9); /* Transparent green overlay */
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 #homelogo:hover {
@@ -30,26 +34,30 @@ body {
 
 .navbar a {
     font-size: 18px;
-    color: #fff;
+    color: #f3f5e7; /* Soft cream for contrast */
     text-decoration: none;
     margin-left: 40px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #b7dbac; /* Light green hover effect */
 }
 
 .navbar a.active {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #b7dbac; /* Light green underline */
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
-    height: 80vh;
-    background-color: rgba(11, 121, 25, 0.6);
-    background-image: url('images/planthero.jpg');
+    color: #f3f5e7; /* Cream text */
+    height: 85vh;
+    background-image: url('/images/planthero.jpg'); /* Nature-themed image */
     background-size: cover;
     background-position: center;
 }
@@ -57,39 +65,95 @@ body {
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for visibility */
 }
 
 .hero-content p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
 .hero-content button {
-    background-color: #28ff7a9f;
-    color: #fff;
-    padding: 10px 20px;
+    background-color: #b7dbac; /* Light green button */
+    color: #2d4023; /* Dark text for contrast */
+    padding: 12px 25px;
     font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* HIGHLIGHTS */
+.hero-content button:hover {
+    background-color: #95c892; /* Slightly darker green */
+}
+
+/* ABOUT SECTION */
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 10%;
+    background-color: #ffffff; /* Clean white background */
+}
+
+.about-content {
+    max-width: 50%;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2d4023; /* Earthy green */
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-content .btn {
+    background-color: #95c892; /* Fresh green */
+    color: #ffffff; /* White text */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.about-content .btn:hover {
+    background-color: #6ea671; /* Darker green hover */
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* HIGHLIGHTS SECTION */
 .highlights {
     text-align: center;
-    padding: 50px;
+    padding: 50px 10%;
+    background-color: #f3f5e7; /* Soft cream */
 }
 
 .highlights h2 {
     font-size: 2.5rem;
+    color: #2d4023;
     margin-bottom: 20px;
 }
 
 .highlight-grid {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .highlight-item {
@@ -101,45 +165,75 @@ body {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* SPECIALS */
+.highlight-item h3 {
+    color: #387f4c; /* Lush green */
+    margin-bottom: 10px;
+}
+
+/* SPECIALS SECTION */
 .specials {
-    padding: 50px;
-    background-color: rgb(245, 245, 245);
-    text-align: center;
+    padding: 50px 10%;
+    background-color: #ffffff; /* Clean white background */
 }
 
 .specials h2 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    color: #2d4023; /* Dark green */
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .specials-content {
     display: flex;
-    gap: 20px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .special {
-    text-align: center;
-    max-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
 }
 
 .special img {
-    width: 100%;
+    flex: 1; /* Take up one part of the available space */
+    width: 100%; /* Ensure responsiveness */
+    max-width: 300px; /* Optional: Limit image width */
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.special-description {
+    flex: 2; /* Take up twice the space compared to the image */
+    text-align: left;
+}
+
+.special-description h3 {
+    font-size: 1.8rem;
+    color: #387f4c; /* Lush green */
     margin-bottom: 10px;
 }
 
-/* TESTIMONIALS */
+.special-description p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #2d4023;
+}
+
+/* TESTIMONIALS SECTION */
 .testimonials {
-    padding: 50px;
+    padding: 50px 10%;
+    background-color: #f3f5e7;
     text-align: center;
 }
 
 .testimonials h2 {
     font-size: 2.5rem;
+    color: #2d4023;
     margin-bottom: 20px;
 }
 
@@ -152,26 +246,101 @@ body {
 
 .testimonial {
     max-width: 300px;
-    background-color: rgb(245, 245, 245);
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial p {
     font-style: italic;
     margin-bottom: 10px;
+    color: #387f4c; /* Soft green accent */
 }
 
 .testimonial h4 {
     font-weight: bold;
-    color: rgb(30, 219, 109);
+    color: #2d4023;
+}
+/* CTA SECTION */
+.cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 20px;
+    background-image: linear-gradient(
+        rgba(56, 143, 76, 0.8), 
+        rgba(56, 143, 76, 0.8)
+    ), 
+    url('images/cta_background.jpg'); /* Replace with your desired image */
+    background-size: cover;
+    background-position: center;
+    color: #f3f5e7; /* Soft cream text for contrast */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add depth */
+}
+
+.cta p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.cta-buttons .btn {
+    background-color: #95c892; /* Fresh green button */
+    color: #ffffff; /* White text */
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-buttons .btn:hover {
+    background-color: #6ea671; /* Darker green on hover */
+    transform: scale(1.05); /* Subtle scaling effect */
+}
+
+.cta-buttons .btn.secondary {
+    background-color: #387f4c; /* Rich green for secondary button */
+    color: #f3f5e7;
+}
+
+.cta-buttons .btn.secondary:hover {
+    background-color: #2d5f37; /* Darker hover color for secondary button */
 }
 
 /* FOOTER */
 footer {
-    background-color: rgb(11, 26, 16);
-    color: #fff;
+    background-color: #387f4c; /* Rich green */
+    color: #ffffff;
     text-align: center;
     padding: 20px;
+}
+
+footer a {
+    color: #b7dbac;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #f3f5e7;
 }
