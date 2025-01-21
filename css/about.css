@@ -1,11 +1,14 @@
+/* GLOBAL STYLES */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
+    background-color: #f3f5e7; /* Soft cream background */
+    color: #2d4023; /* Dark earthy green text */
     min-height: 100vh;
 }
 
@@ -15,13 +18,14 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 0 55px;
-    background: rgba(22, 182, 7, 0.253);
-    backdrop-filter: blur(20px);
+    padding: 15px 55px;
+    background: rgba(56, 143, 76, 0.9);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #homelogo:hover {
@@ -30,114 +34,119 @@ body {
 
 .navbar a {
     font-size: 18px;
-    color: #fff;
+    color: #f3f5e7;
     text-decoration: none;
     margin-left: 40px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #b7dbac;
 }
 
 .navbar a.active {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #b7dbac;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
-    height: 50vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
+    color: #f3f5e7;
+    background-image: url('/images/planthero.jpg'); /* Nature-themed image */
+    background-size: cover;
+    background-position: center;
 }
 
-.heroimage {
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
-    filter: brightness(80%);
-}
-
-.hero-content {
-    position: absolute;
-    top: 30%;
-    transform: translateY(-50%);
-}
-
-.hero h1 {
-    font-size: 4rem;
-}
-
-.hero p {
-    font-size: 1.3rem;
-}
-
-/* ABOUT */
-.about {
-    padding: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.mission, .history, .team {
-    margin-bottom: 40px;
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: rgb(30, 219, 109);
-}
-
-p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #333;
-}
-
-.history img {
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 10px;
-}
-
-.team-members {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.member {
-    text-align: center;
-    max-width: 300px;
-}
-
-.member img {
-    width: 100%;
-    border-radius: 10px;
+.hero-content h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
 }
 
-.member h3 {
-    margin: 10px 0;
-    font-size: 1.5rem;
-    color: rgb(30, 219, 109);
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
 }
 
-.member p {
+/* ABOUT SECTION */
+.about {
+    padding: 60px 10%;
+}
+
+.about-section {
+    margin-bottom: 50px;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2d4023;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #2d4023;
+}
+
+.about-section img {
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* TEAM SECTION */
+.team-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+    max-width: 250px;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    color: #387f4c;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    color: #2d4023;
     font-size: 1rem;
-    color: #555;
+    line-height: 1.6;
 }
 
 /* FOOTER */
 footer {
-    background-color: rgb(11, 26, 16);
-    color: #fff;
+    background-color: #387f4c;
+    color: #ffffff;
     text-align: center;
     padding: 20px;
 }
 
-.header-info a {
-    color: #fff;
-    margin: 10px;
+footer a {
+    color: #b7dbac;
+    margin: 0 10px;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #f3f5e7;
 }
