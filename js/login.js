@@ -23,13 +23,24 @@ async function hashField(input) {
     return hashHex;
 }
 
+// Function to check and maintain session
+function checkSession() {
+    const sessionUser = localStorage.getItem("sessionUser");
+    if (sessionUser) {
+        // If a session exists, redirect to the dashboard
+        // window.location.href = "menu.html";
+    }
+}
+
+// Call this on every login page load
+checkSession();
+
 // Login form submission handler
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
     const email = document.getElementById('email').value;
     const hashedPassword = await hashField(document.getElementById('password').value);
-
 
 
     try {
@@ -46,8 +57,10 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
             const accountData = doc.data();
             if (accountData.password === hashedPassword) {
                 alert("Login successful!");
+                localStorage.setItem("sessionUser", JSON.stringify({ email: accountData.email, userId: doc.id }));
+                console.log("session id (doc.id): ", doc.id);
                 // Redirect to another page or load user-specific data
-                window.location.href = "dashboard.html"; // Example redirect to dashboard
+                // window.location.href = "menu.html"; 
             } else {
                 alert("Incorrect password. Please try again.");
             }
@@ -57,4 +70,15 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         alert("An error occurred during login.");
     }
 });
+
+// Logout functionality
+function logout() {
+    // Clear the session
+    localStorage.removeItem("sessionUser");
+
+    // Redirect to the login page
+    window.location.href = "login.html";
+}
+
+
 
