@@ -47,71 +47,139 @@ body {
     border-bottom: 2px solid #b7dbac;
 }
 
-/* General Menu Section Styling */
-.menu-section {
+/* Menu Categories Section */
+.menu-categories-section {
     margin-top: 30%;
-    padding: 2rem;
-    text-align: center;
+    padding: 3rem 2rem;
     background-color: #f9f9f9;
+    text-align: center;
 }
 
-.menu-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #333;
+.menu-categories-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2d4023;
 }
 
-/* Grid Layout for Menu Items */
-.menu-grid {
+/* Grid Layout for Categories */
+.menu-categories-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-areas: 
+        "item1 item2"
+        "item3 item3"
+        "item4 item5";
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 2rem; /* Space between items */
     margin: 0 auto;
     max-width: 1200px;
 }
 
-/* Individual Menu Items */
-.menu-item {
-    background: #fff;
+.menu-category:nth-child(1) {
+    grid-area: item1;
+}
+
+.menu-category:nth-child(2) {
+    grid-area: item2;
+}
+
+.menu-category:nth-child(3) {
+    grid-area: item3; /* Spans the full row */
+}
+
+.menu-category:nth-child(4) {
+    grid-area: item4;
+}
+
+.menu-category:nth-child(5) {
+    grid-area: item5;
+}
+
+/* Individual Category Cards */
+.menu-category {
+    background: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
-    padding: 1rem;
 }
 
-.menu-item img {
+.menu-category:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-category img {
     width: 100%;
-    height: 150px;
+    height: 200px;
     object-fit: cover;
+}
+
+/* Individual Category Cards */
+.menu-category {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+
+    /* Set a fixed height for taller cards */
+    height: 450px; /* Increase this value to make it taller */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is evenly spaced */
+}
+
+.menu-category img {
+    /* Take up more vertical space with the image */
+    height: 50%; /* Adjust this percentage for image height */
+    object-fit: cover;
+    width: 100%;
     border-bottom: 1px solid #ddd;
 }
 
-.menu-item h3 {
-    font-size: 1.5rem;
-    margin: 1rem 0 0.5rem;
-    color: #333;
+.category-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Keep text aligned at the top */
+    flex-grow: 1; /* Allows content to fill available space */
 }
 
-.menu-item p {
+.category-content h3 {
+    font-size: 1.8rem;
+    color: #2d4023;
+    margin-bottom: 0.5rem;
+}
+
+.category-content p {
     font-size: 1rem;
-    color: #555;
-    margin: 0.5rem 0;
+    color: #555555;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Pushes the button to the bottom */
 }
 
-.menu-item .price {
+.category-content .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
-    color: #000;
-    margin-top: 0.5rem;
+    color: #ffffff;
+    background-color: #387f4c;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Aligns the button */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .menu-grid {
-        grid-template-columns: 1fr;
-    }
+.category-content .btn:hover {
+    background-color: #2d4023;
 }
+
+
 
 /* FOOTER */
 footer {
