@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/menu.css">
-    <title>Menu</title>
+    <title>Document</title>
 </head>
 <body>
     <!-- HEADER -->
@@ -12,140 +12,62 @@
         <img src="images/templogo.png" alt="Logo" id="homelogo" width="100px" onclick="location.href='index.html'">
         <nav class="navbar">
             <a href="index.html">Home</a>
-            <a href="menu.html" class="active">Menu</a>
+            <a href="menu.html">Menu</a>
             <a href="login.html">Order</a>
-            <a href="about.html">About</a>
+            <a href="about.html" class="active">About</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
-    <section class="hero">
-        
-        <div class="hero-content">
-            <h1>Our Menu</h1>
-            <p>Your favorite dishes, sustainabily grown.</p>
-        </div>
 
-        <div class="plantimage">
-            <img class="heroimage" src="images/planthero.jpg">
-        </div>
-    </section>
-   <!--MENU SECTION-->
-
-   <!--TODO: ADD MENU CATEGORIES,
-   TODO: MAKE BUTTON THAT SAYS "MORE" THEN IT WILL DO LIKE A FULLSCREEN 
-    THING SO YOU CAN SEE THE MENU ITEM DETAILS ALONG WITH PRICE AND
-    STUFF,
-   TODO: CUSTOMER REVIEWS,
-   -->
-
-    <section class = "menu">
-
-        <div class="featured-item">
-
-            <h2>Featured Dish</h2>
-            <div class="featured-content">
-
-                <div class="featured-about">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio voluptates eveniet magnam corrupti earum numquam qui veniam eaque? Deserunt, exercitationem! Vitae expedita, dolorem accusamus obcaecati explicabo est aliquam nam laudantium.</p>
-                </div>
-                <div class="featured-pic">
-                    <img src="images/menu_oatmeal.jpg" alt="" height="300" width="300">
-                </div>
-
+    <div class="menu-section">
+        <h2>Our Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="images/menu_oatmeal.jpg" alt="Burger">
+                <h3>Classic Burger</h3>
+                <p>Juicy beef patty with fresh lettuce, tomato, and cheese.</p>
+                <p class="price">$5.99</p>
             </div>
-            
-        </div>
-
-
-        <div class="menu-selection">
-            <div class="menu-selection-buttons">
-                <button>Food</button>
-                <button>Drink</button>
-                <button>Diddy</button>
-                <button>Piddy</button>
-
+            <div class="menu-item">
+                <img src="images/menu_oatmeal.jpg" alt="Chicken Sandwich">
+                <h3>Chicken Sandwich</h3>
+                <p>Grilled or crispy chicken with pickles and sauce.</p>
+                <p class="price">$6.49</p>
+            </div>
+            <div class="menu-item">
+                <img src="images/menu_oatmeal.jpg" alt="Salad">
+                <h3>Fresh Salad</h3>
+                <p>Crisp greens, fresh vegetables, and your choice of dressing.</p>
+                <p class="price">$4.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="images/menu_oatmeal.jpg" alt="Fries">
+                <h3>French Fries</h3>
+                <p>Golden crispy fries, perfectly seasoned.</p>
+                <p class="price">$2.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="images/menu_oatmeal.jpg" alt="Milkshake">
+                <h3>Milkshake</h3>
+                <p>Rich and creamy shakes in various flavors.</p>
+                <p class="price">$3.99</p>
             </div>
         </div>
-
-
-        <div class="slider">
-            <div class="item">
-                <h1>Chickpea Scramble Bowl</h1>
-                <img src="images/menu_salad.jpg" alt="" height="300" width="300">
-                <button>About</button>
-            </div>
-            <div class="item">
-                <h1>B Bowl</h1>
-                <img src="images/menu_oatmeal.jpg" alt="" height="300" width="300">
-                <button>About</button>
-            </div>
-
-            <div class="item">
-                <h1>B Bowl</h1>
-                <img src="images/menu_oatmeal.jpg" alt="" height="300" width="300">   
-                <button>About</button>         
-            </div>
-
-            <div class="item">
-                <h1>B Bowl</h1>
-                <img src="images/menu_oatmeal.jpg" alt="" height="300" width="300">    
-                <button>About</button>        
-            </div>
-
-            <div class="item">
-                <h1>B Bowl</h1>
-                <img src="images/menu_oatmeal.jpg" alt="" height="300" width="300">  
-                <button>About</button>         
-            </div>
-
-            <div class="item">
-                <h1>B Bowl</h1>
-                <img src="images/menu_oatmeal.jpg" alt="" height="300" width="300">   
-                <button>About</button>         
-            </div>
-
-            <div class="item">
-                <h1>B Bowl</h1>
-                <img src="images/menu_oatmeal.jpg" alt="" height="300" width="300">        
-                <button>About</button>  
-            </div>
-
-            <div class="item">
-                <h1>B Bowl</h1>
-                <img src="images/menu_oatmeal.jpg" alt="" height="300" width="300">       
-                <button>About</button>      
-            </div>
-
-            <div class="item">
-                <h1>B Bowl</h1>
-                <img src="images/menu_oatmeal.jpg" alt="" height="300" width="300">    
-                <button>About</button>         
-            </div>
-
-            <div class="item">
-                <h1>B Bowl</h1>
-                <img src="images/menu_oatmeal.jpg" alt="" height="300" width="300">      
-                <button>About</button>       
-            </div>
-            
-            <button id="next">></button>
-            <button id="prev"><</button>
-        </div>
-    </section>
-<!-- FOOTER -->
-<footer>
-    <div class="footer-content">
-        <img src="images/templogo.png" alt="Logo" width="100px" id="footer-logo">
-        <nav class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="specials.html">Specials</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <p>&copy; 2025 BBB. All Rights Reserved.</p>
     </div>
-</footer>
-<script src="js/menu.js"></script>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <img src="images/templogo.png" alt="Logo" width="100px" id="footer-logo">
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="specials.html">Specials</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p>&copy; 2025 BBB. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
