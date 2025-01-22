@@ -14,18 +14,20 @@ body {
     flex-direction: column;
 }
 
+/* HEADER */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 0 55px;
-    background: rgba(22, 182, 7, 0.253);
-    backdrop-filter: blur(20px);
+    padding: 15px 55px;
+    background: rgba(56, 143, 76, 0.9);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #homelogo:hover {
@@ -34,9 +36,18 @@ body {
 
 .navbar a {
     font-size: 18px;
-    color: #fff;
+    color: #f3f5e7;
     text-decoration: none;
     margin-left: 40px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #b7dbac;
+}
+
+.navbar a.active {
+    border-bottom: 2px solid #b7dbac;
 }
 
 .login {
@@ -59,7 +70,7 @@ body {
 
 .form-container h1 {
     margin-bottom: 20px;
-    color: #0b7919;
+    color: #38bd49;
 }
 
 .form-container label {
@@ -107,4 +118,24 @@ body {
 
 .form-container a:hover {
     text-decoration: underline;
+}
+
+
+/* FOOTER */
+footer {
+    background-color: #387f4c;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #b7dbac;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #f3f5e7;
 }
