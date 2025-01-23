@@ -81,6 +81,11 @@ body {
     text-align: center;
 }
 
+.about-section p {
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+}
 
 .team-grid {
     margin-top: 5%;
