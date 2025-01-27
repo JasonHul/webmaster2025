@@ -48,3 +48,24 @@ class Item {
     //Entrees
 ];
 
+function createItemDisplays(category) {
+    try {
+        const menuContainer = document.getElementById('menuContainer');
+        console.log("menuContainer", menuContainer);
+
+        // Checking if itemsList is defined
+        if (typeof itemsList !== 'undefined') {
+            itemsList.forEach(item => {
+                if (item.category === category) {
+                    menuContainer.innerHTML += item.generateItem();
+                    console.log(item.displayDetails());
+                }
+            });
+        } else {
+            console.error("itemsList is not defined.");
+        }
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
