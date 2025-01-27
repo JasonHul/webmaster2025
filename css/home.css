@@ -57,7 +57,7 @@ body {
     text-align: center;
     color: #f3f5e7; /* Cream text */
     height: 85vh;
-    background-image: url('/images/planthero.jpg'); /* Nature-themed image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.2)), url('../images/homepage_hero.jpg'); /* Nature-themed image */
     background-size: cover;
     background-position: center;
 }
@@ -65,12 +65,13 @@ body {
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for visibility */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, .8); /* Subtle shadow for visibility */
 }
 
 .hero-content p {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
 }
 
 .hero-content button {
