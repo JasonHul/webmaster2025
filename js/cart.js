@@ -1,25 +1,68 @@
+foodItems = JSON.parse(localStorage.getItem('foodItems')) || [];
+
+subtotal = 0;
+delivery_fee = 0;
+discount = 0;
+
 function removeItem(button) {
     const row = button.parentElement.parentElement;
+    foodItems = foodItems.filter(item => item.item !== row.querySelector('h3').innerText);
+    localStorage.setItem('foodItems', JSON.stringify(foodItems));
+    updateCartLabel();
     row.remove();
-    // Update total price and show empty cart message if needed
-    updateTotal();
 }
 
-function updateTotal() {
-    const rows = document.querySelectorAll('#cart-items tr');
-    let total = 0;
 
-    rows.forEach(row => {
-        const subtotal = parseFloat(row.cells[4].textContent.replace('$', ''));
-        total += subtotal;
+
+function generateProduct(item) {
+        product = itemsList.find(i => i.item === item.item);
+        console.log(product);
+        pricing = (product.price * item.saved_quantity).toFixed(2);
+        subtotal += pricing;
+        image = product.pictureURL.con;
+    return `
+        <h2>My Cart</h2>
+        <div class="cart-item">
+            <img src="${product.pictureURL.substring(3)}" alt="${product.item}" class="item-image">
+            <div class="item-details">
+                <h3>${product.item}</h3>
+                <p>${product.item}</p>
+            </div>
+            <div class="item-summary">
+                <p>${item.saved_quantity} $${product.price}</p>
+                <p><strong>$${pricing}</strong></p>
+                <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+            </div>
+        </div>
+    `;
+    
+}
+
+
+function generateSummary() {
+    return `
+            <h2>Total Payment</h2>
+            <div class="payment-summary">
+                <p>Subtotal: <strong>$${subtotal}</strong></p>
+                <p>Delivery fee: <strong>$${delivery_fee}</strong></p>
+                <p>Discount: <strong>-$${discount}</strong></p>
+                <p class="remaining-amount"> Total: <strong>$${+subtotal + +delivery_fee - +discount}</strong></p>
+            </div>
+            <button class="confirm-order-btn">Send Order</button>
+            <p class="note">The delivery fee is split among group members, and any balance is refunded based on the total amount.</p>
+        </div>
+    `;
+
+}
+
+const cartContainer = document.getElementById('cart-section');
+console.log("cartContainer: ", cartContainer);
+
+
+    foodItems.forEach(item => {
+            cartContainer.innerHTML += generateProduct(item);
     });
 
-    document.getElementById('total-price').textContent = `$${total.toFixed(2)}`;
+const summarySection = document.getElementById('summary-section');
+    summarySection.innerHTML += generateSummary();
 
-    const emptyCartMessage = document.querySelector('.empty-cart');
-    if (rows.length === 0) {
-        emptyCartMessage.style.display = 'block';
-    } else {
-        emptyCartMessage.style.display = 'none';
-    }
-}

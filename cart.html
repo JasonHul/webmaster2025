@@ -11,6 +11,7 @@
     <header class="header">
         <img src="images/templogo.png" alt="Logo" id="homelogo" width="100px" onclick="location.href='index.html'">
         <nav class="navbar">
+            <a href="cart.html" class="active" id="cart-label">Cart</a>
             <a href="index.html">Home</a>
             <a href="menu.html">Menu</a>
             <a href="login.html">Order</a>
@@ -20,56 +21,15 @@
         </nav>
     </header>
 
-    <section class="cart-page">
-        <div class="cart-header">
-            <h1>Your Checkout Cart</h1>
-            <p>Review your order before proceeding to payment.</p>
+    <section class="checkout-container">
+        <!-- Cart Section -->
+        <div class="cart-section" id="cart-section">
+            <!-- Cart content will be dynamically generated here --> 
         </div>
 
-        <!-- Cart Table -->
-        <table class="cart-table">
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Category</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Subtotal</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="cart-items">
-                <!-- Dynamic cart rows will be populated here using JavaScript -->
-                <tr>
-                    <td>Berry Bliss Smoothie</td>
-                    <td>Drink</td>
-                    <td>2</td>
-                    <td>$5.00</td>
-                    <td>$10.00</td>
-                    <td><button onclick="removeItem(this)">Remove</button></td>
-                </tr>
-                <tr>
-                    <td>Grilled Veggie Platter</td>
-                    <td>Appetizer</td>
-                    <td>1</td>
-                    <td>$12.00</td>
-                    <td>$12.00</td>
-                    <td><button onclick="removeItem(this)">Remove</button></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Total Price -->
-        <div class="total">
-            Total: <span id="total-price">$22.00</span>
-        </div>
-
-        <!-- Checkout Button -->
-        <a href="payment.html" class="checkout-btn">Proceed to Payment</a>
-
-        <!-- Empty Cart Message -->
-        <div class="empty-cart" style="display: none;">
-            Your cart is currently empty. <a href="menu.html">Browse the menu</a> to add items.
+        <!-- Summary Section -->
+        <div class="summary-section" id="summary-section">
+            <!-- Summary content will be dynamically generated here -->         
         </div>
     </section>
 
@@ -86,6 +46,8 @@
             <p>&copy; 2025 BBB. All Rights Reserved.</p>
         </div>
     </footer>
-    <script src ="js/cart.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/item.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>
