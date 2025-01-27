@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/drinks.css">
+    <link rel="stylesheet" href="../css/order-modal.css">
     <title>Drinks</title>
 </head>
 <body>
@@ -11,6 +12,7 @@
     <header class="header">
         <img src="../images/templogo.png" alt="Logo" id="homelogo" width="100px" onclick="location.href='../index.html'">
         <nav class="navbar">
+            <a href="../cart.html" id="cart-label">Cart</a>
             <a href="../index.html">Home</a>
             <a href="../menu.html" class="active">Menu</a>
             <a href="../login.html">Order</a>
@@ -24,59 +26,21 @@
     <div class="menu-categories-section" style="margin-top: 15%;">
         <h2>Our Delicious Drinks</h2>
         <p>Start your meal with a burst of flavor. Explore our range of appetizers crafted for sharing or savoring solo!</p>
-        <div class="menu-categories-grid">
-            <!-- Drinks 1 -->
-            <div class="menu-category">
-                <img src="../images/coffee_heart.jpg" alt="Spring Rolls">
-                <div class="category-content">
-                    <h3>Spring Rolls</h3>
-                    <p>Fresh and crispy rolls filled with vegetables and served with a tangy dipping sauce.</p>
-                    <a href="#" class="btn">Order Now</a>
-                </div>
-            </div>
-            <!-- Drinks 2 -->
-            <div class="menu-category">
-                <img src="../images/coffee_shadow.jpg" alt="Loaded Nachos">
-                <div class="category-content">
-                    <h3>Loaded Nachos</h3>
-                    <p>Layered with cheese, jalapeños, and a blend of fresh toppings. Perfect for sharing!</p>
-                    <a href="#" class="btn">Order Now</a>
-                </div>
-            </div>
-            <!-- Drinks 3 -->
-            <div class="menu-category">
-                <img src="../images/juice.jpg" alt="Buffalo Wings">
-                <div class="category-content">
-                    <h3>Buffalo Wings</h3>
-                    <p>Spicy and flavorful chicken wings served with ranch or blue cheese dressing.</p>
-                    <a href="#" class="btn">Order Now</a>
-                </div>
-            </div>
-            <!-- Drinks 4 -->
-            <div class="menu-category">
-                <img src="../images/orangejuice.jpg" alt="Bruschetta">
-                <div class="category-content">
-                    <h3>Bruschetta</h3>
-                    <p>Grilled bread topped with a fresh mix of tomatoes, basil, and garlic.</p>
-                    <a href="#" class="btn">Order Now</a>
-                </div>
-            </div>
-            <!-- Drinks 5 -->
-            <div class="menu-category">
-                <img src="../images/orangejuice_fancy.jpg" alt="Stuffed Meatballs">
-                <div class="category-content">
-                    <h3>Stuffed Meatballs</h3>
-                    <p>Juicy meatballs stuffed with mozzarella and served with marinara sauce.</p>
-                    <a href="#" class="btn">Order Now</a>
-                </div>
-            </div><div class="menu-category">
-                <img src="../images/lemon_water.jpg" alt="Stuffed Meatballs">
-                <div class="category-content">
-                    <h3>Stuffed Meatballs</h3>
-                    <p>Juicy meatballs stuffed with mozzarella and served with marinara sauce.</p>
-                    <a href="#" class="btn">Order Now</a>
-                </div>
-            </div>
+        <div class="menu-categories-grid" id ="menuContainer">
+            <!-- Appetizer items will be dynamically inserted here --> 
+         </div>
+    </div>
+
+    <!-- Modal (Popup) -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2 id="modalItemName"></h2>
+            <img id="modalItemImage" alt="Item Image">
+            <p id="modalItemPrice"></p>
+            <label for="quantity">How many would you like to order?</label>
+            <input type="number" id="quantity" min="1" value="1">
+            <button id="confirmOrder">Confirm Order</button>
         </div>
     </div>
 
@@ -97,7 +61,7 @@
     <script src="../js/global.js"></script>
     <script src="../js/saved-orders.js"></script>
     <script src="../js/item.js"></script>
-    <script src="../js/appetizers.js"></script>
+    <script src="../js/drinks.js"></script>
     <script src="../js/order-modal.js"></script>
 </body>
 </html>

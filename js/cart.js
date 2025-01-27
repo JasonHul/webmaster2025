@@ -9,7 +9,7 @@ function removeItem(button) {
     
     product = foodItems.find(i => i.item === row.querySelector('h3').innerText);
     item = itemsList.find(i => i.item === product.item);
-    subtotal -= +(product.saved_quantity * item.price);
+    subtotal -= +(product.saved_quantity * item.price).toFixed(2);
     console.log("subtotal: ", subtotal);
     regenerateSummary();
 
@@ -32,7 +32,7 @@ function generateProduct(item) {
             <img src="${product.pictureURL.substring(3)}" alt="${product.item}" class="item-image">
             <div class="item-details">
                 <h3>${product.item}</h3>
-                <p>${product.item}</p>
+                <p>${product.description}</p>
             </div>
             <div class="item-summary">
                 <p>${item.saved_quantity} $${product.price}</p>
