@@ -42,7 +42,7 @@ class Item {
     new Item('Stuffed Mushrooms', 
         'Appetizers',
         8.99,
-        '../images/avacodo_tomato_toast.jpg',
+        '../images/veggiepizza.jpg',
         'Juicy meatballs stuffed with mozzarella and served with marinara sauce.')
 
     //Entrees
