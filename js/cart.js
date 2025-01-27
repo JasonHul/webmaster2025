@@ -6,6 +6,13 @@ discount = 0;
 
 function removeItem(button) {
     const row = button.parentElement.parentElement;
+    
+    product = foodItems.find(i => i.item === row.querySelector('h3').innerText);
+    item = itemsList.find(i => i.item === product.item);
+    subtotal -= +(product.saved_quantity * item.price);
+    console.log("subtotal: ", subtotal);
+    regenerateSummary();
+
     foodItems = foodItems.filter(item => item.item !== row.querySelector('h3').innerText);
     localStorage.setItem('foodItems', JSON.stringify(foodItems));
     updateCartLabel();
@@ -18,10 +25,9 @@ function generateProduct(item) {
         product = itemsList.find(i => i.item === item.item);
         console.log(product);
         pricing = (product.price * item.saved_quantity).toFixed(2);
-        subtotal += pricing;
+        subtotal += +pricing;
         image = product.pictureURL.con;
     return `
-        <h2>My Cart</h2>
         <div class="cart-item">
             <img src="${product.pictureURL.substring(3)}" alt="${product.item}" class="item-image">
             <div class="item-details">
@@ -46,13 +52,18 @@ function generateSummary() {
                 <p>Subtotal: <strong>$${subtotal}</strong></p>
                 <p>Delivery fee: <strong>$${delivery_fee}</strong></p>
                 <p>Discount: <strong>-$${discount}</strong></p>
-                <p class="remaining-amount"> Total: <strong>$${+subtotal + +delivery_fee - +discount}</strong></p>
+                <p class="remaining-amount">Total: <strong id="strong-total">$${(+subtotal + +delivery_fee - +discount).toFixed(2)}</strong></p>
             </div>
             <button class="confirm-order-btn">Send Order</button>
             <p class="note">The delivery fee is split among group members, and any balance is refunded based on the total amount.</p>
         </div>
     `;
 
+}
+
+function regenerateSummary() {
+    const summarySection = document.getElementById('summary-section');
+    summarySection.innerHTML = generateSummary();
 }
 
 const cartContainer = document.getElementById('cart-section');
