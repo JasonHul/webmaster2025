@@ -11,6 +11,11 @@ body {
     min-height: 100vh;
 }
 
+.hero{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.2)), url('../images/menuhero.jpg');
+    background-size: cover;
+    background-position: center;
+}
 /* HEADER */
 .header {
     position: fixed;
