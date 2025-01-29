@@ -3,12 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
 }
 
 body {
-    background-color: #f3f5e7; /* Soft cream background */
-    color: #2d4023; /* Dark earthy green text */
+    background-color: #FFFDD0; /* Soft cream background */
+    color: #4A2C22; /* Dark, warm neutral text */
     min-height: 100vh;
 }
 
@@ -19,7 +19,7 @@ body {
     left: 0;
     width: 100%;
     padding: 15px 55px;
-    background: rgba(56, 143, 76, 0.9);
+    background: rgba(44, 29, 22, 0.9); /* Dark, warm brown with transparency */
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -30,7 +30,7 @@ body {
 
 .navbar a {
     font-size: 18px;
-    color: #f3f5e7;
+    color: #FFFDD0; /* Cream text */
     text-decoration: none;
     margin-left: 40px;
     transition: color 0.3s ease;
@@ -38,8 +38,8 @@ body {
 
 .navbar a:hover,
 .navbar a.active {
-    color: #b7dbac;
-    border-bottom: 2px solid #b7dbac;
+    color: #FF8C42; /* Orange hover/active effect */
+    border-bottom: 2px solid #FF8C42; /* Orange underline */
 }
 
 /* HERO SECTION */
@@ -48,15 +48,15 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #f3f5e7;
+    color: #FFFDD0; /* Cream text */
     height: 70vh;
-    background-image: url('/images/planthero.jpg');
+    background-image: url('/images/planthero.jpg'); /* Nature-themed background */
     background-size: cover;
     background-position: center;
 }
 
 .hero-content {
-    background-color: rgba(56, 143, 76, 0.8);
+    background-color: rgba(44, 29, 22, 0.8); /* Dark, warm brown with slight transparency */
     padding: 30px;
     border-radius: 10px;
 }
@@ -74,7 +74,7 @@ body {
 /* CONTACT SECTION */
 .contact {
     padding: 50px 10%;
-    background-color: #ffffff;
+    background-color: #FFFDD0; /* White background for contrast */
 }
 
 .contact-container {
@@ -85,7 +85,7 @@ body {
 }
 
 .contact-info, .contact-form {
-    background: #f3f5e7;
+    background: #ffffff; /* Soft cream background */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -103,7 +103,7 @@ body {
 }
 
 .contact-info a {
-    color: #387f4c;
+    color: #FF8C42; /* Orange links */
     text-decoration: none;
 }
 
@@ -115,20 +115,20 @@ body {
     display: block;
     margin-top: 15px;
     font-weight: bold;
-    color: #2d4023;
+    color: #4A2C22; /* Dark, warm neutral */
 }
 
 .contact-form input, .contact-form textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #b7dbac;
+    border: 1px solid #FF8C42; /* Orange border */
     border-radius: 5px;
     background: #ffffff;
 }
 
 .contact-form button {
-    background-color: #95c892;
+    background-color: #FF8C42; /* Orange background */
     color: #ffffff;
     border: none;
     padding: 12px 20px;
@@ -140,24 +140,24 @@ body {
 }
 
 .contact-form button:hover {
-    background-color: #6ea671;
+    background-color: #FF6F00; /* Darker orange hover effect */
 }
 
 /* FOOTER */
 footer {
-    background-color: #387f4c;
-    color: #ffffff;
+    background-color: #4A2C22; /* Dark, warm neutral */
+    color: #FFFDD0; /* Cream text */
     text-align: center;
     padding: 20px;
 }
 
 footer a {
-    color: #b7dbac;
+    color: #FF8C42; /* Orange links */
     margin: 0 10px;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #f3f5e7;
+    color: #FFFDD0; /* Cream hover effect */
 }

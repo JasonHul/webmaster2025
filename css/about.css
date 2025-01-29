@@ -3,12 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
 }
 
 body {
-    background-color: #f3f5e7; /* Soft cream background */
-    color: #2d4023; /* Dark earthy green text */
+    background-color: #FFFDD0; /* Soft cream background */
+    color: #4A2C22; /* Darker, warm neutral text */
     min-height: 100vh;
 }
 
@@ -19,13 +19,13 @@ body {
     left: 0;
     width: 100%;
     padding: 15px 55px;
-    background: rgba(56, 143, 76, 0.9);
+    background: rgba(44, 29, 22, 0.9); /* Dark, warm brown with transparency */
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 #homelogo:hover {
@@ -34,18 +34,18 @@ body {
 
 .navbar a {
     font-size: 18px;
-    color: #f3f5e7;
+    color: #FFFDD0; /* Cream text */
     text-decoration: none;
     margin-left: 40px;
     transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #b7dbac;
+    color: #FF8C42; /* Orange hover effect */
 }
 
 .navbar a.active {
-    border-bottom: 2px solid #b7dbac;
+    border-bottom: 2px solid #FF8C42; /* Orange underline */
 }
 
 /* HERO SECTION */
@@ -55,7 +55,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #f3f5e7;
+    color: #FFFDD0; /* Cream text */
     background-image: url('/images/planthero.jpg'); /* Nature-themed image */
     background-size: cover;
     background-position: center;
@@ -84,14 +84,14 @@ body {
 .about-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #2d4023;
+    color: #4A2C22; /* Darker, warm neutral */
 }
 
 .about-section p {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 20px;
-    color: #2d4023;
+    color: #4A2C22; /* Darker, warm neutral */
 }
 
 .about-section img {
@@ -124,31 +124,31 @@ body {
 }
 
 .team-member h3 {
-    color: #387f4c;
+    color: #FF8C42; /* Orange */
     margin-bottom: 10px;
 }
 
 .team-member p {
-    color: #2d4023;
+    color: #4A2C22; /* Darker, warm neutral */
     font-size: 1rem;
     line-height: 1.6;
 }
 
 /* FOOTER */
 footer {
-    background-color: #387f4c;
-    color: #ffffff;
+    background-color: #4A2C22; /* Darker, warm neutral */
+    color: #FFFDD0;
     text-align: center;
     padding: 20px;
 }
 
 footer a {
-    color: #b7dbac;
+    color: #FF8C42; /* Orange */
     margin: 0 10px;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #f3f5e7;
+    color: #FF6F00; /* Darker orange hover */
 }
