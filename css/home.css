@@ -3,12 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
 }
 
 body {
-    background-color: #f3f5e7; /* Soft cream background */
-    color: #2d4023; /* Dark earthy green text */
+    background-color: #FFFDD0; /* Soft cream background */
+    color: #4A2C22; /* Darker, warm neutral for text */
     min-height: 100vh;
 }
 
@@ -19,7 +19,7 @@ body {
     left: 0;
     width: 100%;
     padding: 15px 55px;
-    background: rgba(56, 143, 76, 0.9); /* Transparent green overlay */
+    background: rgba(44, 29, 22, 0.9); /* Dark, warm brown with transparency */
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -34,18 +34,18 @@ body {
 
 .navbar a {
     font-size: 18px;
-    color: #f3f5e7; /* Soft cream for contrast */
+    color: #FFFDD0; /* Cream text for contrast */
     text-decoration: none;
     margin-left: 40px;
     transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #b7dbac; /* Light green hover effect */
+    color: #FF8C42; /* Orange hover effect */
 }
 
 .navbar a.active {
-    border-bottom: 2px solid #b7dbac; /* Light green underline */
+    border-bottom: 2px solid #FF8C42; /* Orange underline */
 }
 
 /* HERO SECTION */
@@ -55,39 +55,57 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #f3f5e7; /* Cream text */
+    color: #FFFDD0; /* Cream text */
     height: 85vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.2)), url('../images/homepage_hero.jpg'); /* Nature-themed image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/homepage_hero.jpg'); /* Nature-themed image */
     background-size: cover;
     background-position: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text contrast */
 }
 
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, .8); /* Subtle shadow for visibility */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Subtle shadow for visibility */
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content p {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content button {
-    background-color: #b7dbac; /* Light green button */
-    color: #2d4023; /* Dark text for contrast */
+    background-color: #FF8C42; /* Orange button */
+    color: #FFFDD0; /* Cream text for contrast */
     padding: 12px 25px;
     font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content button:hover {
-    background-color: #95c892; /* Slightly darker green */
+    background-color: #FF6F00; /* Darker orange on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
 /* ABOUT SECTION */
@@ -96,7 +114,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 50px 10%;
-    background-color: #ffffff; /* Clean white background */
+    background-color: #FFFDD0; /* Soft cream background */
 }
 
 .about-content {
@@ -107,7 +125,7 @@ body {
 .about-content h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #2d4023; /* Earthy green */
+    color: #4A2C22; /* Darker, warm neutral */
 }
 
 .about-content p {
@@ -117,19 +135,20 @@ body {
 }
 
 .about-content .btn {
-    background-color: #95c892; /* Fresh green */
-    color: #ffffff; /* White text */
+    background-color: #FF8C42; /* Orange */
+    color: #FFFDD0; /* Cream text */
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .about-content .btn:hover {
-    background-color: #6ea671; /* Darker green hover */
+    background-color: #FF6F00; /* Darker orange hover */
+    transform: translateY(-2px);
 }
 
 .about-image img {
@@ -142,12 +161,12 @@ body {
 .highlights {
     text-align: center;
     padding: 50px 10%;
-    background-color: #f3f5e7; /* Soft cream */
+    background-color: #FFFDD0; /* Soft cream */
 }
 
 .highlights h2 {
     font-size: 2.5rem;
-    color: #2d4023;
+    color: #4A2C22; /* Darker, warm neutral */
     margin-bottom: 20px;
 }
 
@@ -171,19 +190,19 @@ body {
 }
 
 .highlight-item h3 {
-    color: #387f4c; /* Lush green */
+    color: #FF8C42; /* Orange */
     margin-bottom: 10px;
 }
 
 /* SPECIALS SECTION */
 .specials {
     padding: 50px 10%;
-    background-color: #ffffff; /* Clean white background */
+    background-color: #FFFDD0; /* Soft cream background */
 }
 
 .specials h2 {
     font-size: 2.5rem;
-    color: #2d4023; /* Dark green */
+    color: #4A2C22; /* Darker, warm neutral */
     margin-bottom: 30px;
     text-align: center;
 }
@@ -216,26 +235,26 @@ body {
 
 .special-description h3 {
     font-size: 1.8rem;
-    color: #387f4c; /* Lush green */
+    color: #FF8C42; /* Orange */
     margin-bottom: 10px;
 }
 
 .special-description p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #2d4023;
+    color: #4A2C22; /* Darker, warm neutral */
 }
 
 /* TESTIMONIALS SECTION */
 .testimonials {
     padding: 50px 10%;
-    background-color: #f3f5e7;
+    background-color: #FFFDD0; /* Soft cream */
     text-align: center;
 }
 
 .testimonials h2 {
     font-size: 2.5rem;
-    color: #2d4023;
+    color: #4A2C22; /* Darker, warm neutral */
     margin-bottom: 20px;
 }
 
@@ -248,7 +267,7 @@ body {
 
 .testimonial {
     max-width: 300px;
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -257,13 +276,14 @@ body {
 .testimonial p {
     font-style: italic;
     margin-bottom: 10px;
-    color: #387f4c; /* Soft green accent */
+    color: #FF8C42; /* Orange accent */
 }
 
 .testimonial h4 {
     font-weight: bold;
-    color: #2d4023;
+    color: #4A2C22; /* Darker, warm neutral */
 }
+
 /* CTA SECTION */
 .cta {
     display: flex;
@@ -273,13 +293,13 @@ body {
     text-align: center;
     padding: 70px 20px;
     background-image: linear-gradient(
-        rgba(56, 143, 76, 0.8), 
-        rgba(56, 143, 76, 0.8)
+        rgba(255, 191, 0, 0.8), 
+        rgba(255, 191, 0, 0.8)
     ), 
     url('images/cta_background.jpg'); /* Replace with your desired image */
     background-size: cover;
     background-position: center;
-    color: #f3f5e7; /* Soft cream text for contrast */
+    color: #FFFDD0; /* Cream text for contrast */
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -303,8 +323,8 @@ body {
 }
 
 .cta-buttons .btn {
-    background-color: #95c892; /* Fresh green button */
-    color: #ffffff; /* White text */
+    background-color: #FF8C42; /* Orange button */
+    color: #FFFDD0; /* Cream text */
     padding: 15px 30px;
     font-size: 18px;
     font-weight: bold;
@@ -315,34 +335,34 @@ body {
 }
 
 .cta-buttons .btn:hover {
-    background-color: #6ea671; /* Darker green on hover */
+    background-color: #FF6F00; /* Darker orange on hover */
     transform: scale(1.05); /* Subtle scaling effect */
 }
 
 .cta-buttons .btn.secondary {
-    background-color: #387f4c; /* Rich green for secondary button */
-    color: #f3f5e7;
+    background-color: #4A2C22; /* Darker, warm neutral for secondary button */
+    color: #FFFDD0;
 }
 
 .cta-buttons .btn.secondary:hover {
-    background-color: #2d5f37; /* Darker hover color for secondary button */
+    background-color: #3A1C12; /* Darker hover color for secondary button */
 }
 
 /* FOOTER */
 footer {
-    background-color: #387f4c; /* Rich green */
-    color: #ffffff;
+    background-color: #4A2C22; /* Darker, warm neutral */
+    color: #FFFDD0;
     text-align: center;
     padding: 20px;
 }
 
 footer a {
-    color: #b7dbac;
+    color: #FF8C42; /* Orange */
     margin: 0 10px;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #f3f5e7;
+    color: #FF6F00; /* Darker orange hover */
 }
