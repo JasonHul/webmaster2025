@@ -1,21 +1,17 @@
+/* GLOBAL STYLES */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
 }
 
 body {
-    background-color: #f3f5e7; /* Soft cream background */
-    color: #2d4023; /* Dark earthy green text */
+    background-color: #FFFDD0; /* Soft cream background */
+    color: #4A2C22; /* Darker, warm neutral for text */
     min-height: 100vh;
 }
 
-.hero{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.2)), url('../images/menuhero.jpg');
-    background-size: cover;
-    background-position: center;
-}
 /* HEADER */
 .header {
     position: fixed;
@@ -23,13 +19,13 @@ body {
     left: 0;
     width: 100%;
     padding: 15px 55px;
-    background: rgba(56, 143, 76, 0.9);
+    background: rgba(44, 29, 22, 0.9); /* Dark, warm brown with transparency */
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 #homelogo:hover {
@@ -38,35 +34,35 @@ body {
 
 .navbar a {
     font-size: 18px;
-    color: #f3f5e7;
+    color: #FFFDD0; /* Cream text for contrast */
     text-decoration: none;
     margin-left: 40px;
     transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #b7dbac;
+    color: #FF8C42; /* Orange hover effect */
 }
 
 .navbar a.active {
-    border-bottom: 2px solid #b7dbac;
+    border-bottom: 2px solid #FF8C42; /* Orange underline */
 }
 
-/* Menu Categories Section */
+/* MENU CATEGORIES SECTION */
 .menu-categories-section {
     margin-top: 30%;
     padding: 3rem 2rem;
-    background-color: #f9f9f9;
+    background-color: #FFFDD0; /* Soft cream background */
     text-align: center;
 }
 
 .menu-categories-section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #2d4023;
+    color: #4A2C22; /* Darker, warm neutral */
 }
 
-/* Grid Layout for Categories */
+/* GRID LAYOUT FOR CATEGORIES */
 .menu-categories-grid {
     display: grid;
     grid-template-areas: 
@@ -99,7 +95,7 @@ body {
     grid-area: item5;
 }
 
-/* Individual Category Cards */
+/* INDIVIDUAL CATEGORY CARDS */
 .menu-category {
     background: #ffffff;
     border: 1px solid #ddd;
@@ -108,6 +104,10 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
+    height: 450px; /* Increased height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .menu-category:hover {
@@ -117,32 +117,8 @@ body {
 
 .menu-category img {
     width: 100%;
-    height: 200px;
+    height: 50%; /* Adjust image height */
     object-fit: cover;
-}
-
-/* Individual Category Cards */
-.menu-category {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-
-    /* Set a fixed height for taller cards */
-    height: 450px; /* Increase this value to make it taller */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Ensures content is evenly spaced */
-}
-
-.menu-category img {
-    /* Take up more vertical space with the image */
-    height: 50%; /* Adjust this percentage for image height */
-    object-fit: cover;
-    width: 100%;
     border-bottom: 1px solid #ddd;
 }
 
@@ -150,13 +126,13 @@ body {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Keep text aligned at the top */
-    flex-grow: 1; /* Allows content to fill available space */
+    justify-content: flex-start;
+    flex-grow: 1;
 }
 
 .category-content h3 {
     font-size: 1.8rem;
-    color: #2d4023;
+    color: #4A2C22; /* Darker, warm neutral */
     margin-bottom: 0.5rem;
 }
 
@@ -164,7 +140,7 @@ body {
     font-size: 1rem;
     color: #555555;
     margin-bottom: 1rem;
-    flex-grow: 1; /* Pushes the button to the bottom */
+    flex-grow: 1;
 }
 
 .category-content .btn {
@@ -172,33 +148,33 @@ body {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
-    color: #ffffff;
-    background-color: #387f4c;
+    color: #FFFDD0; /* Cream text */
+    background-color: #FF8C42; /* Orange */
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    align-self: flex-start; /* Aligns the button */
+    align-self: flex-start;
 }
 
 .category-content .btn:hover {
-    background-color: #2d4023;
+    background-color: #FF6F00; /* Darker orange on hover */
 }
 
 /* FOOTER */
 footer {
-    background-color: #387f4c;
-    color: #ffffff;
+    background-color: #4A2C22; /* Darker, warm neutral */
+    color: #FFFDD0;
     text-align: center;
     padding: 20px;
 }
 
 footer a {
-    color: #b7dbac;
+    color: #FF8C42; /* Orange */
     margin: 0 10px;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #f3f5e7;
+    color: #FF6F00; /* Darker orange hover */
 }
