@@ -15,6 +15,7 @@ function removeItem(button) {
 
     foodItems = foodItems.filter(item => item.item !== row.querySelector('h3').innerText);
     localStorage.setItem('foodItems', JSON.stringify(foodItems));
+    saveToDatabase();
     updateCartLabel();
     row.remove();
 }

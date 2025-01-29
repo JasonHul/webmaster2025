@@ -34,6 +34,7 @@ document.addEventListener("click", function(event) {
 confirmOrder.onclick = function() {
     const quantity = quantityInput.value;
     addFoodItem(modalItemName.textContent, quantity);
+    saveToDatabase();
     console.log(`Order confirmed for ${quantity} ${modalItemName.textContent}(s)`);
     modal.style.display = "none";
     

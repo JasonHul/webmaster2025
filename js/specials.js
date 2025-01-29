@@ -1,1 +1,1 @@
-createItemDisplays("Appetizers");
+createItemDisplays("Specials");

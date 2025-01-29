@@ -41,14 +41,14 @@ const Categories = Object.freeze({
 
  const itemsList = [
    // Appetizers
-    new Item('Spring Rolls', Categories.APPETIZERS, 5.99, '../images/app_salad.jpg', 'Fresh and crispy rolls filled with vegetables and served with a tangy dipping sauce.'),
-    new Item('Loaded Nachos', Categories.APPETIZERS, 4.99, '../images/avacodo_tomato_toast.jpg', 'Layered with cheese, jalapeños, and a blend of fresh toppings. Perfect for sharing!'),
-    new Item('Buffalo Wings', Categories.APPETIZERS, 7.99, '../images/salad_ranch.jpg', 'Spicy and flavorful chicken wings served with ranch or blue cheese dressing.'),
-    new Item('Bruschetta', Categories.APPETIZERS, 6.49, 
+    new Item('Greek Salad', Categories.APPETIZERS, 5.99, '../images/app_salad.jpg', 'Fresh and crispy rolls filled with vegetables and served with a tangy dipping sauce.'),
+    new Item('Tomato and Avacado Toast', Categories.APPETIZERS, 4.99, '../images/avacodo_tomato_toast.jpg', 'Layered with cheese, jalapeños, and a blend of fresh toppings. Perfect for sharing!'),
+    new Item('Lettuce Eat Classic Salad', Categories.APPETIZERS, 7.99, '../images/salad_ranch.jpg', 'Spicy and flavorful chicken wings served with ranch or blue cheese dressing.'),
+    new Item('Squash Soup', Categories.APPETIZERS, 6.49, 
         '../images/squash_soup.jpg', 
         'Grilled bread topped with a fresh mix of tomatoes, basil, and garlic.'),
     
-    new Item('Stuffed Mushrooms', 
+    new Item('Veggie Pizza', 
         Categories.APPETIZERS,
         8.99,
         '../images/veggiepizza.jpg',
