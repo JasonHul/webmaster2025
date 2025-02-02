@@ -1,3 +1,4 @@
+
 const cartLabel = document.getElementById("cart-label");
 
 // Function to update the cart label
