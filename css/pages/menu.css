@@ -1,56 +1,7 @@
-/* GLOBAL STYLES */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* Modern, clean font */
-}
-
-body {
-    background-color: #FFFDD0; /* Soft cream background */
-    color: #4A2C22; /* Darker, warm neutral for text */
-    min-height: 100vh;
-}
-
-/* HEADER */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px 55px;
-    background: rgba(44, 29, 22, 0.9); /* Dark, warm brown with transparency */
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-}
-
-#homelogo:hover {
-    cursor: pointer;
-}
-
-.navbar a {
-    font-size: 18px;
-    color: #FFFDD0; /* Cream text for contrast */
-    text-decoration: none;
-    margin-left: 40px;
-    transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-    color: #FF8C42; /* Orange hover effect */
-}
-
-.navbar a.active {
-    border-bottom: 2px solid #FF8C42; /* Orange underline */
-}
 
 /* MENU CATEGORIES SECTION */
 .menu-categories-section {
-    margin-top: 30%;
+    margin-top: 95px;
     padding: 3rem 2rem;
     background-color: #FFFDD0; /* Soft cream background */
     text-align: center;
@@ -158,23 +109,4 @@ body {
 
 .category-content .btn:hover {
     background-color: #FF6F00; /* Darker orange on hover */
-}
-
-/* FOOTER */
-footer {
-    background-color: #4A2C22; /* Darker, warm neutral */
-    color: #FFFDD0;
-    text-align: center;
-    padding: 20px;
-}
-
-footer a {
-    color: #FF8C42; /* Orange */
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #FF6F00; /* Darker orange hover */
 }
