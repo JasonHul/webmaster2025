@@ -50,9 +50,9 @@ function generateSummary() {
     return `
             <h2>Total Payment</h2>
             <div class="payment-summary">
-                <p>Subtotal: <strong>$${subtotal}</strong></p>
-                <p>Delivery fee: <strong>$${delivery_fee}</strong></p>
-                <p>Discount: <strong>-$${discount}</strong></p>
+                <p>Subtotal: <strong>$${subtotal.toFixed(2)}</strong></p>
+                <p>Delivery fee: <strong>$${delivery_fee.toFixed(2)}</strong></p>
+                <p>Discount: <strong>-$${discount.toFixed(2)}</strong></p>
                 <p class="remaining-amount">Total: <strong id="strong-total">$${(+subtotal + +delivery_fee - +discount).toFixed(2)}</strong></p>
             </div>
             <button class="confirm-order-btn">Send Order</button>
