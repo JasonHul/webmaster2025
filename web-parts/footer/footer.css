@@ -6,6 +6,10 @@ footer {
     padding: 20px;
 }
 
+#footer-logo:hover {
+    cursor: pointer;
+}
+
 footer a {
     color: #FF8C42; /* Orange */
     margin: 0 10px;

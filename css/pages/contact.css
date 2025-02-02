@@ -5,7 +5,8 @@
     align-items: center;
     text-align: center;
     color: #FFFDD0; /* Cream text */
-    height: 70vh;
+    margin-top: 140px;
+    margin-bottom: 50px;
     background-image: url('/images/planthero.jpg'); /* Nature-themed background */
     background-size: cover;
     background-position: center;

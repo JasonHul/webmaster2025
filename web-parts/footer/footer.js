@@ -13,7 +13,7 @@ function loadFooter() {
     return `
     <footer>
         <div class="footer-content">
-            <img src="images/nectar-removebg-preview.png" width="5%" alt="Logo" id="footer-logo">
+            <img src="images/nectar-removebg-preview.png" width="5%" alt="Logo" id="footer-logo" onclick="location.href='index.html'">
             <nav class="footer-links">
                 <a href="index.html">Home</a>
                 <a href="menu.html">Menu</a>
