@@ -3,28 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/entrees.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="css/food.css">
     <link rel="stylesheet" href="../css/order-modal.css">
     <title>Entrees</title>
 </head>
 <body>
+    
     <!-- HEADER -->
-    <header class="header">
-        <img src="../images/letLogo7Green-removebg-preview.png" alt="Logo" id="homelogo" width="100px" onclick="location.href='../index.html'">
-        <nav class="navbar">
-            <a href="../cart.html" id="cart-label">Cart</a>
-            <a href="../index.html">Home</a>
-            <a href="../menu.html" class="active">Menu</a>
-            <a href="../login.html">Order</a>
-            <a href="../about.html">About</a>
-            <a href="../contact.html">Contact</a>
-            <a href="reference.html">Reference Page</a>
-
-        </nav>
-    </header>
+    <header id="header-section"></header>
 
     <!-- Entrees SECTION -->
-    <div class="menu-categories-section" style="margin-top: 15%;">
+    <div class="menu-categories-section">
         <h2>Our Exellent Entrees</h2>
         <p>Start your meal with a burst of flavor. Explore our range of appetizers crafted for sharing or savoring solo!</p>
         <div class="menu-categories-grid" id ="menuContainer">
@@ -47,20 +37,11 @@
 
 
     <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <img src="../images/letLogo7Green-removebg-preview.png" alt="Logo" width="100px" id="footer-logo">
-            <nav class="footer-links">
-                <a href="../index.html">Home</a>
-                <a href="../menu.html">Menu</a>
-                <a href="../specials.html">Specials</a>
-                <a href="../about.html">About</a>
-                <a href="../contact.html">Contact</a>
-            </nav>
-            <p>&copy; 2025 BBB. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <footer id="footer-section"></footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="../web-parts/header/headerFood.js"></script>
+    <script src="../web-parts/footer/footerFood.js"></script>
     <script src="../js/global.js"></script>
     <script src="../js/saved-orders.js"></script>
     <script src="../js/item.js"></script>

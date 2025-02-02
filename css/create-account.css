@@ -1,46 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    min-height: 100vh;
-    background: linear-gradient(to right, #0b7919, #1edb6d);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 0 55px;
-    background: rgba(22, 182, 7, 0.253);
-    backdrop-filter: blur(20px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-}
-
-#homelogo:hover {
-    cursor: pointer;
-}
-
-.navbar a {
-    font-size: 18px;
-    color: #fff;
-    text-decoration: none;
-    margin-left: 40px;
-}
 
 .create-account {
-    margin-top: 80px;
+    margin-top: 140px;
+    margin-bottom: 140px;
     display: flex;
     justify-content: center;
     align-items: center;

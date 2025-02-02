@@ -1,47 +1,3 @@
-/* GLOBAL STYLES */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* Modern, clean font */
-}
-
-body {
-    background-color: #FFFDD0; /* Soft cream background */
-    color: #4A2C22; /* Dark, warm neutral text */
-    min-height: 100vh;
-}
-
-/* HEADER */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px 55px;
-    background: rgba(44, 29, 22, 0.9); /* Dark, warm brown with transparency */
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.navbar a {
-    font-size: 18px;
-    color: #FFFDD0; /* Cream text */
-    text-decoration: none;
-    margin-left: 40px;
-    transition: color 0.3s ease;
-}
-
-.navbar a:hover,
-.navbar a.active {
-    color: #FF8C42; /* Orange hover/active effect */
-    border-bottom: 2px solid #FF8C42; /* Orange underline */
-}
-
 /* HERO SECTION */
 .hero {
     display: flex;
@@ -141,23 +97,4 @@ body {
 
 .contact-form button:hover {
     background-color: #FF6F00; /* Darker orange hover effect */
-}
-
-/* FOOTER */
-footer {
-    background-color: #4A2C22; /* Dark, warm neutral */
-    color: #FFFDD0; /* Cream text */
-    text-align: center;
-    padding: 20px;
-}
-
-footer a {
-    color: #FF8C42; /* Orange links */
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #FFFDD0; /* Cream hover effect */
 }
