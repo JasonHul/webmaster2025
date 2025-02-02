@@ -1,0 +1,13 @@
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+}
+
+body {
+    background-color: #FFFDD0; /* Soft cream background */
+    color: #4A2C22; /* Darker, warm neutral for text */
+    min-height: 100vh;
+}

@@ -1,154 +1,77 @@
-/* GLOBAL STYLES */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* Modern, clean font */
-}
-
+/* Add this to your about.css or within a <style> tag */
 body {
-    background-color: #FFFDD0; /* Soft cream background */
-    color: #4A2C22; /* Darker, warm neutral text */
-    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background:  #FFFDD0;
+    color: #FF8C42;
+    text-align: center;
+    min-height: 100vh; /* Ensure body takes at least the viewport height */
 }
 
-/* HEADER */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px 55px;
-    background: rgba(44, 29, 22, 0.9); /* Dark, warm brown with transparency */
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-}
-
-#homelogo:hover {
-    cursor: pointer;
-}
-
-.navbar a {
-    font-size: 18px;
-    color: #FFFDD0; /* Cream text */
-    text-decoration: none;
-    margin-left: 40px;
-    transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-    color: #FF8C42; /* Orange hover effect */
-}
-
-.navbar a.active {
-    border-bottom: 2px solid #FF8C42; /* Orange underline */
-}
-
-/* HERO SECTION */
+/* Hero Section */
 .hero {
-    height: 60vh;
+    height: 100vh; /* Full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: #FFFDD0; /* Cream text */
-    background-image: url('/images/planthero.jpg'); /* Nature-themed image */
-    background-size: cover;
-    background-position: center;
+    background: #222;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
-}
-
-.hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-}
-
-/* ABOUT SECTION */
-.about {
-    padding: 60px 10%;
-}
-
-.about-section {
-    margin-bottom: 50px;
-}
-
-.about-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #4A2C22; /* Darker, warm neutral */
-}
-
-.about-section p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: #4A2C22; /* Darker, warm neutral */
-}
-
-.about-section img {
-    width: 50%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    margin-left: 50%;
-    transform: translate(-50%);
-}
-
-/* TEAM SECTION */
-.team-grid {
-    display: flex;
-    gap: 30px;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.team-member {
-    text-align: center;
-    max-width: 250px;
-}
-
-.team-member img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-}
-
-.team-member h3 {
-    color: #FF8C42; /* Orange */
-    margin-bottom: 10px;
-}
-
-.team-member p {
-    color: #4A2C22; /* Darker, warm neutral */
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* FOOTER */
-footer {
-    background-color: #4A2C22; /* Darker, warm neutral */
-    color: #FFFDD0;
-    text-align: center;
+.hero-content {
+    max-width: 800px;
     padding: 20px;
 }
 
-footer a {
-    color: #FF8C42; /* Orange */
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
-footer a:hover {
-    color: #FF6F00; /* Darker orange hover */
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Parallax Sections */
+.parallax {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+    z-index: 10;
+}
+
+.parallax h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.parallax p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.parallax img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#layer1 { z-index: 1; }
+#layer2 { z-index: 2; }
+#layer3 { z-index: 3; }
+
+
+/* Spacer to allow scrolling */
+.spacer {
+    height: 800vh; /* Adjust based on the number of parallax sections */
 }

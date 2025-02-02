@@ -3,150 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/about.css">
+    
     <title>BBB | About Us</title>
-    <style>
-        /* Add this to your about.css or within a <style> tag */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-            background:  #FFFDD0;
-            color: #FF8C42;
-            text-align: center;
-            min-height: 100vh; /* Ensure body takes at least the viewport height */
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh; /* Full viewport height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #222;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-
-        /* Parallax Sections */
-        .parallax {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            max-width: 800px;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            text-align: center;
-            z-index: 10;
-        }
-
-        .parallax h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .parallax p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .parallax img {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        #layer1 { z-index: 1; }
-        #layer2 { z-index: 2; }
-        #layer3 { z-index: 3; }
-
-        /* Footer */
-        .footer {
-            position: fixed;
-            bottom: -100%; /* Start off-screen */
-            width: 100%;
-            background: #4A2C22;
-            z-index: 100;
-            padding: 20px 0;
-            transition: bottom 0.5s ease-in-out;
-        }
-
-        .footer.visible {
-            bottom: 0; /* Slide into view */
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .footer-links a {
-            color: #FF8C42;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        footer a:hover {
-            color: #FF6F00; /* Darker orange hover */
-        }
-
-        #footer-logo {
-            width: 50px;
-            height: auto;
-        }
-
-        /* Spacer to allow scrolling */
-        .spacer {
-            height: 800vh; /* Adjust based on the number of parallax sections */
-        }
-    </style>
 </head>
 <body>
     <!-- HEADER -->
-    <header class="header">
-        <img src="images/nectar-removebg-preview.png" alt="Logo" id="homelogo" width="65px" onclick="location.href='index.html'">
-        <nav class="navbar">
-            <a href="cart.html" id="cart-label">Cart</a>
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="login.html">Order</a>
-            <a href="about.html" class="active">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="reference.html">Reference Page</a>
-        </nav>
-    </header>
+    <header class="header" id="header-section"></header>
 
     <!-- HERO SECTION -->
     <section class="hero">
@@ -206,63 +70,11 @@
     <div class="spacer"></div>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-content">
-            <img src="images/nectar-removebg-preview.png" alt="Logo" id="footer-logo">
-            <nav class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="menu.html">Menu</a>
-                <a href="food/specials.html">Specials</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <p>&copy; 2025 Nectar. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <footer id="footer-section"></footer>
 
-    <script>
-        // Add this to your global.js or within a <script> tag
-        window.addEventListener('scroll', () => {
-            let scrollY = window.scrollY;
-            let windowHeight = window.innerHeight;
-            let documentHeight = document.documentElement.scrollHeight;
-
-            // Parallax Effect (starts after hero section)
-            function updateLayer(layer, index) {
-                let scrollSpeed = 2;  // Speed factor for scrolling
-                let fadeStart = index * windowHeight * scrollSpeed;
-                let fadeEnd = (index + 1) * windowHeight * scrollSpeed;
-
-                // Calculate opacity
-                if (scrollY >= fadeStart && scrollY <= fadeEnd) {
-                    let progress = (scrollY - fadeStart) / (windowHeight * scrollSpeed);
-
-                    // Fade in for the first 25%, stay fully visible for 50%, fade out for the last 25%
-                    if (progress <= 0.25) {
-                        layer.style.opacity = progress * 4; // Fade in
-                    } else if (progress <= 0.75) {
-                        layer.style.opacity = 1; // Fully visible
-                    } else {
-                        layer.style.opacity = 1 - (progress - 0.75) * 4; // Fade out
-                    }
-                } else {
-                    layer.style.opacity = 0;
-                }
-            }
-
-            // Update each layer
-            updateLayer(document.getElementById('layer1'), 0);
-            updateLayer(document.getElementById('layer2'), 1);
-            updateLayer(document.getElementById('layer3'), 2);
-
-            // Footer Visibility (appears at the bottom of the page)
-            let footer = document.querySelector('.footer');
-            if (scrollY + windowHeight >= documentHeight - 100) {
-                footer.classList.add('visible');
-            } else {
-                footer.classList.remove('visible');
-            }
-        });
-    </script>
+    <script src="web-parts/header/header.js"></script>
+    <script src="web-parts/footer/footer.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/about.js"></script>
 </body>
 </html>
