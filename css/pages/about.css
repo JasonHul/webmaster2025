@@ -77,5 +77,5 @@ body {
 
 /* Spacer to allow scrolling */
 .spacer {
-    height: 1800vh; /* Adjust based on the number of parallax sections */
+    height: 1000vh; /* Adjust based on the number of parallax sections */
 }
