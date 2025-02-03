@@ -53,7 +53,9 @@ document.getElementById("accountForm").addEventListener("submit", async (e) => {
             password,
             timestamp: firebase.firestore.FieldValue.serverTimestamp() // Adds a server-side timestamp
         });
-        console.log("Message saved successfully!");
+        console.log("Account created successfully!");
+        alert("Account created successfully!");
+        window.location.href = "login.html";
     } 
     catch (error) {
         console.error("Error saving message:", error);
