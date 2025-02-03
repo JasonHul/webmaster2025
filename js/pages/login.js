@@ -57,7 +57,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
             const accountData = doc.data();
             if (accountData.password === hashedPassword) {
                 alert("Login successful!");
-                localStorage.setItem("sessionUser", JSON.stringify({ email: accountData.email, userId: doc.id }));
+                localStorage.setItem("sessionUser", JSON.stringify({ email: accountData.email, userId: doc.id, username: accountData.username }));
                 console.log("session id (doc.id): ", doc.id);
                 // Redirect to another page or load user-specific data
                 // window.location.href = "menu.html"; 
