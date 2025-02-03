@@ -69,9 +69,13 @@ body {
 #layer1 { z-index: 1; }
 #layer2 { z-index: 2; }
 #layer3 { z-index: 3; }
+#layer4 { z-index: 4; }
+#layer5 { z-index: 5; }
+#layer6 { z-index: 6; }
+#layer7 { z-index: 7; }
 
 
 /* Spacer to allow scrolling */
 .spacer {
-    height: 800vh; /* Adjust based on the number of parallax sections */
+    height: 1800vh; /* Adjust based on the number of parallax sections */
 }

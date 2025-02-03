@@ -28,9 +28,13 @@ window.addEventListener('scroll', () => {
     }
 
     // Update each layer
-    updateLayer(document.getElementById('layer1'), 0);
-    updateLayer(document.getElementById('layer2'), 1);
-    updateLayer(document.getElementById('layer3'), 2);
+    updateLayer(document.getElementById('layer1'), 0.5);
+    updateLayer(document.getElementById('layer2'), 1.5);
+    updateLayer(document.getElementById('layer3'), 2.5);
+    updateLayer(document.getElementById('layer4'), 3.5);
+    updateLayer(document.getElementById('layer5'), 4.5);
+    updateLayer(document.getElementById('layer6'), 5.5);
+    updateLayer(document.getElementById('layer7'), 6.5);
 
     // Footer Visibility (appears at the bottom of the page)
     let footer = document.querySelector('.footer');
