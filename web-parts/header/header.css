@@ -33,3 +33,10 @@
 .navbar a.active {
     border-bottom: 2px solid #FF8C42; /* Orange underline */
 }
+
+#user-greeting {
+    margin-right: 40%;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFDD0; /* Cream text for contrast */
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Overview - BBB</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/profile.css">
+</head>
+<body>
+    <header id="header-section"></header>
+    <div class ="viewing-area">
+        <section class="account-details">
+            <h2>Personal Details</h2>
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Email:</strong> johndoe@example.com</p>
+            <p><strong>Phone:</strong> +1 234 567 890</p>
+        </section>
+        
+        <section class="past-orders">
+            <h2>Past Orders</h2>
+            <ul>
+                <li>Order #1234 - Quinoa Salad - $12.99</li>
+                <li>Order #1235 - Vegan Burger - $15.99</li>
+                <li>Order #1236 - Organic Smoothie - $8.50</li>
+            </ul>
+        </section>
+        
+        <section class="logout">
+            <a href="index.html" onclick="logout()" class="logout-button">Logout</a>
+        </section>
+    </div>
+    <footer id="footer-section"></footer>
+
+    <script src="web-parts/header/header.js"></script>
+    <script src="web-parts/footer/footer.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/pages/login.js"></script>
+</body>

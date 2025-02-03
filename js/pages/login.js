@@ -83,3 +83,76 @@ function logout() {
 
 
 
+//Code trying to implment
+// document.getElementById('loginForm').addEventListener('submit', async (e) => {
+//     e.preventDefault();
+    
+//     const email = document.getElementById('email').value;
+//     const hashedPassword = await hashField(document.getElementById('password').value);
+
+
+//     try {
+//         // Query Firestore to find an account with the matching email
+//         const querySnapshot = await db.collection("accountForm").where("email", "==", email).get();
+        
+//         if (querySnapshot.empty) {
+//             alert("No account found with that email.");
+//             return;
+//         }
+
+//         // Check if the password matches
+//         querySnapshot.forEach(doc => {
+//             const accountData = doc.data();
+//             if (accountData.password === hashedPassword) {
+//                 alert("Login successful!");
+//                 localStorage.setItem("sessionUser", JSON.stringify({ email: accountData.email, userId: doc.id, username: accountData.username }));
+//                 console.log("session id (doc.id): ", doc.id);
+//                 // Redirect to another page or load user-specific data
+//                 // window.location.href = "menu.html";
+//                 const items = getCartHistory(doc.id);
+//                 console.log("login.js - FoodItems: ", items);
+//                 localStorage.setItem("foodItems", items); 
+//             } else {
+//                 alert("Incorrect password. Please try again.");
+//             }
+//         });
+//     } catch (error) {
+//         console.error("Error checking credentials:", error);
+//         alert("An error occurred during login.");
+//     }
+// });
+
+// async function getCartHistory(userId) {
+//     try {
+//         const querySnapshot = await db.collection("cartHistory").get();
+
+//         if (querySnapshot.empty) {
+//             console.log("No cart history found.");
+//             return null;
+//         }
+
+//         let cartHistory = [];
+//         querySnapshot.forEach(foodDoc => {
+//             // Check if the document ID matches the userId
+//             if (foodDoc.id === userId) {
+//                 console.log("User's cart history found.");
+//                 const data = foodDoc.data().foodItems;
+//                 cartHistory.push(data);
+//             }
+//         });
+
+//         if (cartHistory.length === 0) {
+//             console.log("No cart history found for this user.");
+//             return null;
+//         }
+
+//         console.log("Cart History:", cartHistory);
+//         return cartHistory;
+//     } catch (error) {
+//         console.error("Error fetching cart history:", error);
+//         return null;
+//     }
+// }
+
+
+

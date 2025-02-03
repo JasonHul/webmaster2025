@@ -5,7 +5,7 @@ function loadFooter() {
     // Load the CSS dynamically
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = "../webmaster2025/web-parts/footer/footer.css" // Path to the CSS file
+    link.href = "./web-parts/footer/footer.css" // Path to the CSS file
     document.head.appendChild(link);
 
     console.log("Load Function trying to do it's job");

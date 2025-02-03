@@ -8,7 +8,7 @@ function loadHeader() {
     // Load the CSS dynamically
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = "../webmaster2025/web-parts/header/header.css" // Path to the CSS file
+    link.href = "./web-parts/header/header.css" // Path to the CSS file
     document.head.appendChild(link);
 
     console.log("LoadHeader Function trying to do it's job");
@@ -16,6 +16,7 @@ function loadHeader() {
     return `
     <header class="header">
         <img src="images/nectar-removebg-preview.png" alt="Logo" id="homelogo" width="65px" onclick="location.href='index.html'">
+        <h2 id="user-greeting"></h2>
         <nav class="navbar">
             <a href="cart.html" id="cart-label">Cart</a>
             <a href="index.html">Home</a>
@@ -24,6 +25,7 @@ function loadHeader() {
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
             <a href="reference.html">Reference Page</a>
+            <a href="profile.html">Your Profile</a>
         </nav>
     </header>
     `;
@@ -33,4 +35,17 @@ function loadHeader() {
     }
 }
 
+function writeUserGreeting() {
+    if (localStorage.getItem("sessionUser")) {
+        const sessionUser = JSON.parse(localStorage.getItem("sessionUser"));
+        const userGreeting = document.getElementById("user-greeting");
+        userGreeting.textContent = `Welcome, ${sessionUser.username}!`;
+        console.log("Session user found:", sessionUser);
+    }
+    else {
+        console.log("No session user found.");
+    }
+}
+
 headerSection.innerHTML = loadHeader();
+writeUserGreeting();
