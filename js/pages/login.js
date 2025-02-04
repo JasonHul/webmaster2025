@@ -35,18 +35,6 @@ function checkSession() {
 // Call this on every login page load
 checkSession();
 
-// Logout functionality
-function logout() {
-    // Clear the session
-    localStorage.removeItem("sessionUser");
-    localStorage.removeItem("foodItems");
-
-    // Redirect to the login page
-    window.location.href = "login.html";
-}
-
-
-
 //Login Area
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
