@@ -15,7 +15,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #222;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/aboutushero.jpg");
+    background-size: cover;
+    background-position: center;
+
+    
 }
 
 .hero-content {
@@ -78,4 +82,10 @@ body {
 /* Spacer to allow scrolling */
 .spacer {
     height: 1000vh; /* Adjust based on the number of parallax sections */
+}
+
+.content-wrapper.content-wrapper {
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    gap: 20px; /* Space between text and image */
 }
