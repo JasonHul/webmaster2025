@@ -35,42 +35,6 @@ function checkSession() {
 // Call this on every login page load
 checkSession();
 
-// Login form submission handler
-document.getElementById('loginForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const email = document.getElementById('email').value;
-    const hashedPassword = await hashField(document.getElementById('password').value);
-
-
-    try {
-        // Query Firestore to find an account with the matching email
-        const querySnapshot = await db.collection("accountForm").where("email", "==", email).get();
-        
-        if (querySnapshot.empty) {
-            alert("No account found with that email.");
-            return;
-        }
-
-        // Check if the password matches
-        querySnapshot.forEach(doc => {
-            const accountData = doc.data();
-            if (accountData.password === hashedPassword) {
-                alert("Login successful!");
-                localStorage.setItem("sessionUser", JSON.stringify({ email: accountData.email, userId: doc.id, username: accountData.username }));
-                console.log("session id (doc.id): ", doc.id);
-                // Redirect to another page or load user-specific data
-                // window.location.href = "menu.html"; 
-            } else {
-                alert("Incorrect password. Please try again.");
-            }
-        });
-    } catch (error) {
-        console.error("Error checking credentials:", error);
-        alert("An error occurred during login.");
-    }
-});
-
 // Logout functionality
 function logout() {
     // Clear the session
@@ -83,76 +47,66 @@ function logout() {
 
 
 
-//Code trying to implment
-// document.getElementById('loginForm').addEventListener('submit', async (e) => {
-//     e.preventDefault();
+//Login Area
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
     
-//     const email = document.getElementById('email').value;
-//     const hashedPassword = await hashField(document.getElementById('password').value);
+    const email = document.getElementById('email').value;
+    const hashedPassword = await hashField(document.getElementById('password').value);
 
-
-//     try {
-//         // Query Firestore to find an account with the matching email
-//         const querySnapshot = await db.collection("accountForm").where("email", "==", email).get();
+    try {
+        // Query Firestore to find an account with the matching email
+        const querySnapshot = await db.collection("accountForm").where("email", "==", email).get();
         
-//         if (querySnapshot.empty) {
-//             alert("No account found with that email.");
-//             return;
-//         }
+        if (querySnapshot.empty) {
+            alert("No account found with that email.");
+            return;
+        }
 
-//         // Check if the password matches
-//         querySnapshot.forEach(doc => {
-//             const accountData = doc.data();
-//             if (accountData.password === hashedPassword) {
-//                 alert("Login successful!");
-//                 localStorage.setItem("sessionUser", JSON.stringify({ email: accountData.email, userId: doc.id, username: accountData.username }));
-//                 console.log("session id (doc.id): ", doc.id);
-//                 // Redirect to another page or load user-specific data
-//                 // window.location.href = "menu.html";
-//                 const items = getCartHistory(doc.id);
-//                 console.log("login.js - FoodItems: ", items);
-//                 localStorage.setItem("foodItems", items); 
-//             } else {
-//                 alert("Incorrect password. Please try again.");
-//             }
-//         });
-//     } catch (error) {
-//         console.error("Error checking credentials:", error);
-//         alert("An error occurred during login.");
-//     }
-// });
+        // Check if the password matches
+        for (const doc of querySnapshot.docs) {
+            const accountData = doc.data();
+            if (accountData.password === hashedPassword) {
+                alert("Login successful!");
+                localStorage.setItem("sessionUser", JSON.stringify({ email: accountData.email, userId: doc.id, username: accountData.username }));
+                console.log("session id (doc.id): ", doc.id);
+                
+                // Fetch cart history properly using await
+                const items = await getCartHistory(doc.id);
+                console.log("login.js - FoodItems: ", items);
+                
+                // Store cart items properly in localStorage
+                localStorage.setItem("foodItems", JSON.stringify(items));
 
-// async function getCartHistory(userId) {
-//     try {
-//         const querySnapshot = await db.collection("cartHistory").get();
+                updateCartLabel();
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        }
+    } catch (error) {
+        console.error("Error checking credentials:", error);
+        alert("An error occurred during login.");
+    }
+});
 
-//         if (querySnapshot.empty) {
-//             console.log("No cart history found.");
-//             return null;
-//         }
+async function getCartHistory(userId) {
+    try {
+        const doc = await db.collection("cartHistory").doc(userId).get();
 
-//         let cartHistory = [];
-//         querySnapshot.forEach(foodDoc => {
-//             // Check if the document ID matches the userId
-//             if (foodDoc.id === userId) {
-//                 console.log("User's cart history found.");
-//                 const data = foodDoc.data().foodItems;
-//                 cartHistory.push(data);
-//             }
-//         });
+        if (!doc.exists) {
+            console.log("No cart history found.");
+            return null;
+        }
 
-//         if (cartHistory.length === 0) {
-//             console.log("No cart history found for this user.");
-//             return null;
-//         }
-
-//         console.log("Cart History:", cartHistory);
-//         return cartHistory;
-//     } catch (error) {
-//         console.error("Error fetching cart history:", error);
-//         return null;
-//     }
-// }
+        console.log("User's cart history found.");
+        const data = doc.data().foodItems || [];
+        console.log("Cart History:", data);
+        return data;
+    } catch (error) {
+        console.error("Error fetching cart history:", error);
+        return null;
+    }
+}
 
 
 

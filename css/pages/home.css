@@ -6,8 +6,9 @@
     align-items: center;
     text-align: center;
     color: #FFFDD0; /* Cream text */
-    height: 85vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('../images/homepage_hero.jpg'); /* Nature-themed image */
+    height: 90vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExajBqcDUzOGFhaGIxbWd3bGtrczQ2NzFsZXpuYWxlOTFkOGpsaWE3ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XIixg3mYzPy7n1YgSJ/giphy.gif'); /* Nature-themed image */
+
     background-size: cover;
     background-position: center;
     position: relative;
