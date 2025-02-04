@@ -35,42 +35,6 @@ function checkSession() {
 // Call this on every login page load
 checkSession();
 
-// Login form submission handler
-// document.getElementById('loginForm').addEventListener('submit', async (e) => {
-//     e.preventDefault();
-    
-//     const email = document.getElementById('email').value;
-//     const hashedPassword = await hashField(document.getElementById('password').value);
-
-
-//     try {
-//         // Query Firestore to find an account with the matching email
-//         const querySnapshot = await db.collection("accountForm").where("email", "==", email).get();
-        
-//         if (querySnapshot.empty) {
-//             alert("No account found with that email.");
-//             return;
-//         }
-
-//         // Check if the password matches
-//         querySnapshot.forEach(doc => {
-//             const accountData = doc.data();
-//             if (accountData.password === hashedPassword) {
-//                 alert("Login successful!");
-//                 localStorage.setItem("sessionUser", JSON.stringify({ email: accountData.email, userId: doc.id, username: accountData.username }));
-//                 console.log("session id (doc.id): ", doc.id);
-//                 // Redirect to another page or load user-specific data
-//                 // window.location.href = "menu.html"; 
-//             } else {
-//                 alert("Incorrect password. Please try again.");
-//             }
-//         });
-//     } catch (error) {
-//         console.error("Error checking credentials:", error);
-//         alert("An error occurred during login.");
-//     }
-// });
-
 // Logout functionality
 function logout() {
     // Clear the session
@@ -83,7 +47,7 @@ function logout() {
 
 
 
-//Code trying to implment
+//Login Area
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
