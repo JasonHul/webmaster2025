@@ -1,10 +1,10 @@
 /* Container Layout */
 .checkout-container {
     margin-top: 95px;
+    margin-bottom: 25vh;
     display: flex;
     gap: 30px;
     padding: 40px 10%;
-    background-color: #ffffff;
     color: #2d4023;
 }
 

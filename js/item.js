@@ -48,15 +48,12 @@ const itemsList = [
     new Item('Golden Harvest Squash Soup', Categories.APPETIZERS, 6.99, '../images/squash_soup.jpg', 'A velvety, rich squash soup infused with warm spices and a drizzle of honeyed cream.'),
     new Item('Rustic Veggie Flatbread', Categories.APPETIZERS, 8.99, '../images/veggiepizza.jpg', 'A crispy, artisan flatbread topped with roasted vegetables, fresh basil, and a hint of truffle oil.'),
 
-
-
     //Desserts
     new Item('Toffee Swirl', Categories.DESSERTS, 5.49, '../images/toffee_icecream.jpg', 'A luscious toffee-infused ice cream with golden caramel ribbons and a hint of honeyed crunch.'),
     new Item('Rosé Velvet Cake', Categories.DESSERTS, 6.49, '../images/cake_pinkfrost.jpg', 'A dreamy pink-frosted cake with delicate vanilla layers, kissed with a touch of floral nectar.'),
     new Item('Honeyed Silk Cheesecake', Categories.DESSERTS, 6.99, '../images/cheesecake.jpg', 'A creamy, velvety cheesecake with a golden honey drizzle and buttery graham crust.'),
     new Item('Nectar Blossom Cookie', Categories.DESSERTS, 3.99, '../images/cookie.jpg', 'A soft, chewy cookie infused with warm honey, vanilla, and caramelized toffee bits.'),
     new Item('Garden Nectar Ice Cream', Categories.DESSERTS, 5.99, '../images/veggyicecream.jpg', 'A silky-smooth plant-based ice cream infused with garden-fresh flavors and a touch of golden honey.'),
-
 
     //Drinks
     new Item('Honeyed Espresso Bliss', Categories.DRINKS, 5.49, '../images/coffee_heart.jpg', 'A bold espresso kissed with a hint of natural sweetness—pure liquid gold.'),
@@ -67,6 +64,7 @@ const itemsList = [
     new Item('Meadow Serenity Tea', Categories.DRINKS, 4.49, '../images/teasimple.jpg', 'A calming herbal tea steeped with delicate botanicals and golden honey essence.'),
     new Item('Chilled Pineapple Juice', Categories.DRINKS, 3.49, '../images/juice.jpg', 'A sweet and savory pineapple juice chilled with ice and infused with a honey drizzle.'),
 
+    
     //Entrees
     new Item('Golden Curry Bliss', Categories.ENTREES, 10.99, '../images/curry_rice.jpg', 'A fragrant golden curry served over fluffy rice, infused with warm spices and a touch of honeyed coconut.'),
     new Item('Spiced Nectar Curry', Categories.ENTREES, 11.49, '../images/curryburry.jpg', 'A rich, velvety curry bursting with bold spices, slow-simmered for deep, aromatic flavor.'),
@@ -75,6 +73,7 @@ const itemsList = [
     new Item('Sun-Kissed Tomato Surprise', Categories.ENTREES, 10.99, '../images/tomato_suprise.jpg', 'Juicy, sun-ripened tomatoes seasoned with a flavorful medley of grains, herbs, and a hint of golden honey.'),
     new Item('Garden Herb Pasta', Categories.ENTREES, 11.99, '../images/veg_pasta.jpg', 'A vibrant veggie pasta tossed with fresh basil, roasted garlic, and a touch of citrus zest.'),
 
+    
     //Specials
     new Item('Berry Bliss Açaí Bowl', Categories.SPECIALS, 7.99, '../images/acai_bowl.jpg', 'A nourishing açaí bowl topped with fresh berries, granola, and a drizzle of wild honey.'),
     new Item('Strawberry Nectar Smoothie', Categories.SPECIALS, 6.49, '../images/strawberry_smoothie.jpg', 'A creamy, refreshing smoothie blended with ripe strawberries, banana, and a touch of floral honey.'),

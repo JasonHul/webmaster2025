@@ -14,22 +14,6 @@ function hashFieldText(input) {
     );
 }
 
-// Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyCLnWMQFQelUfRT1AMw_ynbUqPm-fBLdy4",
-    authDomain: "webmaster25-d336f.firebaseapp.com",
-    databaseURL: "https://webmaster25-d336f-default-rtdb.firebaseio.com",
-    projectId: "webmaster25-d336f",
-    storageBucket: "webmaster25-d336f.appspot.com",
-    messagingSenderId: "592082921682",
-    appId: "1:592082921682:web:ce8c62ffb626640713650b"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-// Initialize Firestore
-const db = firebase.firestore();
 
 // Form submission handler
 document.getElementById("accountForm").addEventListener("submit", async (e) => {

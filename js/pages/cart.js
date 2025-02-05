@@ -1,19 +1,6 @@
-// Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyCLnWMQFQelUfRT1AMw_ynbUqPm-fBLdy4",
-    authDomain: "webmaster25-d336f.firebaseapp.com",
-    databaseURL: "https://webmaster25-d336f-default-rtdb.firebaseio.com",
-    projectId: "webmaster25-d336f",
-    storageBucket: "webmaster25-d336f.appspot.com",
-    messagingSenderId: "592082921682",
-    appId: "1:592082921682:web:ce8c62ffb626640713650b"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
 
 foodItems = JSON.parse(localStorage.getItem('foodItems')) || [];
+console.log("cart.js - foodItems: ", foodItems);
 
 subtotal = 0;
 delivery_fee = 0;
@@ -39,7 +26,7 @@ function removeItem(button) {
 
 function generateProduct(item) {
         product = itemsList.find(i => i.item === item.item);
-        console.log(product);
+        console.log("cart.js - product: ", product);
         pricing = (product.price * item.saved_quantity).toFixed(2);
         subtotal += +pricing;
         image = product.pictureURL.con;
@@ -70,22 +57,46 @@ function generateSummary() {
                 <p>Discount: <strong>-$${discount.toFixed(2)}</strong></p>
                 <p class="remaining-amount">Total: <strong id="strong-total">$${(+subtotal + +delivery_fee - +discount).toFixed(2)}</strong></p>
             </div>
-            <button class="confirm-order-btn">Send Order</button>
+            <button onclick="saveOrderToDatabase()" class="confirm-order-btn">Send Order</button>
             <p class="note">The delivery fee is split among group members, and any balance is refunded based on the total amount.</p>
         </div>
     `;
 
 }
 
+
 function regenerateSummary() {
     const summarySection = document.getElementById('summary-section');
     summarySection.innerHTML = generateSummary();
 }
 
+async function saveOrderToDatabase() {
+    try {
+        const sessionUser = JSON.parse(localStorage.getItem("sessionUser"));
+        const userId = sessionUser ? sessionUser.userId : null;
+        tempID = Math.floor(Math.random() * 1000000); //WILL NEED TO REPLACE WITH PROPER SYSTEM W/o DUPLICATES
 
-function saveOrderToDatabase() {
-    
+        if (userId) {
+            await db.collection("orderHistory").add({
+                userId, // Save userId for reference
+                foodItems,
+                orderId: tempID,
+                totalPrice: (+subtotal + +delivery_fee - +discount).toFixed(2),
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            });
+
+            console.log("Order Placed Successfully!");
+            alert("Order created successfully! Check Your Profile!");
+        } else {
+            alert("Please login to place an order!");
+            window.location.href = "login.html";
+        }
+    } catch (error) {
+        console.error("Error saving order:", error);
+        alert("An error occurred while placing the order. Please try again.");
+    }
 }
+
 
 const cartContainer = document.getElementById('cart-section');
 console.log("cartContainer: ", cartContainer);

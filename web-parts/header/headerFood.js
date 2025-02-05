@@ -21,11 +21,10 @@ function loadHeader() {
             <a href="../cart.html" id="cart-label">Cart</a>
             <a href="../index.html">Home</a>
             <a href="../menu.html">Menu</a>
-            <a href="../login.html">Order</a>
             <a href="../about.html">About</a>
             <a href="../contact.html">Contact</a>
             <a href="../reference.html">Reference Page</a>
-            <a href="../profile.html">Your Profile</a>
+            <a onclick="direct()" style="cursor: pointer;">Your Profile</a>
         </nav>
     </header>
     `;
@@ -45,6 +44,15 @@ function writeUserGreeting() {
     }
     else {
         console.log("No session user found.");
+    }
+}
+
+function direct() {
+    if (localStorage.getItem("sessionUser")) {
+        location.href = "../../../profile.html";
+    }
+    else {
+        location.href = "../../../login.html";
     }
 }
 

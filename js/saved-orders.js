@@ -1,22 +1,9 @@
 //TODO: Add functionality when user logged in to save into database in future
 // Firebase configuration (already initialized above)
-const firebaseConfig = {
-    apiKey: "AIzaSyCLnWMQFQelUfRT1AMw_ynbUqPm-fBLdy4",
-    authDomain: "webmaster25-d336f.firebaseapp.com",
-    databaseURL: "https://webmaster25-d336f-default-rtdb.firebaseio.com",
-    projectId: "webmaster25-d336f",
-    storageBucket: "webmaster25-d336f.appspot.com",
-    messagingSenderId: "592082921682",
-    appId: "1:592082921682:web:ce8c62ffb626640713650b"
-};
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
 
 foodItems = JSON.parse(localStorage.getItem('foodItems')) || [];
 
-userid = JSON.parse(localStorage.getItem("sessionUser")).userId;
 
 function addFoodItem(item, count) {
     
@@ -53,6 +40,7 @@ function checkDuplicates(itemName) {
 
 async function saveToDatabase() {
     try {
+        userid = JSON.parse(localStorage.getItem("sessionUser")).userId;
         if (userid !== null) {
             const cartRef = db.collection("cartHistory").doc(userid); // Use userId as the document ID
 

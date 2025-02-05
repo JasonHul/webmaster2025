@@ -1,18 +1,3 @@
-// Firebase configuration (already initialized above)
-const firebaseConfig = {
-    apiKey: "AIzaSyCLnWMQFQelUfRT1AMw_ynbUqPm-fBLdy4",
-    authDomain: "webmaster25-d336f.firebaseapp.com",
-    databaseURL: "https://webmaster25-d336f-default-rtdb.firebaseio.com",
-    projectId: "webmaster25-d336f",
-    storageBucket: "webmaster25-d336f.appspot.com",
-    messagingSenderId: "592082921682",
-    appId: "1:592082921682:web:ce8c62ffb626640713650b"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
 // Hashing function
 async function hashField(input) {
     const encoder = new TextEncoder();
@@ -56,18 +41,47 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
             const accountData = doc.data();
             if (accountData.password === hashedPassword) {
                 alert("Login successful!");
-                localStorage.setItem("sessionUser", JSON.stringify({ email: accountData.email, userId: doc.id, username: accountData.username }));
+                localStorage.setItem("sessionUser", JSON.stringify({ 
+                    email: accountData.email, 
+                    userId: doc.id, 
+                    username: accountData.username 
+                }));
                 console.log("session id (doc.id): ", doc.id);
                 
                 // Fetch cart history properly using await
                 const items = await getCartHistory(doc.id);
                 console.log("login.js - FoodItems: ", items);
-                
-                // Store cart items properly in localStorage
-                localStorage.setItem("foodItems", JSON.stringify(items));
 
+                
+                console.log("login.js - items: ", items);
+                // Check if items exist and are an array
+                if (!Array.isArray(items) || items.length === 0) {
+                    console.warn("No items found in cart history.");
+                } else {
+                    console.log("Processing cart items...");
+
+                    for (const product_item of items) {
+                        // Validate object structure
+                        if (!product_item.item || product_item.saved_quantity === undefined) {
+                            console.warn("Invalid item format:", product_item);
+                            continue; // Skip invalid items
+                        }
+
+                        console.log(`Adding item: ${product_item.item}, Quantity: ${product_item.saved_quantity}`);
+
+                        // Call function to add item (assuming this function exists)
+                        addFoodItem(product_item.item, product_item.saved_quantity);
+                    }
+
+                    console.log("All valid items processed successfully.");
+                }
+                
+                console.log("login.js -  Now FoodItems: ", JSON.parse(localStorage.getItem('foodItems')));
+        
                 updateCartLabel();
-            } else {
+                saveToDatabase();
+            }
+            else {
                 alert("Incorrect password. Please try again.");
             }
         }

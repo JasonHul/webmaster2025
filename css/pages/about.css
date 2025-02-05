@@ -7,6 +7,7 @@ body {
     color: #FF8C42;
     text-align: center;
     min-height: 100vh; /* Ensure body takes at least the viewport height */
+    background-color: rgb(43, 43, 43);
 }
 
 /* Hero Section */

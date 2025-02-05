@@ -21,11 +21,10 @@ function loadHeader() {
             <a href="cart.html" id="cart-label">Cart</a>
             <a href="index.html">Home</a>
             <a href="menu.html">Menu</a>
-            <a href="login.html">Order</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
             <a href="reference.html">Reference Page</a>
-            <a href="profile.html">Your Profile</a>
+            <a onclick="direct()" style="cursor: pointer;">Your Profile</a>
         </nav>
     </header>
     `;
@@ -38,6 +37,7 @@ function loadHeader() {
 function writeUserGreeting() {
     if (localStorage.getItem("sessionUser")) {
         const sessionUser = JSON.parse(localStorage.getItem("sessionUser"));
+        console.log("sessionUser: ", sessionUser);
         const userGreeting = document.getElementById("user-greeting");
         userGreeting.textContent = `Welcome, ${sessionUser.username}!`;
         console.log("Session user found:", sessionUser);
@@ -47,5 +47,15 @@ function writeUserGreeting() {
     }
 }
 
+function direct() {
+    if (localStorage.getItem("sessionUser")) {
+        location.href = "profile.html";
+    }
+    else {
+        location.href = "login.html";
+    }
+}
+
 headerSection.innerHTML = loadHeader();
 writeUserGreeting();
+
