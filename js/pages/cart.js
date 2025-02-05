@@ -87,6 +87,8 @@ async function saveOrderToDatabase() {
 
             console.log("Order Placed Successfully!");
             alert("Order created successfully! Check Your Profile!");
+            localStorage.removeItem("foodItems");
+            console.log("FoodItems was cleared");
         } else {
             alert("Please login to place an order!");
             window.location.href = "login.html";

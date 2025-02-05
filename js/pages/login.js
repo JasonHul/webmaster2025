@@ -80,6 +80,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         
                 updateCartLabel();
                 saveToDatabase();
+                window.location.href = "profile.html";
             }
             else {
                 alert("Incorrect password. Please try again.");
