@@ -15,7 +15,7 @@
 
 /* Modal content */
 .modal-content {
-    background-color: #fff;
+    background-color: #ffffff;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #888;
@@ -65,10 +65,12 @@
     padding: 8px;
     margin-bottom: 10px;
     width: 100px;
+    border-radius: 8px;
+    border-color: #FF8C42;
 }
 
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: #FF8C42;/* Green */
     color: white;
     padding: 12px 20px;
     border: none;
@@ -79,5 +81,5 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color:  #ff6842;
 }
