@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    margin: 0;
+    margin-top: 10%;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@ html, body {
 
 section {
     background: white;
-    margin: 20px auto;
+    margin: 315px auto;
     padding: 25px;
     width: 90%;
     max-width: 800px;
@@ -76,4 +76,5 @@ ul li {
     padding: 15px;
     width: 100%;
     margin-top: auto; /* Ensures footer is pushed down */
+    
 }
