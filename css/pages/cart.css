@@ -97,7 +97,7 @@
 .cart-total .total-amount {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #387f4c;
+    color: #FF8C42;
 }
 
 /* Summary Section */
@@ -112,13 +112,13 @@
 
 .summary-section h2 {
     font-size: 1.8rem;
-    color: #387f4c;
+    color: #FF8C42;
     margin-bottom: 20px;
 }
 
 .payment-summary {
     font-size: 1rem;
-    color: #2d4023;
+    color: #403b23;
 }
 
 .payment-summary p {
@@ -135,7 +135,7 @@
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #95c892;
+    background-color: #FF8C42;
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -147,7 +147,7 @@
 }
 
 .confirm-order-btn:hover {
-    background-color: #6ea671;
+    background-color: #ff7722;
 }
 
 .note {
