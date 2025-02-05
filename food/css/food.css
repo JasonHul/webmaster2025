@@ -3,12 +3,12 @@
     margin-top: 95px; /* Push content below fixed header */
     padding: 2rem;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #FFFDD0;
 }
 
 .menu-categories-section h2 {
     font-size: 2.5rem;
-    color: #2d4023;
+    color: #ff8800;
     margin-bottom: 1rem;
 }
 
@@ -63,7 +63,7 @@
 
 .category-content h3 {
     font-size: 1.8rem;
-    color: #2d4023;
+    color: #FF8C42; #2d4023;
     margin-bottom: 0.5rem;
 }
 
@@ -78,8 +78,8 @@
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
-    color: #ffffff;
-    background-color: #387f4c;
+    color: #FFFDD0; /* Cream text */
+    background-color: #FF8C42; /* Orange */
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
@@ -87,7 +87,7 @@
 }
 
 .category-content .btn:hover {
-    background-color: #2d4023;
+    background-color: #ff6842;
 }
 
 
