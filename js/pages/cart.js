@@ -20,6 +20,9 @@ function removeItem(button) {
     saveToDatabase();
     updateCartLabel();
     row.remove();
+    if (foodItems.length === 0) {
+        displayEmptyCart();
+    }
 }
 
 
@@ -103,10 +106,18 @@ async function saveOrderToDatabase() {
 const cartContainer = document.getElementById('cart-section');
 console.log("cartContainer: ", cartContainer);
 
+function displayEmptyCart() {
+    cartContainer.innerHTML = `<h2 class="empty-cart">Your Cart is Empty</h2>`;
+}
 
+if (foodItems.length > 0) {
     foodItems.forEach(item => {
             cartContainer.innerHTML += generateProduct(item);
     });
+}
+else {
+    displayEmptyCart();
+}
 
 const summarySection = document.getElementById('summary-section');
     summarySection.innerHTML += generateSummary();
