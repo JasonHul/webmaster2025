@@ -69,8 +69,15 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
                         console.log(`Adding item: ${product_item.item}, Quantity: ${product_item.saved_quantity}`);
 
-                        // Call function to add item (assuming this function exists)
-                        addFoodItem(product_item.item, product_item.saved_quantity);
+                        for (i of itemsList) {
+                            if (product_item.item == i.item) {
+                                // Call function to add item (assuming this function exists)
+                                addFoodItem(product_item.item, product_item.saved_quantity);
+                                console.log("Adding to addFoodItem method: ", product_item);
+                                break;
+                            }
+                        }
+
                     }
 
                     console.log("All valid items processed successfully.");
@@ -80,7 +87,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         
                 updateCartLabel();
                 saveToDatabase();
-                window.location.href = "profile.html";
+                // window.location.href = "profile.html";
             }
             else {
                 alert("Incorrect password. Please try again.");
