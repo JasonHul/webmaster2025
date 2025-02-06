@@ -78,6 +78,11 @@ async function saveOrderToDatabase() {
         const sessionUser = JSON.parse(localStorage.getItem("sessionUser"));
         const userId = sessionUser ? sessionUser.userId : null;
         tempID = Math.floor(Math.random() * 1000000); //WILL NEED TO REPLACE WITH PROPER SYSTEM W/o DUPLICATES
+        
+        if (foodItems.length === 0) {
+            alert("Your cart is empty. Please add items to your cart before saving the order.");
+            return;
+        }
 
         if (userId) {
             await db.collection("orderHistory").add({
