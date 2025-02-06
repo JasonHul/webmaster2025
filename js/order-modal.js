@@ -33,6 +33,16 @@ document.addEventListener("click", function(event) {
 // Confirm order functionality (for now, just log quantity)
 confirmOrder.onclick = function() {
     const quantity = quantityInput.value;
+
+    if (quantity <= 0) {
+        alert("Please enter a valid quantity.");
+        return;
+    }
+    if (quantity > 15) {
+        alert("Please enter a quantity less than or equal to 15.");
+        return;
+    }
+        
     addFoodItem(modalItemName.textContent, quantity);
     saveToDatabase();
     console.log(`Order confirmed for ${quantity} ${modalItemName.textContent}(s)`);
