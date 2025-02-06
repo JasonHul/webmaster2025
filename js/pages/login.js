@@ -92,6 +92,8 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     }
 });
 
+
+
 async function getCartHistory(userId) {
     try {
         const doc = await db.collection("cartHistory").doc(userId).get();
