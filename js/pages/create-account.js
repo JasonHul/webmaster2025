@@ -31,6 +31,10 @@ document.getElementById("accountForm").addEventListener("submit", async (e) => {
             alert("Passwords do not match!");
             return;
         }
+
+        if (!await verifyEmail(email)) {
+            return;
+        }
         await db.collection("accountForm").add({
             username,
             email,
@@ -45,6 +49,36 @@ document.getElementById("accountForm").addEventListener("submit", async (e) => {
         console.error("Error saving message:", error);
     }
 });
+
+
+async function verifyEmail(email) {
+    let duplicateEmailFlag = false;
+    let invalidEmailFlag = false;
+    let errorMessage = "Error:";
+
+    // Email regex validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        invalidEmailFlag = true;
+        errorMessage += " email formatting is incorrect, ";
+    }
+
+    // Firestore query (async)
+    const snapshot = await db.collection("accountForm").where("email", "==", email).get();
+    if (!snapshot.empty) {
+        duplicateEmailFlag = true;
+        errorMessage += " email duplicate found in database, ";
+    }
+
+    // If any validation fails, show alert and return false
+    if (duplicateEmailFlag || invalidEmailFlag) {
+        alert(errorMessage);
+        return false;
+    }
+    
+    return true;
+}
+
 
 // Utility function to get form field values
 const getElementVal = (id) => document.getElementById(id).value;
