@@ -54,40 +54,13 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
                 
                 console.log("login.js - items: ", items);
-                // Check if items exist and are an array
-                if (!Array.isArray(items) || items.length === 0) {
-                    console.warn("No items found in cart history.");
-                } else {
-                    console.log("Processing cart items...");
-
-                    for (const product_item of items) {
-                        // Validate object structure
-                        if (!product_item.item || product_item.saved_quantity === undefined) {
-                            console.warn("Invalid item format:", product_item);
-                            continue; // Skip invalid items
-                        }
-
-                        console.log(`Adding item: ${product_item.item}, Quantity: ${product_item.saved_quantity}`);
-
-                        for (i of itemsList) {
-                            if (product_item.item == i.item) {
-                                // Call function to add item (assuming this function exists)
-                                addFoodItem(product_item.item, product_item.saved_quantity);
-                                console.log("Adding to addFoodItem method: ", product_item);
-                                break;
-                            }
-                        }
-
-                    }
-
-                    console.log("All valid items processed successfully.");
-                }
-                
+                checkIfItemsExist(items);
+                 
                 console.log("login.js -  Now FoodItems: ", JSON.parse(localStorage.getItem('foodItems')));
         
                 updateCartLabel();
                 saveToDatabase();
-                // window.location.href = "profile.html";
+                window.location.href = "profile.html";
             }
             else {
                 alert("Incorrect password. Please try again.");
@@ -120,5 +93,36 @@ async function getCartHistory(userId) {
     }
 }
 
+
+function checkIfItemsExist(items) {        
+    // Check if items exist and are an array
+    if (!Array.isArray(items) || items.length === 0) {
+        console.warn("No items found in cart history.");
+    } else {
+        console.log("Processing cart items...");
+
+        for (const product_item of items) {
+            // Validate object structure
+            if (!product_item.item || product_item.saved_quantity === undefined) {
+                console.warn("Invalid item format:", product_item);
+                continue; // Skip invalid items
+            }
+
+            console.log(`Adding item: ${product_item.item}, Quantity: ${product_item.saved_quantity}`);
+
+            for (i of itemsList) {
+                if (product_item.item == i.item) {
+                    // Call function to add item (assuming this function exists)
+                    addFoodItem(product_item.item, product_item.saved_quantity);
+                    console.log("Adding to addFoodItem method: ", product_item);
+                    break;
+                }
+            }
+
+        }
+
+        console.log("All valid items processed successfully.");
+    }
+}
 
 
