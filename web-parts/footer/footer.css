@@ -20,3 +20,7 @@ footer a {
 footer a:hover {
     color: #FF6F00; /* Darker orange hover */
 }
+
+.copyright {
+    margin-top: 10px;
+}

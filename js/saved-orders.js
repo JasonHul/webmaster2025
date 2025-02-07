@@ -7,11 +7,10 @@ foodItems = JSON.parse(localStorage.getItem('foodItems')) || [];
 
 function addFoodItem(item, count) {
     
-    
     //Adds duplicate quantity and count to the same item while deleting the previous one
     saved_quantity = +checkDuplicates(item) + +count;
-    
     const order = { item, saved_quantity };
+    console.log("saved-orders - addFoodItem - order: ", order);
     foodItems.push(order);
     localStorage.setItem('foodItems', JSON.stringify(foodItems));
     updateCartLabel();

@@ -20,6 +20,9 @@ function removeItem(button) {
     saveToDatabase();
     updateCartLabel();
     row.remove();
+    if (foodItems.length === 0) {
+        displayEmptyCart();
+    }
 }
 
 
@@ -74,6 +77,11 @@ async function saveOrderToDatabase() {
         const sessionUser = JSON.parse(localStorage.getItem("sessionUser"));
         const userId = sessionUser ? sessionUser.userId : null;
         tempID = Math.floor(Math.random() * 1000000); //WILL NEED TO REPLACE WITH PROPER SYSTEM W/o DUPLICATES
+        
+        if (foodItems.length === 0) {
+            alert("Your cart is empty. Please add items to your cart before saving the order.");
+            return;
+        }
 
         if (userId) {
             await db.collection("orderHistory").add({
@@ -103,10 +111,18 @@ async function saveOrderToDatabase() {
 const cartContainer = document.getElementById('cart-section');
 console.log("cartContainer: ", cartContainer);
 
+function displayEmptyCart() {
+    cartContainer.innerHTML = `<h2 class="empty-cart">Your Cart is Empty</h2>`;
+}
 
+if (foodItems.length > 0) {
     foodItems.forEach(item => {
             cartContainer.innerHTML += generateProduct(item);
     });
+}
+else {
+    displayEmptyCart();
+}
 
 const summarySection = document.getElementById('summary-section');
     summarySection.innerHTML += generateSummary();

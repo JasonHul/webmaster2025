@@ -21,7 +21,7 @@ function loadFooter() {
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
-            <p>&copy; 2025 Nectar. All Rights Reserved.</p>
+            <p class="copyright">&copy; 2025 Nectar. All Rights Reserved.</p>
         </div>
     </footer>
     `;

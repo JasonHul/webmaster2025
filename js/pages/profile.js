@@ -80,7 +80,6 @@ function generatePersonalDetails() {
             <h2 class="section-title">Personal Details</h2>
             <p><strong>Name:</strong> ${user.username}</p>
             <p><strong>Email:</strong> ${user.email}</p>
-            <p><strong>Phone:</strong> ${user.phone || "N/A"}</p>
         `;
         
         accountDetailsSection.innerHTML += detailsHTML;
@@ -89,13 +88,20 @@ function generatePersonalDetails() {
  
 
 function generatePastOrders() {
+
     searchOrderHistoryFromDatabase((orderHistory) => {
+        let ordersHTML = '';
         if (!orderHistory) {
             console.log("No order history data available.");
-            return;
+            ordersHTML += `
+            <h2 class="section-title">Past Orders</h2>
+            <h3>No Orders Placed</h3>
+            
+        `;
         }
+        else {
 
-        const ordersHTML = `
+        ordersHTML += `
             <h2 class="section-title">Past Orders</h2>
             <ul>
                 ${orderHistory.map((order) => `
@@ -108,6 +114,7 @@ function generatePastOrders() {
                 `).join("")}
             </ul>
         `;
+        }
 
         pastOrdersSection.innerHTML += ordersHTML;
     });

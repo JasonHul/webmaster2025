@@ -1,21 +1,3 @@
-  
-  // Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyCLnWMQFQelUfRT1AMw_ynbUqPm-fBLdy4",
-    authDomain: "webmaster25-d336f.firebaseapp.com",
-    databaseURL: "https://webmaster25-d336f-default-rtdb.firebaseio.com",
-    projectId: "webmaster25-d336f",
-    storageBucket: "webmaster25-d336f.appspot.com",
-    messagingSenderId: "592082921682",
-    appId: "1:592082921682:web:ce8c62ffb626640713650b"
-  };
-
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-  // Initialize Firestore
-  const db = firebase.firestore();
-
   // Form submission handler
   document.getElementById("contactForm").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -33,6 +15,7 @@
         timestamp: firebase.firestore.FieldValue.serverTimestamp() // Adds a server-side timestamp
       });
       console.log("Message saved successfully!");
+      alert("Message sent successfully!");
     } catch (error) {
       console.error("Error saving message:", error);
     }
