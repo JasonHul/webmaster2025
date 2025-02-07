@@ -58,7 +58,6 @@ function generateSummary() {
                 <p class="remaining-amount">Total: <strong id="strong-total">$${(+subtotal + +delivery_fee - +discount).toFixed(2)}</strong></p>
             </div>
             <button onclick="saveOrderToDatabase()" class="confirm-order-btn">Send Order</button>
-            <p class="note">The delivery fee is split among group members, and any balance is refunded based on the total amount.</p>
         </div>
     `;
 
@@ -88,6 +87,7 @@ async function saveOrderToDatabase() {
             console.log("Order Placed Successfully!");
             alert("Order created successfully! Check Your Profile!");
             localStorage.removeItem("foodItems");
+            updateCartLabel();
             console.log("FoodItems was cleared");
         } else {
             alert("Please login to place an order!");
