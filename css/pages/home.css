@@ -244,8 +244,8 @@
     text-align: center;
     padding: 70px 20px;
     background-image: linear-gradient(
-        rgba(255, 191, 0, 0.8), 
-        rgba(255, 191, 0, 0.8)
+        rgb(250, 233, 134), 
+        rgb(250, 233, 134)
     ), 
     url('images/cta_background.jpg'); /* Replace with your desired image */
     background-size: cover;
