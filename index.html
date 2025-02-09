@@ -17,6 +17,21 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Welcome to Nectar</h1>
+
+            
+            <!-- Testing Browser Detection -->
+        <p id="deviceType"></p>
+
+        <script>
+            function isMobile() {
+                return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            }
+    
+            let message = isMobile() ? "You are using a mobile device. (Just A test)" : "You are using a desktop browser. (Just a test)";
+            document.getElementById("deviceType").textContent = message;
+        </script>
+
+
             <p>Farm-to-table dining crafted with passion and local ingredients.</p>
             <button onclick="location.href='menu.html'">View Our Menu</button>
         </div>
@@ -40,6 +55,8 @@
     <!-- HIGHLIGHTS -->
     <section class="highlights">
         <h2>Our Signature Offerings</h2>
+        
+
         <div class="highlight-grid">
             <div class="highlight-item">
                 <img src="images/squash_soup.jpg" alt="Pizza">
