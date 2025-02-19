@@ -1,26 +1,26 @@
-/* Add this to your about.css or within a <style> tag */
+/* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-    background:  #FFFDD0;
-    color: #FF8C42;
-    text-align: center;
-    min-height: 100vh; /* Ensure body takes at least the viewport height */
-    background-color: #FFFDD0;
+    font-family: 'Arial', sans-serif;
+    background: #FFFDD0;
+    color: #333;
+    line-height: 1.8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Hero Section */
 .hero {
-    height: 100vh; /* Full viewport height */
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/aboutushero.jpg");
     background-size: cover;
     background-position: center;
-
-    
+    text-align: center;
+    color: #fff;
 }
 
 .hero-content {
@@ -29,64 +29,96 @@ body {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Parallax Sections */
-.parallax {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 800px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    text-align: center;
-    z-index: 10;
+/* Content Sections */
+.content-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.parallax h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 60px;
 }
 
-.parallax p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.parallax img {
-    width: 100%;
-    max-width: 400px;
+.content-wrapper img {
+    max-width: 50%;
     height: auto;
     border-radius: 10px;
-    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-#layer1 { z-index: 1; }
-#layer2 { z-index: 2; }
-#layer3 { z-index: 3; }
-#layer4 { z-index: 4; }
-#layer5 { z-index: 5; }
-#layer6 { z-index: 6; }
-#layer7 { z-index: 7; }
-
-
-/* Spacer to allow scrolling */
-.spacer {
-    height: 1000vh; /* Adjust based on the number of parallax sections */
+.text-content {
+    flex: 1;
 }
 
-.content-wrapper.content-wrapper {
-    display: flex;
-    align-items: center; /* Vertically center the content */
-    gap: 20px; /* Space between text and image */
+.text-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #FF8C42;
+    font-weight: bold;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.text-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.text-content ul li {
+    margin-bottom: 10px;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .content-wrapper img {
+        max-width: 100%;
+        order: 1;
+    }
+
+    .text-content {
+        order: 2;
+        text-align: center;
+    }
+
+    .text-content h2 {
+        font-size: 2rem;
+    }
+
+    .text-content p {
+        font-size: 1.1rem;
+    }
 }
