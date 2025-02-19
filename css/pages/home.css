@@ -91,7 +91,7 @@
     align-items: center;
     padding: 50px 10%;
     background-color: #FFFDD0; /*background */
-    justify-content: center;
+    justify-content: space-between;
     gap: 40px; 
 }
 
@@ -109,7 +109,7 @@
 }
 
 .about-content p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -142,6 +142,24 @@
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .about-content {
+        order: 2; 
+        padding-right: 0; 
+        text-align: center; 
+    }
+
+    .about-image {
+        order: 1; 
+        margin-bottom: 15px; 
+    }
 }
 
 /* HIGHLIGHTS SECTION */
