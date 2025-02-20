@@ -14,15 +14,20 @@ const db = firebase.firestore();
 
 
 
-const cartLabel = document.getElementById("cart-label");
+const cartLabels = document.querySelectorAll(".cart-label"); // Select all elements with class "cart-label"
 
-// Function to update the cart label
+// Function to update all cart labels
 function updateCartLabel() {
     foodItems = JSON.parse(localStorage.getItem('foodItems')) || [];
     console.log("Global.js - foodItems: ", foodItems);
     const totalItems = getNumberOfItems();
-    cartLabel.innerText = `Cart (${totalItems})`;
+
+    // Update the inner text for all cart label elements
+    cartLabels.forEach(label => {
+        label.innerText = `Cart (${totalItems})`;
+    });
 }
+
 
 function getNumberOfItems() {
     let totalCount = 0;

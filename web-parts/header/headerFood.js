@@ -18,7 +18,7 @@ function loadHeader() {
         <img src="../images/nectar-removebg-preview.png" alt="Logo" id="homelogo" width="65px" onclick="location.href='../index.html'">
         <h2 id="user-greeting"></h2>
         <nav class="navbar">
-            <a href="../cart.html" id="cart-label">Cart</a>
+            <a href="../cart.html" class="cart-label">Cart</a>
             <a href="../menu.html">Menu</a>
             <a href="../about.html">About</a>
             <a href="../contact.html">Contact</a>
@@ -31,7 +31,7 @@ function loadHeader() {
   			<div class="bar3"></div>
    		</div>
         <div id="mySidenav" class="sidenav">
-            <a href="../cart.html" id="cart-label">Cart</a>
+            <a href="../cart.html" class="cart-label">Cart</a>
             <a href="../index.html">Home</a>
             <a href="../menu.html">Menu</a>
             <a href="../about.html">About</a>
