@@ -19,13 +19,26 @@ function loadHeader() {
         <h2 id="user-greeting"></h2>
         <nav class="navbar">
             <a href="../cart.html" id="cart-label">Cart</a>
+            <a href="../menu.html">Menu</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+            <a href="../reference.html">Reference Page</a>
+            <a onclick="direct()" style="cursor: pointer;">Profile</a>
+        </nav>
+        <div class="menuicon" onclick="move();">
+			<div class="bar1"></div>
+  			<div class="bar2"></div>
+  			<div class="bar3"></div>
+   		</div>
+        <div id="mySidenav" class="sidenav">
+            <a href="../cart.html" id="cart-label">Cart</a>
             <a href="../index.html">Home</a>
             <a href="../menu.html">Menu</a>
             <a href="../about.html">About</a>
             <a href="../contact.html">Contact</a>
             <a href="../reference.html">Reference Page</a>
-            <a onclick="direct()" style="cursor: pointer;">Your Profile</a>
-        </nav>
+            <a onclick="direct()" style="cursor: pointer;">Profile</a>
+        </div>
     </header>
     `;
     }
@@ -58,3 +71,17 @@ function direct() {
 
 headerSection.innerHTML = loadHeader();
 writeUserGreeting();
+
+function move() {
+    const sidenav = document.getElementById("mySidenav");
+    const menuicon = document.querySelector(".menuicon");
+    
+    if (sidenav.classList.contains("open")) {
+        menuicon.classList.toggle("change");
+        sidenav.classList.remove("open"); // Close menu
+    } else {
+        sidenav.classList.add("open"); // Open menu fullscreen
+        menuicon.classList.toggle("change");
+    }
+}
+

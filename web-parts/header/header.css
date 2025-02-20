@@ -4,13 +4,14 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 95px;
     padding: 15px 55px;
     background: rgba(44, 29, 22, 0.9); /* Dark, warm brown with transparency */
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
+    z-index: 100;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
@@ -40,3 +41,79 @@
     font-weight: bold;
     color: #FFFDD0; /* Cream text for contrast */
 }
+
+@media screen and (max-width: 1230px) {
+    .navbar {
+        display: none;
+    }
+    .menuicon {
+       display: block !important;
+    }
+    .sidenav.open {
+        display: block !important;
+    }
+}
+
+.menuicon {
+  	cursor: pointer;
+  	margin-left:30px;
+    display: none;	
+}
+
+.menuicon :hover {
+    background-color: #cccaa4;
+    
+}
+  
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #FFFDD0;
+    margin-top:6px;
+    transition: 0.4s;
+}
+  
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-8px, 7px);
+    transform: rotate(-45deg) translate(-8px, 7px);
+}
+  
+.change .bar2 {opacity: 0;}
+  
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.sidenav {
+    height: 100vh; /* Full screen height */
+    width: 0; /* Start hidden */
+    position: fixed; /* Make it independent from .header */
+    top: 95px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 30px;
+    z-index: 100; /* Ensure it appears above everything */
+}
+
+.sidenav a {
+    padding: 16px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #FFFDD0;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #FF8C42; /* Orange hover effect */
+}
+
+/* When sidenav is active (open state) */
+.sidenav.open {
+    width: 75%; /* Full screen width */
+    display: none; /* Overidden by media query */
+}
+
