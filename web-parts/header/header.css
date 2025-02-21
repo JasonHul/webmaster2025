@@ -91,7 +91,7 @@
     position: fixed; /* Make it independent from .header */
     top: 95px;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.9);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 30px;
@@ -108,12 +108,11 @@
 }
 
 .sidenav a:hover {
-    color: #FF8C42; /* Orange hover effect */
+    color: #FF8C42;
 }
 
-/* When sidenav is active (open state) */
 .sidenav.open {
-    width: 75%; /* Full screen width */
+    width: 75%;
     display: none; /* Overidden by media query */
 }
 

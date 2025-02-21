@@ -62,10 +62,10 @@ function writeUserGreeting() {
 
 function direct() {
     if (localStorage.getItem("sessionUser")) {
-        location.href = "../../../profile.html";
+        location.href = "../profile.html";
     }
     else {
-        location.href = "../../../login.html";
+        location.href = "../login.html";
     }
 }
 
@@ -78,9 +78,9 @@ function move() {
     
     if (sidenav.classList.contains("open")) {
         menuicon.classList.toggle("change");
-        sidenav.classList.remove("open"); // Close menu
+        sidenav.classList.remove("open");
     } else {
-        sidenav.classList.add("open"); // Open menu fullscreen
+        sidenav.classList.add("open");
         menuicon.classList.toggle("change");
     }
 }
