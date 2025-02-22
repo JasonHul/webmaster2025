@@ -56,12 +56,14 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
     height: 450px; /* Increased height */
+    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .menu-category:hover {
+    cursor: pointer;
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }

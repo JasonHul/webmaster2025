@@ -16,13 +16,13 @@ class Item {
 
     generateItem() {
         return `
-        <div class="menu-category">
+        <div class="menu-category" data-item="${this.item}" data-price="${this.price}" data-picture="${this.pictureURL}">
             <img src="${this.pictureURL}" alt="${this.item}">
             <div class="category-content">
                 <h3>${this.item}</h3>
                 <p>${this.description}</p>
                 <p class="price">$${this.price}</p>
-                <a href="#" class="btn" data-item="${this.item}" data-price="${this.price}" data-picture="${this.pictureURL}">Order Now</a>
+                <a class="btn" data-item="${this.item}" data-price="${this.price}" data-picture="${this.pictureURL}">Order Now</a>
             </div>
         </div>
         `;
