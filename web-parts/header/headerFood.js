@@ -15,7 +15,7 @@ function loadHeader() {
     // Return the footer HTML structure
     return `
     <header class="header">
-        <img src="../images/nectar-removebg-preview.png" alt="Logo" id="homelogo" width="65px" onclick="location.href='../index.html'">
+        <img src="../images/toWEBP/nectar-removebg-preview.webp" alt="Logo" id="homelogo" width="65px" onclick="location.href='../index.html'">
         <h2 id="user-greeting"></h2>
         <nav class="navbar">
             <a href="../cart.html" class="cart-label">Cart</a>

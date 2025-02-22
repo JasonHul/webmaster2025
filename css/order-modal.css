@@ -16,25 +16,26 @@
 /* Modal content */
 .modal-content {
     background-color: #ffffff;
-    margin: 0 auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     max-width: 600px;
     text-align: center;
     border-radius: 8px;
-
+    position: relative; /* Ensures absolute elements inside it are positioned relative to this */
 }
 
 /* Close button */
 .close {
     color: #424242;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
-    position: relative;
-    top: -10px;
-    left: 265px;
+    position: absolute; /* Now it's always in the top-right corner */
+    top: 10px;
+    right: 20px;
     cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .close:hover,
@@ -46,6 +47,7 @@
 /* Modal content styling */
 #modalItemName {
     font-size: 24px;
+    margin-top: 25px;
     margin-bottom: 10px;
 }
 
