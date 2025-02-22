@@ -1,6 +1,6 @@
 /* FOOTER */
-footer {
-    background-color: #4A2C22; /* Darker, warm neutral */
+.footer-content {
+    background-color: rgba(44, 29, 22, 0.9); /* Darker, warm neutral */
     color: #FFFDD0;
     text-align: center;
     padding: 20px;
