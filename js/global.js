@@ -44,6 +44,12 @@ function isMobile() {
     return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
 
-let message = isMobile() ? "You are using a mobile device. (Just A test)" : "You are using a desktop browser. (Just a test)";
-document.getElementById("deviceType").textContent = message;
+try {
+    let message = isMobile() ? "You are using a mobile device. (Just A test)" : "You are using a desktop browser. (Just a test)";
+    document.getElementById("deviceType").textContent = message;
+}
+catch (error) {
+    console.error("Error:", error);
+}
+
 
