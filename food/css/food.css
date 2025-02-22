@@ -64,7 +64,7 @@
 
 .category-content h3 {
     font-size: 1.8rem;
-    color: #FF8C42; #2d4023;
+    color: #FF8C42;
     margin-bottom: 0.5rem;
 }
 
@@ -93,7 +93,7 @@
 
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .navbar a {
         font-size: 14px;
         margin: 0 10px;
