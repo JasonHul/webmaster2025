@@ -7,7 +7,7 @@
     align-items: center;
     text-align: center;
     color: #FFFDD0; /* Cream text */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../../images/aboutsec1.jpg'); /* Nature-themed image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.247)), url("../../images/toWEBP/menuhero.webp");
     background-size: cover;
     background-position: center;
 }
