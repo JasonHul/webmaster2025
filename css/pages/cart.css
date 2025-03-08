@@ -1,12 +1,10 @@
 /* Container Layout */
 .checkout-container {
-    margin-top: 95px;
-    margin-bottom: 25vh;
     display: flex;
+    margin-top: 95px;
+    margin-bottom: 10vh;
     gap: 30px;
     padding: 40px 10%; 
-    color: #FF8C42;
-    color: #2d4023;
 }
 
 /* Cart Section */
@@ -108,12 +106,14 @@
 
 /* Summary Section */
 .summary-section {
+    margin-top: 55px;
     flex: 1;
     padding: 20px;
     border: 1px solid #d4d4d4;
     border-radius: 8px;
     background-color: #f3f5e7;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: fit-content;
 }
 
 .summary-section h2 {
