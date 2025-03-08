@@ -7,21 +7,22 @@
     color: #FFFDD0; /* Cream text */
     margin-top: 90px;
     margin-bottom: 50px;
-    background-image: url(''); /* Nature-themed background */
+    height: 80vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.247)), url("../../images/toWEBP/contactushero.webp");
     background-size: cover;
     background-position: center;
 }
 
 .hero-content {
-    background-color: rgba(44, 29, 22, 0.8); /* Dark, warm brown with slight transparency */
     padding: 30px;
-    border-radius: 10px;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.418);
 }
 
 .hero-content p {

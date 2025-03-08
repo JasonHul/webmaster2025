@@ -66,7 +66,9 @@ const referenceImageList = [
   new Reference("Veggie Longbread", "images/toWEBP/veg_pizza.webp", "Veggie Longbread", 300, 200),
   new Reference("Veggie Wraps", "images/toWEBP/veggy_wraps.webp", "Veggie Wraps", 300, 200),
   new Reference("Home Hero Picture", "images/toWEBP/homepage_hero.webp", "Veggie Wraps", 300, 200),
-  new Reference("Who We Are Picture", "images/toWEBP/whowearepic.webp", "Veggie Wraps", 300, 200),
+  new Reference("Who We Are Picture", "images/toWEBP/whowearepic.webp", "Who We Are", 300, 200),
+  new Reference("Contact Us Picture", "images/toWEBP/contactushero.webp", "Contact Us", 300, 200),
+  
 ];
 
 
