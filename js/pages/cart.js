@@ -60,11 +60,13 @@ function generateSummary() {
                 <p>Discount: <strong>-$${discount.toFixed(2)}</strong></p>
                 <p class="remaining-amount">Total: <strong id="strong-total">$${(+subtotal + +delivery_fee - +discount).toFixed(2)}</strong></p>
             </div>
-            <button onclick="saveOrderToDatabase()" class="confirm-order-btn">Send Order</button>
+            
         </div>
     `;
 
 }
+
+// <button onclick="saveOrderToDatabase()" class="confirm-order-btn">Send Order</button>
 
 
 function regenerateSummary() {

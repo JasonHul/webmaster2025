@@ -1,10 +1,12 @@
 /* Container Layout */
 .checkout-container {
     display: flex;
-    margin-top: 95px;
+    margin-top: 135px;
     margin-bottom: 10vh;
     gap: 30px;
-    padding: 40px 10%; 
+    
+    padding-left: 50px;
+    padding-right: 50px; 
 }
 
 /* Cart Section */
@@ -33,7 +35,8 @@
 }
 
 .cart-section {
-    flex: 2;
+    flex: 1;
+    max-width: 50%;
 }
 
 .cart-section h2 {
@@ -104,8 +107,7 @@
     color: #FF8C42;
 }
 
-/* Summary Section */
-.summary-section {
+.checkout-section {
     margin-top: 55px;
     flex: 1;
     padding: 20px;
@@ -113,7 +115,19 @@
     border-radius: 8px;
     background-color: #f3f5e7;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* max-width: 30%; */
     max-height: fit-content;
+}
+/* Summary Section */
+.summary-section {
+    /* margin-top: 55px;
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    background-color: #f3f5e7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: fit-content; */
 }
 
 .summary-section h2 {
@@ -134,7 +148,7 @@
 .remaining-amount {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #d9534f; /* Highlighted remaining amount */
+    color: #d9534f;
 }
 
 .confirm-order-btn {
@@ -161,4 +175,27 @@
     font-size: 0.9rem;
     color: #606060;
     text-align: center;
+}
+
+/* Card Input section */
+
+.payment-form {
+    /* background-color: white; */
+    margin-top: 30px;
+}
+
+.payment-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+.payment-form input {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.payment-form .payment-button {
+    display: block;
 }
