@@ -104,14 +104,19 @@ function generatePastOrders() {
         ordersHTML += `
             <h2 class="section-title">Past Orders</h2>
             <ul>
-                ${orderHistory.map((order) => `
+            ${orderHistory
+                .sort((a, b) => b.timestamp.toDate() - a.timestamp.toDate()) // Sort by timestamp (newest first)
+                .map((order) => `
                     <li>
-                        Order #${order.orderId} - 
-                        <strong>${order.foodItems.map(item => item.item).join(", ")}</strong> - 
-                        $${order.totalPrice} - 
-                        ${order.timestamp.toDate().toLocaleString()}
+                    
+                        <p>Order #${order.orderId}</p>
+                        <p>
+                        <strong>${order.foodItems.map(item => item.item + " (" + item.saved_quantity + "x)").join(", ")}</strong></p>
+                        <p><strong>$${order.totalPrice}</strong></p>
+                        <p>${order.timestamp.toDate().toLocaleString()}</p>
                     </li>
                 `).join("")}
+            
             </ul>
         `;
         }
