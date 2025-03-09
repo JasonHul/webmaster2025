@@ -207,6 +207,11 @@
     .checkout-section {
         margin-top: 0px;
     }
+
+    .cart-section h2 {
+        text-align: center;
+    }
+
     .checkout-container {
         flex-direction: column;
         align-items: center;
@@ -220,13 +225,12 @@
     }
 
     .item-image {
-        margin-bottom: 10px;
+         margin-bottom: 10px;
         margin-right: 0px;
     }   
 
     .item-details {
-        text-align: center; */
-        display: none;
+        text-align: center;
     }
 
     .item-summary {
