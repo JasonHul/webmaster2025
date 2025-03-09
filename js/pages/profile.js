@@ -110,9 +110,8 @@ function generatePastOrders() {
                     <li>
                     
                         <p>Order #${order.orderId}</p>
-                        <p>
-                        <strong>${order.foodItems.map(item => item.item + " (" + item.saved_quantity + "x)").join(", ")}</strong></p>
-                        <p><strong>$${order.totalPrice}</strong></p>
+                        <p class="food-items"><strong>${order.foodItems.map(item => item.item + " (" + item.saved_quantity + "x)").join(", ")}</strong></p>
+                        <p class="total-price"><strong>$${order.totalPrice}</strong></p>
                         <p>${order.timestamp.toDate().toLocaleString()}</p>
                     </li>
                 `).join("")}
