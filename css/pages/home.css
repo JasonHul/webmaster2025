@@ -24,7 +24,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text contrast */
+    background: rgba(0, 0, 0, 0.3); 
 }
 
 .hero-content h1 {
@@ -47,8 +47,8 @@
 }
 
 .hero-content button {
-    background-color: #FF8C42; /* Orange button */
-    color: #FFFDD0; /* Cream text for contrast */
+    background-color: #FF8C42; 
+    color: #FFFDD0; 
     padding: 12px 25px;
     font-size: 16px;
     font-weight: bold;
@@ -61,18 +61,18 @@
 }
 
 .hero-content button:hover {
-    background-color: #FF6F00; /* Darker orange on hover */
-    transform: translateY(-2px); /* Slight lift effect */
+    background-color: #FF6F00; 
+    transform: translateY(-2px); 
 }
 
 @media (max-width: 768px) {
     .hero {
-        height: 80vh; /* Reduce height on small screens */
+        height: 80vh; 
         padding: 10px;
     }
 
     .hero h1 {
-        font-size: 2rem; /* Smaller font */
+        font-size: 2rem; 
     }
 
     .hero p {
@@ -90,22 +90,18 @@
     display: flex;
     align-items: center;
     padding: 50px 10%;
-    background-color: #FFFDD0; /*background */
     justify-content: space-between;
     gap: 40px; 
 }
 
 .about-content {
     flex: 1;
-    max-width: 600px;
-    max-width: 50%; 
-    padding: 5%;
 }
 
 .about-content h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #4A2C22; /* Darker, warm neutral */
+    color: #4A2C22;
 }
 
 .about-content p {
@@ -115,8 +111,8 @@
 }
 
 .about-content .btn {
-    background-color: #FF8C42; /* Orange */
-    color: #FFFDD0; /* Cream text */
+    background-color: #FF8C42; 
+    color: #FFFDD0; 
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -129,7 +125,7 @@
 }
 
 .about-content .btn:hover {
-    background-color: #FF6F00; /* Darker orange hover */
+    background-color: #FF6F00; 
     transform: translateY(-2px);
 }
 
@@ -141,37 +137,37 @@
 .about-image img {
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Mobile layout */
 @media (max-width: 768px) {
     .about {
-        flex-direction: column; /* Stack elements vertically */
-    }
-
-    .about-content {
-        order: 2; 
-        padding-right: 0; 
-        text-align: center; 
+        flex-direction: column; 
     }
 
     .about-image {
         order: 1; 
         margin-bottom: 15px; 
     }
+
+    .about-content {
+        order: 2; 
+        text-align: center;
+    }
+
+    
 }
 
 /* HIGHLIGHTS SECTION */
 .highlights {
     text-align: center;
     padding: 50px 10%;
-    background-color: #FFFDD0; /* cream ayo? */
 }
 
 .highlights h2 {
     font-size: 3.2rem;
-    color: #4A2C22; /* Darker */
+    color: #4A2C22; 
     margin-bottom: 25px;
 }
 
@@ -205,12 +201,12 @@
 }
 
 .highlight-item:hover {
-    transform: scale(1.1); /* Increases size by 10% */
+    transform: scale(1.1); 
 }
 
 .highlight-item h3 {
     font-size: 2rem;
-    color: #FF8C42; /* Orange */
+    color: #FF8C42; 
     margin-bottom: 10px;
 }
 
@@ -221,12 +217,11 @@
 /* SPECIALS SECTION */
 .specials {
     padding: 50px 10%;
-    background-color: #FFFDD0; /* Soft cream background */
 }
 
 .specials h2 {
     font-size: 3.2rem;
-    color: #4A2C22; /* Darker, warm neutral */
+    color: #4A2C22; 
     margin-bottom: 30px;
     text-align: center;
 }
@@ -246,13 +241,13 @@
 }
 
 .special:hover{
-    transform: scale(1.05); /* Increases size by 10% */
+    transform: scale(1.05);
 
 }
 .special img {
     flex: 1; /* Take up one part of the available space */
-    width: 100%; /* Ensure responsiveness */
-    max-width: 300px; /* Optional: Limit image width */
+    width: 100%; 
+    max-width: 300px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.7s;
@@ -266,26 +261,25 @@
 
 .special-description h3 {
     font-size: 2.8rem;
-    color: #FF8C42; /* Orange */
+    color: #FF8C42; 
     margin-bottom: 10px;
 }
 
 .special-description p {
     font-size: 2.2rem;
     line-height: 1.6;
-    color: #4A2C22; /* Darker, warm neutral */
+    color: #4A2C22; 
 }
 
 /* TESTIMONIALS SECTION */
 .testimonials {
     padding: 50px 10%;
-    background-color: #FFFDD0; /* Soft cream */
     text-align: center;
 }
 
 .testimonials h2 {
     font-size: 2.5rem;
-    color: #4A2C22; /* Darker, warm neutral */
+    color: #4A2C22; 
     margin-bottom: 20px;
 }
 
@@ -307,12 +301,12 @@
 .testimonial p {
     font-style: italic;
     margin-bottom: 10px;
-    color: #FF8C42; /* Orange accent */
+    color: #FF8C42;
 }
 
 .testimonial h4 {
     font-weight: bold;
-    color: #4A2C22; /* Darker, warm neutral */
+    color: #4A2C22; 
 }
 
 /* CTA SECTION */
@@ -327,10 +321,10 @@
         rgb(250, 198, 134), 
         rgb(250, 233, 134)
     ), 
-    url('images/cta_background.jpg'); /* Replace with your desired image */
+    url('images/cta_background.jpg'); 
     background-size: cover;
     background-position: center;
-    color: #FFFDD0; /* Cream text for contrast */
+    color: #FFFDD0; 
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -355,8 +349,8 @@
 }
 
 .cta-buttons .btn {
-    background-color: #FF8C42; /* Orange button */
-    color: #FFFDD0; /* Cream text */
+    background-color: #FF8C42;
+    color: #FFFDD0;
     padding: 15px 30px;
     font-size: 18px;
     font-weight: bold;
@@ -372,10 +366,10 @@
 }
 
 .cta-buttons .btn.secondary {
-    background-color: #4A2C22; /* Darker, warm neutral for secondary button */
+    background-color: #4A2C22;
     color: #FFFDD0;
 }
 
 .cta-buttons .btn.secondary:hover {
-    background-color: #3A1C12; /* Darker hover color for secondary button */
+    background-color: #3A1C12;
 }

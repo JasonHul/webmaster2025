@@ -4,10 +4,9 @@
     margin-top: 135px;
     margin-bottom: 10vh;
     gap: 30px;
-    
-    padding-left: 50px;
-    padding-right: 50px; 
+    padding: 0 70px; 
 }
+
 .cart-section, .checkout-section {
     width: 100%; /* Ensures they take up full width */
 }
@@ -16,7 +15,7 @@
 
 .remove-btn {
     margin-top: 10px;
-    background-color: #f06464; /* Red button */
+    background-color: #f06464;
     color: #ffffff;
     border: none;
     border-radius: 5px;
