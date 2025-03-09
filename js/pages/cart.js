@@ -41,7 +41,7 @@ function generateProduct(item) {
                 <p>${product.description}</p>
             </div>
             <div class="item-summary">
-                <p>${item.saved_quantity} $${product.price}</p>
+                <p>${item.saved_quantity}x - $${product.price}</p>
                 <p><strong>$${pricing}</strong></p>
                 <button class="remove-btn" onclick="removeItem(this)">Remove</button>
             </div>
