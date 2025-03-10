@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body, html {
+    height: 100%;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
+    url('../../images/toWEBP/aboutsec3.webp') no-repeat center center/cover;
+display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.reservation-form {
+    margin-top: auto;
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    max-width: 90%;
+    z-index: 1;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #FF8C42;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #FF6F00;
+}
+
+.guest-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.guest-container div {
+    flex: 1;
+}
+
+.text-content {
+    position: absolute;
+    right: 10%;
+    color: white;
+    text-align: left;
+    max-width: 400px;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .text-content {
+        position: relative;
+        right: 0;
+        text-align: center;
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .text-content h1 {
+        font-size: 28px;
+    }
+
+    .text-content p {
+        font-size: 14px;
+    }
+
+    .reservation-form {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .guest-container {
+        flex-direction: column;
+    }
+}

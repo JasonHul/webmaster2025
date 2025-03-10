@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/table.css">
+    <title>Reserve a Table</title>
+</head>
+<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+<body>
+    <section id="header-section"></section>
+
+    <div class="hero-section">
+        <div class="overlay"></div>
+        
+        <!-- Reservation Form -->
+        <div class="reservation-form">
+            <h2>Reserve Your Table</h2>
+            <form action="#" method="post">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time" required>
+
+                <div class="guest-container">
+                    <div>
+                        <label for="guests">Guests</label>
+                        <input type="number" id="guests" name="guests" min="1" value="2">
+                    </div>
+                </div>
+
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contact" placeholder="Enter your phone number" required>
+
+                <button type="submit">Reserve Now</button>
+            </form>
+        </div>
+
+        <!-- Text Section -->
+        <div class="text-content">
+            <h1>MAKE YOUR RESERVATION</h1>
+            <p>Enjoy an unforgettable dining experience. Book your table now and savor delicious meals in a cozy ambiance.</p>
+        </div>
+    </div>
+
+    <section id="footer-section"></section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script> 
+    <script src="web-parts/header/header.js"></script>
+    <script src="web-parts/footer/footer.js"></script>
+    <script src="js/global.js"></script>
+</body>
+</html>
