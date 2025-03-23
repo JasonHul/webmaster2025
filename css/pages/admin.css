@@ -1,0 +1,157 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Deep Black */
+    color: #E0E0E0; /* Light Grey */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.admin-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #1E1E1E; /* Dark Grey */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #F4A261; /* Soft Gold */
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    background-color: #1E1E1E;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.nav-links.active {
+    display: block;
+}
+
+.nav-links li {
+    margin: 10px 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #F4A261; /* Soft Gold */
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+}
+
+.nav-links a:hover {
+    color: #E76F51; /* Warm Red-Orange */
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #F4A261; /* Soft Gold */
+    cursor: pointer;
+    display: none;
+}
+
+/* Sections */
+section {
+    margin-top: 20px;
+    padding: 15px;
+    background: #1E1E1E; /* Dark Grey */
+    border-radius: 8px;
+    color: #E0E0E0;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+    color: #F4A261;
+}
+
+/* Form Styling */
+form input, button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+form input {
+    background: #2E2E2E;
+    color: #E0E0E0;
+    border: 1px solid #F4A261;
+}
+
+button {
+    background: #F4A261; /* Soft Gold */
+    color: #121212;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #E76F51; /* Warm Red-Orange */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #1E1E1E;
+}
+
+table, th, td {
+    border: 1px solid #F4A261;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #F4A261; /* Soft Gold */
+    color: #121212;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    form input, button {
+        padding: 8px;
+    }
+}
