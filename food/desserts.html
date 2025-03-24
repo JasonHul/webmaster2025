@@ -22,14 +22,25 @@
     </div>
 
     <!-- Modal (Popup) -->
+
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <span id="closeModal" class="close">&times;</span>
             <h2 id="modalItemName"></h2>
             <img id="modalItemImage" alt="Item Image">
             <p id="modalItemPrice"></p>
-            <label for="quantity">How many would you like to order?</label>
-            <input type="number" id="quantity" min="1" value="1">
+    
+            <div class="quantity-container">
+                <label for="quantity">How many would you like to order?</label>
+                <div class="quantity-controls">
+                    <button id="decreaseQty">-</button>
+                    <input type="number" id="quantity" min="1" value="1" readonly>
+                    <button id="increaseQty">+</button>
+                </div>
+            </div>
+    
+            <p><strong>Total Price:</strong> $<span id="totalPrice">0.00</span></p>
+            
             <button id="confirmOrder">Add to Cart</button>
         </div>
     </div>
