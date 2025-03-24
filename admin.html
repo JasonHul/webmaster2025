@@ -6,79 +6,177 @@
     <title>Restaurant Admin Panel</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/pages/admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* General Styles */
+        
+    </style>
 </head>
 <body>
     <section id="header-section"></section>
+
     <div class="admin-container">
         <h1>Restaurant Admin Panel</h1>
 
+        <!-- Navigation -->
         <nav class="admin-nav">
-            <button class="menu-toggle">☰ Menu</button>
+            <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
             <ul class="nav-links">
-                <li><a href="#menu">Manage Menu</a></li>
-                <li><a href="#orders">View Orders</a></li>
-                <li><a href="#settings">Settings</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#orders">Customer Orders</a></li>
+                <li><a href="#reservations">Table Reservations</a></li>
+                <li><a href="#messages">Customer Messages</a></li>
             </ul>
         </nav>
 
-        <section id="menu">
-            <h2>Manage Menu</h2>
-            <form>
-                <label for="item-name">Item Name:</label>
-                <input type="text" id="item-name" placeholder="Enter item name" required>
+        <!-- Analytics Section (Moved to the Top) -->
+        <section id="analytics">
+            <h2>Analytics</h2>
 
-                <label for="item-price">Price ($):</label>
-                <input type="number" id="item-price" placeholder="Enter price" required>
+            <!-- Best Selling Items Chart -->
+            <div class="chart-container">
+                <h3>Top Selling Items</h3>
+                <canvas id="bestSellingChart"></canvas>
+            </div>
 
-                <button type="submit">Add Item</button>
-            </form>
+            <!-- Most Active Times Chart -->
+            <div class="chart-container">
+                <h3>Most Active Times</h3>
+                <canvas id="activeTimesChart"></canvas>
+            </div>
         </section>
 
+        <!-- Customer Orders -->
         <section id="orders">
             <h2>Customer Orders</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Order ID</th>
-                        <th>Customer</th>
-                        <th>Items</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>#1001</td>
-                        <td>John Doe</td>
-                        <td>Burger, Fries</td>
-                        <td>Pending</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Total Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-list">
+                        <tr>
+                            <td>#1001</td>
+                            <td>John Doe</td>
+                            <td>Burger, Fries</td>
+                            <td>$15.99</td>
+                            <td>Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <section id="settings">
-            <h2>Restaurant Settings</h2>
-            <label for="restaurant-name">Restaurant Name:</label>
-            <input type="text" id="restaurant-name" placeholder="Enter restaurant name" required>
-
-            <label for="opening-hours">Opening Hours:</label>
-            <input type="text" id="opening-hours" placeholder="e.g., 9 AM - 10 PM">
-
-            <button type="submit">Update</button>
+        <!-- Table Reservations -->
+        <section id="reservations">
+            <h2>Table Reservations</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reservation ID</th>
+                            <th>Customer</th>
+                            <th>Guests</th>
+                            <th>Date & Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservations-list">
+                        <tr>
+                            <td>#2001</td>
+                            <td>Jane Smith</td>
+                            <td>4</td>
+                            <td>March 25, 7:00 PM</td>
+                            <td>Confirmed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
+
+        <!-- Customer Messages -->
+        <section id="messages">
+            <h2>Customer Messages</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Message ID</th>
+                            <th>Customer</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="messages-list">
+                        <tr>
+                            <td>#3001</td>
+                            <td>Michael Brown</td>
+                            <td>michael@example.com</td>
+                            <td>Great service! Thank you!</td>
+                            <td>March 24, 2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Logout Button -->
         <section class="logout">
-            <a onclick="logout()" class="logout-button" >Logout</a>
+            <a onclick="logout()" class="logout-button">Logout</a>
         </section>
-        
     </div>
 
     <section id="footer-section"></section>
-        
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script> 
-    <script src="web-parts/header/header.js"></script>
-    <script src="web-parts/footer/footer.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="js/global.js"></script>
     <script src="js/pages/admin.js"></script>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+
+        // Best Selling Items (Bar Chart)
+        const bestSellingCtx = document.getElementById('bestSellingChart').getContext('2d');
+        new Chart(bestSellingCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Burger', 'Pizza', 'Fries', 'Pasta', 'Salad'],
+                datasets: [{
+                    label: 'Orders',
+                    data: [120, 95, 80, 60, 40],
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff']
+                }]
+            },
+            options: { responsive: true, scales: { y: { beginAtZero: true } } }
+        });
+
+        // Most Active Times (Line Chart)
+        const activeTimesCtx = document.getElementById('activeTimesChart').getContext('2d');
+        new Chart(activeTimesCtx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Orders per Day',
+                    data: [50, 65, 70, 80, 120, 150, 130],
+                    borderColor: '#ff6384',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    fill: true
+                }]
+            },
+            options: { responsive: true, scales: { y: { beginAtZero: true } } }
+        });
+    </script>
 </body>
 </html>
