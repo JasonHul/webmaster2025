@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Admin Panel</title>
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/pages/admin.css">
 </head>
 <body>
+    <section id="header-section"></section>
     <div class="admin-container">
         <h1>Restaurant Admin Panel</h1>
 
-        <nav>
+        <nav class="admin-nav">
             <button class="menu-toggle">☰ Menu</button>
             <ul class="nav-links">
                 <li><a href="#menu">Manage Menu</a></li>
@@ -64,12 +66,19 @@
 
             <button type="submit">Update</button>
         </section>
+        <section class="logout">
+            <a onclick="logout()" class="logout-button" >Logout</a>
+        </section>
+        
     </div>
 
-    <script>
-        document.querySelector(".menu-toggle").addEventListener("click", function() {
-            document.querySelector(".nav-links").classList.toggle("active");
-        });
-    </script>
+    <section id="footer-section"></section>
+        
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script> 
+    <script src="web-parts/header/header.js"></script>
+    <script src="web-parts/footer/footer.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/pages/admin.js"></script>
 </body>
 </html>

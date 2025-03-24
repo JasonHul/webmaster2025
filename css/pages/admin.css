@@ -1,6 +1,5 @@
 /* General Styling */
 body {
-    font-family: 'Arial', sans-serif;
     background-color: #121212; /* Deep Black */
     color: #E0E0E0; /* Light Grey */
     margin: 0;
@@ -11,7 +10,7 @@ body {
 .admin-container {
     width: 90%;
     max-width: 800px;
-    margin: 20px auto;
+    margin: 95px auto;
     background: #1E1E1E; /* Dark Grey */
     padding: 20px;
     border-radius: 8px;
@@ -25,7 +24,7 @@ h1 {
 }
 
 /* Navigation */
-nav {
+.admin-nav {
     text-align: center;
     background-color: #1E1E1E;
     padding: 10px;
@@ -155,3 +154,25 @@ th {
         padding: 8px;
     }
 }
+
+.logout-button {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    padding: 12px 25px;
+    background-color: #ff9900;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #e68a00;
+}
+
