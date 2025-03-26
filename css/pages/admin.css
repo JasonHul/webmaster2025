@@ -7,91 +7,91 @@ body {
 }
 
 .admin-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    max-width: 1200px;
+    margin: 95px auto;
+    padding: 20px;
+}
 
-        h1, h2, h3 {
-            text-align: center;
-        }
+h1, h2, h3 {
+    text-align: center;
+}
 
-        /* Responsive Navigation */
-        .menu-toggle {
-            display: none;
-            background: #333;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-        }
+/* Responsive Navigation */
+.menu-toggle {
+    display: none;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
 
-        .admin-nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-        }
+.admin-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
 
-        .admin-nav ul li {
-            margin: 0 15px;
-        }
+.admin-nav ul li {
+    margin: 0 15px;
+}
 
-        .admin-nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
+.admin-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
 
-        /* Responsive Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
+/* Responsive Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
 
-        table, th, td {
-            border: 1px solid #ddd;
-        }
+table, th, td {
+    border: 1px solid #ddd;
+}
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
+th, td {
+    padding: 10px;
+    text-align: left;
+}
 
-        /* Make tables scrollable on mobile */
-        .table-container {
-            overflow-x: auto;
-        }
+/* Make tables scrollable on mobile */
+.table-container {
+    overflow-x: auto;
+}
 
-        /* Responsive Layout */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-                width: 100%;
-                text-align: center;
-            }
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 
-            .admin-nav ul {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                background: #444;
-                padding: 10px;
-            }
+    .admin-nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background: #444;
+        padding: 10px;
+    }
 
-            .admin-nav ul.show {
-                display: flex;
-            }
+    .admin-nav ul.show {
+        display: flex;
+    }
 
-            .admin-nav ul li {
-                margin: 10px 0;
-            }
+    .admin-nav ul li {
+        margin: 10px 0;
+    }
 
-            .admin-nav ul li a {
-                color: #fff;
-            }
-        }
+    .admin-nav ul li a {
+        color: #fff;
+    }
+}
 
 
 h1 {
@@ -146,7 +146,7 @@ h1 {
 }
 
 /* Sections */
-section {
+.section-admin {
     margin-top: 20px;
     padding: 15px;
     background: #1E1E1E; /* Dark Grey */

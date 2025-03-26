@@ -30,7 +30,7 @@
         </nav>
 
         <!-- Analytics Section (Moved to the Top) -->
-        <section id="analytics">
+        <section class="section-admin" id="analytics">
             <h2>Analytics</h2>
 
             <!-- Best Selling Items Chart -->
@@ -40,14 +40,14 @@
             </div>
 
             <!-- Most Active Times Chart -->
-            <div class="chart-container">
+            <div class="section-admin"  class="chart-container">
                 <h3>Most Active Times</h3>
                 <canvas id="activeTimesChart"></canvas>
             </div>
         </section>
 
         <!-- Customer Orders -->
-        <section id="orders">
+        <section class="section-admin" id="orders">
             <h2>Customer Orders</h2>
             <div class="table-container">
                 <table>
@@ -74,7 +74,7 @@
         </section>
 
         <!-- Table Reservations -->
-        <section id="reservations">
+        <section class="section-admin" id="reservations">
             <h2>Table Reservations</h2>
             <div class="table-container">
                 <table>
@@ -101,7 +101,7 @@
         </section>
 
         <!-- Customer Messages -->
-        <section id="messages">
+        <section class="section-admin" id="messages">
             <h2>Customer Messages</h2>
             <div class="table-container">
                 <table>
@@ -128,55 +128,18 @@
         </section>
 
         <!-- Logout Button -->
-        <section class="logout">
+        <div class="logout">
             <a onclick="logout()" class="logout-button">Logout</a>
-        </section>
+        </div>
     </div>
 
     <section id="footer-section"></section>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="web-parts/header/header.js"></script>   
+    <script src="web-parts/footer/footer.js"></script>   
     <script src="js/global.js"></script>
     <script src="js/pages/admin.js"></script>
-
-    <script>
-        // Toggle Mobile Menu
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('show');
-        }
-
-        // Best Selling Items (Bar Chart)
-        const bestSellingCtx = document.getElementById('bestSellingChart').getContext('2d');
-        new Chart(bestSellingCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Burger', 'Pizza', 'Fries', 'Pasta', 'Salad'],
-                datasets: [{
-                    label: 'Orders',
-                    data: [120, 95, 80, 60, 40],
-                    backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff']
-                }]
-            },
-            options: { responsive: true, scales: { y: { beginAtZero: true } } }
-        });
-
-        // Most Active Times (Line Chart)
-        const activeTimesCtx = document.getElementById('activeTimesChart').getContext('2d');
-        new Chart(activeTimesCtx, {
-            type: 'line',
-            data: {
-                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                datasets: [{
-                    label: 'Orders per Day',
-                    data: [50, 65, 70, 80, 120, 150, 130],
-                    borderColor: '#ff6384',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    fill: true
-                }]
-            },
-            options: { responsive: true, scales: { y: { beginAtZero: true } } }
-        });
-    </script>
 </body>
 </html>

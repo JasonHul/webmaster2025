@@ -1,3 +1,13 @@
+
+function checkAdmin() {
+    if (localStorage.getItem("sessionUser")) {
+        const sessionUser = JSON.parse(localStorage.getItem("sessionUser"));
+        if (sessionUser.email === "admin@email.com") {
+           window.location.href = "admin.html";
+        }
+    }
+}
+
 function logout() {
     // Clear the session
     localStorage.removeItem("sessionUser");
@@ -125,7 +135,7 @@ function generatePastOrders() {
 }
 
 
-
+checkAdmin();
 generatePersonalDetails();
 generatePastOrders();
 
