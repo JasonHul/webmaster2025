@@ -95,7 +95,9 @@ async function saveOrderToDatabase() {
             console.log("Order Placed Successfully!");
             alert("Order created successfully! Check Your Profile!");
             localStorage.removeItem("foodItems");
-            updateCartLabel();
+            // updateCartLabel();
+            // displayEmptyCart();
+            window.location.href = "profile.html";
             console.log("FoodItems was cleared");
         } else {
             alert("Please login to place an order!");
