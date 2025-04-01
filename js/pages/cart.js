@@ -117,8 +117,9 @@ function displayEmptyCart() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
+    lastname = JSON.parse(localStorage.getItem('sessionUser')).lastname != null ? JSON.parse(localStorage.getItem('sessionUser')).lastname : ""; 
     document.getElementById("first-name").value = localStorage.getItem('sessionUser') ? JSON.parse(localStorage.getItem('sessionUser')).username : "";
-    document.getElementById("last-name").value = localStorage.getItem('sessionUser') ? JSON.parse(localStorage.getItem('sessionUser')).lastname : "";
+    document.getElementById("last-name").value = lastname;
     document.getElementById("email").value = localStorage.getItem('sessionUser') ? JSON.parse(localStorage.getItem('sessionUser')).email : "";
 });
 

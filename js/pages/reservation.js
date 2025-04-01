@@ -23,6 +23,7 @@ document.getElementById('reservation-form').addEventListener('submit', async (e)
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("name").value = localStorage.getItem('sessionUser') ? JSON.parse(localStorage.getItem('sessionUser')).username  +
-     " " + JSON.parse(localStorage.getItem('sessionUser')).lastname: "";    
+    firstname = localStorage.getItem('sessionUser') ? JSON.parse(localStorage.getItem('sessionUser')).username : ""; // firstname is username
+    lastname = JSON.parse(localStorage.getItem('sessionUser')).lastname != null ? JSON.parse(localStorage.getItem('sessionUser')).lastname : ""; 
+    document.getElementById("name").value = firstname + " " + lastname;   
 });
