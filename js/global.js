@@ -39,17 +39,3 @@ function getNumberOfItems() {
 
 updateCartLabel();
 
-
-function isMobile() {
-    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-}
-
-try {
-    let message = isMobile() ? "You are using a mobile device. (Just A test)" : "You are using a desktop browser. (Just a test)";
-    document.getElementById("deviceType").textContent = message;
-}
-catch (error) {
-    console.error("Error:", error);
-}
-
-

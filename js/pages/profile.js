@@ -88,7 +88,7 @@ function generatePersonalDetails() {
         
         const detailsHTML = `
             <h2 class="section-title">Personal Details</h2>
-            <p><strong>Name:</strong> ${user.username}</p>
+            <p><strong>Name:</strong> ${user.username} ${user.lastname}</p>
             <p><strong>Email:</strong> ${user.email}</p>
         `;
         

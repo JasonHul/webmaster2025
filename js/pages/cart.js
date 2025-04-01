@@ -66,8 +66,6 @@ function generateSummary() {
 
 }
 
-// <button onclick="saveOrderToDatabase()" class="confirm-order-btn">Send Order</button>
-
 
 function regenerateSummary() {
     const summarySection = document.getElementById('summary-section');
@@ -116,6 +114,13 @@ console.log("cartContainer: ", cartContainer);
 function displayEmptyCart() {
     cartContainer.innerHTML = `<h2 class="empty-cart">Your Cart is Empty</h2>`;
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("first-name").value = localStorage.getItem('sessionUser') ? JSON.parse(localStorage.getItem('sessionUser')).username : "";
+    document.getElementById("last-name").value = localStorage.getItem('sessionUser') ? JSON.parse(localStorage.getItem('sessionUser')).lastname : "";
+    document.getElementById("email").value = localStorage.getItem('sessionUser') ? JSON.parse(localStorage.getItem('sessionUser')).email : "";
+});
 
 if (foodItems.length > 0) {
     foodItems.forEach(item => {

@@ -44,7 +44,8 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
                 localStorage.setItem("sessionUser", JSON.stringify({ 
                     email: accountData.email, 
                     userId: doc.id, 
-                    username: accountData.username 
+                    username: accountData.username, 
+                    lastname: accountData.lastname
                 }));
                 console.log("session id (doc.id): ", doc.id);
                 

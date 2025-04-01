@@ -19,6 +19,7 @@ function hashFieldText(input) {
 document.getElementById("accountForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const username = getElementVal("username");
+    const lastname = getElementVal("lastname");
     const email = getElementVal("email");
     const password = await hashField(getElementVal("password"));
     const confirm_password = await hashField(getElementVal("confirm-password"));
@@ -37,6 +38,7 @@ document.getElementById("accountForm").addEventListener("submit", async (e) => {
         }
         await db.collection("accountForm").add({
             username,
+            lastname,
             email,
             password,
             timestamp: firebase.firestore.FieldValue.serverTimestamp() // Adds a server-side timestamp
