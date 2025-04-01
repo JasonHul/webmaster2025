@@ -1,5 +1,6 @@
 class Item {
 
+    //Item Constructor
     constructor(item, category, price, pictureURL = '', description) {
         this.item = item; 
         this.category = category;
