@@ -55,14 +55,24 @@ function generateSummary() {
     return `
             <h2>Total Payment</h2>
             <div class="payment-summary">
-                <p>Subtotal: <strong>$${subtotal.toFixed(2)}</strong></p>
-                <p>Delivery fee: <strong>$${delivery_fee.toFixed(2)}</strong></p>
-                <p>Discount: <strong>-$${discount.toFixed(2)}</strong></p>
-                <p class="remaining-amount">Total: <strong id="strong-total">$${(+subtotal + +delivery_fee - +discount).toFixed(2)}</strong></p>
+                <div class="row">
+                    <span>Subtotal:</span> <strong>$${subtotal.toFixed(2)}</strong>
+                </div>
+                <div class="row">
+                    <span>Delivery fee:</span> <strong>$${delivery_fee.toFixed(2)}</strong>
+                </div>
+                <div class="row">
+                    <span>Discount:</span> <strong>-$${discount.toFixed(2)}</strong>
+                </div>
+                <div class="row">
+                    <span>Tax (5%):</span> <strong>$${(+subtotal * 0.05).toFixed(2)}</strong>
+                </div>
+                <div class="row total">
+                    <span>Total:</span> <strong id="strong-total">$${(+subtotal + +delivery_fee - +discount + (+subtotal * 0.05)).toFixed(2)}</strong>
+                </div>
             </div>
-            
-        </div>
-    `;
+                `
+                ;
 
 }
 

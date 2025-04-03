@@ -91,7 +91,10 @@
     background-color: #ff6842;
 }
 
-
+.price {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .navbar a {
