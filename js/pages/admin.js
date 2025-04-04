@@ -19,28 +19,28 @@ function toggleMenu() {
 
 
 //Get number of items stored in foodItems from firebase database
-listFoodItemsFromDatabase = [];
-function getNumOrderItemsFromDatabase()  {
-    list = []
-    db.collection("orderHistory").get().then((snapshot) => {
-        if (snapshot.empty) {
-            console.log("No matching documents.");
-        } else {
-            snapshot.forEach((doc) => {
-                const data = doc.data();
-                const foodItems = data.foodItems || [];
-                list.push(foodItems);
-            });
-        }
-    }).catch((error) => {
-        console.log("Error getting documents: ", error);
-    });
+// listFoodItemsFromDatabase = [];
+// function getNumOrderItemsFromDatabase()  {
+//     list = []
+//     db.collection("orderHistory").get().then((snapshot) => {
+//         if (snapshot.empty) {
+//             console.log("No matching documents.");
+//         } else {
+//             snapshot.forEach((doc) => {
+//                 const data = doc.data();
+//                 const foodItems = data.foodItems || [];
+//                 list.push(foodItems);
+//             });
+//         }
+//     }).catch((error) => {
+//         console.log("Error getting documents: ", error);
+//     });
 
-    return list;
-}
+//     return list;
+// }
 
-listFoodItemsFromDatabase = getNumOrderItemsFromDatabase();
-console.log("listFoodItemsFromDatabase: ", listFoodItemsFromDatabase);
+// listFoodItemsFromDatabase = getNumOrderItemsFromDatabase();
+// console.log("listFoodItemsFromDatabase: ", listFoodItemsFromDatabase);
 
 
 
@@ -48,15 +48,15 @@ console.log("listFoodItemsFromDatabase: ", listFoodItemsFromDatabase);
 const bestSellingCtx = document.getElementById('bestSellingChart').getContext('2d');
 
 // Flatten the nested array structure
-const flattenedFoodItems = listFoodItemsFromDatabase.flat();
+// const flattenedFoodItems = listFoodItemsFromDatabase.flat();
 
 // Map and sum saved quantities based on itemsList labels
-const orderCounts = itemsList.map(item => {
-    const matchedItems = flattenedFoodItems.filter(dbItem => dbItem.item === item.item);
-    console.log("matchedItems: ", matchedItems);
-    console.log("saved_quantity: ", matchedItems.saved_quantity);
-    return matchedItems.reduce((total, dbItem) => total + dbItem.saved_quantity, 0); // Sum all saved_quantity values
-});
+// const orderCounts = itemsList.map(item => {
+//     const matchedItems = flattenedFoodItems.filter(dbItem => dbItem.item === item.item);
+//     console.log("matchedItems: ", matchedItems);
+//     console.log("saved_quantity: ", matchedItems.saved_quantity);
+//     return matchedItems.reduce((total, dbItem) => total + dbItem.saved_quantity, 0);
+// });
 
 new Chart(bestSellingCtx, {
     type: 'bar',
@@ -88,3 +88,102 @@ new Chart(activeTimesCtx, {
     options: { responsive: true, scales: { y: { beginAtZero: true } } }
 });
 
+
+let listContactFormFromDatabase = [];
+
+async function getContactFormFromDatabase() {
+    console.log("getContactFormFromDatabase called");
+    try {
+        const snapshot = await db.collection("contactForm").get();
+        if (snapshot.empty) {
+            console.log("No matching documents.");
+        } else {
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                const name = data.name || "N/A";
+                const email = data.email || "N/A";
+                const subject = data.subject || "N/A";
+                const message = data.message || "N/A";
+                const timestamp = formatTimestamp(data.timestamp);
+
+                const contactForm = {
+                    name,
+                    email,
+                    subject,
+                    message,
+                    timestamp,
+                };
+
+                listContactFormFromDatabase.push(contactForm);
+                console.log("Contact Form Data: ", contactForm);
+            });
+        }
+
+        // Now that data is fetched, call loadContactFormTable
+        loadContactFormTable();
+
+    } catch (error) {
+        console.log("Error getting documents: ", error);
+    }
+}
+
+
+function loadContactFormTable() {
+    try {
+        const messageList = document.getElementById('messages-list');
+        console.log("messages-list", messageList);
+
+        if (!messageList) {
+            console.error("Element with ID 'messages-list' not found.");
+            return;
+        }
+
+        listContactFormFromDatabase.forEach(contactForm => {
+            console.log("Foreach Contact Form: ", contactForm);
+            messageList.innerHTML += generateMessageRow(
+                contactForm.name,
+                contactForm.email,
+                contactForm.subject,
+                contactForm.message,
+                contactForm.timestamp
+            );
+        });
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function generateMessageRow(name, email, subject, message, timestamp) {
+    return `
+    <tr>
+        <td>${name}</td>
+        <td>${email}</td>
+        <td>${subject}</td>
+        <td>${message}</td>
+        <td>${timestamp}</td>
+    </tr>
+    `;
+}
+
+// Trigger the whole flow
+getContactFormFromDatabase();
+
+
+
+
+//Miscellaneous functions
+function formatTimestamp(timestamp) {
+    if (timestamp && timestamp.toDate) {
+        const date = timestamp.toDate();
+        return date.toLocaleString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        });
+    }
+    return "N/A";
+}
