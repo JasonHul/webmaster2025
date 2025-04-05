@@ -36,4 +36,13 @@
     }
   }
 
-  // fetchData();
+  document.addEventListener("DOMContentLoaded", function () {
+    const sessionUser = localStorage.getItem('sessionUser');
+    if (sessionUser) {
+        const user = JSON.parse(sessionUser);
+        const firstname = user.username || "";
+        const lastname = user.lastname || "";
+        document.getElementById("name").value = firstname + " " + lastname;
+        document.getElementById("email").value = user.email || "";
+    }
+  });
