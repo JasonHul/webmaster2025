@@ -90,7 +90,89 @@ new Chart(activeTimesCtx, {
 
 
 
-/* ORDER HISTORY FORM SEECTION */
+/* ORDER HISTORY FORM SECTION */
+let listOrderHistoryFromDatabase = [];
+
+async function getOrderHistoryFromDatabase() {
+    console.log("getOrderHistoryFromDatabase called");
+    try {
+        const snapshot = await db.collection("orderHistory").get();
+        if (snapshot.empty) {
+            console.log("No matching order documents.");
+        } else {
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                const userId = data.userId || "N/A";
+                const foodItems = data.foodItems || [];
+                const orderId = data.orderId || "N/A";
+                const totalPrice = data.totalPrice || "0.00";
+                const status = data.status || "Pending";
+                const timestamp = formatTimestamp(data.timestamp);
+
+                const order = {
+                    userId,
+                    foodItems,
+                    orderId,
+                    totalPrice,
+                    status,
+                    timestamp
+                };
+
+                listOrderHistoryFromDatabase.push(order);
+                console.log("Order History Data: ", order);
+            });
+        }
+
+        loadOrderTable();
+
+    } catch (error) {
+        console.log("Error getting order documents: ", error);
+    }
+}
+
+
+function loadOrderTable() {
+    try {
+        const orderList = document.getElementById('order-list');
+        console.log("order-list", orderList);
+
+        if (!orderList) {
+            console.error("Element with ID 'order-list' not found.");
+            return;
+        }
+
+        listOrderHistoryFromDatabase.forEach(order => {
+            orderList.innerHTML += generateOrderRow(
+                order.userId,
+                order.foodItems,
+                order.orderId,
+                order.totalPrice,
+                order.status,
+                order.timestamp
+            );
+        });
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function generateOrderRow(userId, foodItems, orderId, totalPrice, status, timestamp) {
+    const items = foodItems.map(item => `${item.item} (x${item.saved_quantity})`).join(", ");
+    return `
+    <tr>
+        <td>${orderId}</td>
+        <td>${userId}</td>
+        <td>${items}</td>
+        <td>$${totalPrice}</td>
+        <td>${status}</td>
+        <td>${timestamp}</td>
+    </tr>
+    `;
+}
+
+getOrderHistoryFromDatabase();
+
 
 
 /* RESERVATION FORM SECTION */
