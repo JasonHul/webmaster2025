@@ -92,7 +92,6 @@ new Chart(activeTimesCtx, {
 
 /* ORDER HISTORY FORM SECTION */
 let listOrderHistoryFromDatabase = [];
-
 async function getOrderHistoryFromDatabase() {
     console.log("getOrderHistoryFromDatabase called");
     try {
@@ -159,17 +158,62 @@ function loadOrderTable() {
 
 function generateOrderRow(userId, foodItems, orderId, totalPrice, status, timestamp) {
     const items = foodItems.map(item => `${item.item} (x${item.saved_quantity})`).join(", ");
+    const statusOptions = ['Pending', 'Confirmed', 'Preparing', 'Out for Delivery', 'Delivered', 'Cancelled'];
+
+    const statusDropdown = `
+        <select id="status-${orderId}" onchange="updateOrderStatus('${orderId}')">
+            ${statusOptions.map(option => `
+                <option value="${option}" ${option === status ? "selected" : ""}>${option}</option>
+            `).join('')}
+        </select>
+    `;
+
+    //  RETURN THIS TO METHOD AFTER UPDATEORDERSTATUS() IS FIXED 
+    //    <td>${statusDropdown}</td>
     return `
-    <tr>
+    <tr id="order-${orderId}">
         <td>${orderId}</td>
         <td>${userId}</td>
         <td>${items}</td>
-        <td>$${totalPrice}</td>
         <td>${status}</td>
+        <td>$${totalPrice}</td>
+
         <td>${timestamp}</td>
     </tr>
     `;
 }
+// async function updateOrderStatus(orderId) {
+//     const newStatus = document.getElementById(`status-${orderId}`).value;
+    
+//     try {
+//         // Find the order document with the matching orderId
+//         const querySnapshot = db.collection("orderHistory").where("orderId", "==", orderId).get();
+        
+
+//         if (querySnapshot.empty) {
+//             console.error(`Order with ID ${orderId} not found.`);
+//             alert(`Error: Order not found.`);
+//             return;
+//         }
+
+
+//         /* ONLY 2 CODE BLOCKS BELOW DON'T WORK, NEED TO FIX DOC REF TO DATABASE TO FIX METHOD*/
+
+//         // Assuming orderId is unique, just update the first match
+//         // const docRef = querySnapshot.docs[0].ref;
+
+//         // await docRef.update({
+//         //     status: newStatus
+//         // });
+
+//         console.log(`Order ${orderId} status updated to ${newStatus}`);
+//         alert(`Order status updated to "${newStatus}" successfully!`);
+
+//     } catch (error) {
+//         console.error("Error updating order status:", error);
+//         alert("Error updating order status.");
+//     }
+// }
 
 getOrderHistoryFromDatabase();
 
