@@ -21,7 +21,7 @@ function loadHeader() {
             <a href="../cart.html" class="cart-label">Cart</a>
             <a href="../menu.html">Menu</a>
             <a href="../about.html">About</a>
-            <a href="../reservation.html">Reservations</a>
+            <a href="../reservation.html">Reservation</a>
             <a href="../reference.html">Reference Page</a>
             <a onclick="direct()" style="cursor: pointer;">Profile</a>
         </nav>
