@@ -86,3 +86,11 @@ function move() {
     }
 }
 
+//head append
+function appendHead() {
+    const head = document.getElementById('head-section');
+    head.innerHTML += `
+    <link rel="shortcut icon" type="image/x-icon" href="../images/toWEBP/nectar-removebg-preview.webp" />
+    `;
+}
+appendHead();
