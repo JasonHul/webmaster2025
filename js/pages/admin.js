@@ -89,8 +89,98 @@ new Chart(activeTimesCtx, {
 });
 
 
-let listContactFormFromDatabase = [];
 
+/* ORDER HISTORY FORM SEECTION */
+
+
+/* RESERVATION FORM SECTION */
+let listReservationFormFromDatabase = [];
+async function getReservationFormFromDatabase() {
+    console.log("getReservationFormFromDatabase called");
+    try {
+        const snapshot = await db.collection("reservationForm").get();
+        if (snapshot.empty) {
+            console.log("No matching reservation documents.");
+        } else {
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                const name = data.name || "N/A";
+                const date = data.date || "N/A";
+                const time = data.time || "N/A";
+                const guests = data.guests || "N/A";
+                const phone = data.phone || "N/A";
+                const status = data.status || "N/A";
+                const timestamp = formatTimestamp(data.timestamp);
+
+                const reservation = {
+                    name,
+                    date,
+                    time,
+                    guests,
+                    phone,
+                    status,
+                    timestamp
+                };
+
+                listReservationFormFromDatabase.push(reservation);
+                console.log("Reservation Data: ", reservation);
+            });
+        }
+
+        // Call the function to load reservation table
+        loadReservationTable();
+
+    } catch (error) {
+        console.log("Error getting reservation documents: ", error);
+    }
+}
+
+function loadReservationTable() {
+    try {
+        const reservationList = document.getElementById('reservation-list');
+        console.log("reservation-list", reservationList);
+
+        if (!reservationList) {
+            console.error("Element with ID 'reservation-list' not found.");
+            return;
+        }
+
+        listReservationFormFromDatabase.forEach(reservation => {
+            reservationList.innerHTML += generateReservationRow(
+                reservation.name,
+                reservation.date,
+                reservation.time,
+                reservation.guests,
+                reservation.phone,
+                reservation.status,
+                reservation.timestamp
+            );
+        });
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function generateReservationRow(name, date, time, guests, phone, status, timestamp) {
+    return `
+    <tr>
+        <td>${name}</td>
+        <td>${date}</td>
+        <td>${time}</td>
+        <td>${guests}</td>
+        <td>${phone}</td>
+        <td>${status}</td>
+        <td>${timestamp}</td>
+    </tr>
+    `;
+}
+
+getReservationFormFromDatabase();
+
+
+/* CONTACT FORM SECTION */
+let listContactFormFromDatabase = [];
 async function getContactFormFromDatabase() {
     console.log("getContactFormFromDatabase called");
     try {
@@ -119,7 +209,6 @@ async function getContactFormFromDatabase() {
             });
         }
 
-        // Now that data is fetched, call loadContactFormTable
         loadContactFormTable();
 
     } catch (error) {
@@ -166,7 +255,6 @@ function generateMessageRow(name, email, subject, message, timestamp) {
     `;
 }
 
-// Trigger the whole flow
 getContactFormFromDatabase();
 
 

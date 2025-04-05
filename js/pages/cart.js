@@ -99,7 +99,8 @@ async function saveOrderToDatabase() {
                 foodItems,
                 orderId: tempID,
                 totalPrice: (+subtotal + +delivery_fee - +discount).toFixed(2),
-                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                status: "Pending" // Initial status of the order
             });
 
             console.log("Order Placed Successfully!");
