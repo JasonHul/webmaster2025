@@ -55,6 +55,12 @@ input, select {
     width: 100%;
 }
 
+.reservation-warning {
+    color: red; 
+    display: none; 
+    margin-top: 10px;
+}
+
 button {
     margin-top: 15px;
     padding: 12px;
