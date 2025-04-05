@@ -23,7 +23,8 @@ document.getElementById('reservation-form').addEventListener('submit', async (e)
             time,
             guests,
             phone,
-            status: 'pending'
+            status: 'pending',
+            timestamp: firebase.firestore.FieldValue.serverTimestamp() // Adds a server-side timestamp
         });
 
         console.log('Reservation submitted successfully!');
