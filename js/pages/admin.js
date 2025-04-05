@@ -169,13 +169,13 @@ function generateOrderRow(userId, foodItems, orderId, totalPrice, status, timest
     `;
 
     //  RETURN THIS TO METHOD AFTER UPDATEORDERSTATUS() IS FIXED 
+    //        <td>${status}</td>
     //    <td>${statusDropdown}</td>
     return `
     <tr id="order-${orderId}">
         <td>${orderId}</td>
         <td>${userId}</td>
         <td>${items}</td>
-        <td>${status}</td>
         <td>$${totalPrice}</td>
 
         <td>${timestamp}</td>
@@ -289,6 +289,7 @@ function loadReservationTable() {
 }
 
 function generateReservationRow(name, date, time, guests, phone, status, timestamp) {
+    //  RETURN THIS TO METHOD AFTER UPDATEORDERSTATUS() IS FIXED <td>${status}</td>
     return `
     <tr>
         <td>${name}</td>
@@ -296,7 +297,7 @@ function generateReservationRow(name, date, time, guests, phone, status, timesta
         <td>${time}</td>
         <td>${guests}</td>
         <td>${phone}</td>
-        <td>${status}</td>
+       
         <td>${timestamp}</td>
     </tr>
     `;
