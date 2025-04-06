@@ -11,7 +11,7 @@
 }
 
 footer a {
-    color: #FF8C42; /* Orange */
+    color: #FFFDD0; /* Orange */
     margin: 0 10px;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -24,3 +24,36 @@ footer a:hover {
 .copyright {
     margin-top: 10px;
 }
+
+.footer-links {
+    margin-bottom: 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .social-icon {
+    width: 24px;
+    height: 24px;
+    fill: #FFFDD0;
+    transition: fill 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    fill: #FF6F00;
+  }
+  
+  @media (max-width: 600px) {
+    .footer-links a {
+      display: block;
+      margin: 5px 0;
+    }
+  
+    .social-icons {
+      gap: 10px;
+    }
+  }
