@@ -18,7 +18,7 @@ function loadFooter() {
     <a href="../reservation.html">Reservation</a>
     <a href="../reference.html">Reference</a>
     <a href="../careers.html">Careers</a>
-    <a href="../privacy.html">Privacy Policy</a>
+    <a href="../privacy.html" target="_blank">Privacy Policy</a>
   </div>
 
   <div class="social-icons">
