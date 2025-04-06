@@ -19,6 +19,7 @@ function loadFooter() {
             <a href="food/specials.html">Specials</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
+            <a href="careers.html">Careers</a>
         </nav>
         <p class="copyright">&copy; 2025 Nectar. All Rights Reserved.</p>
     </footer>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers at Nectar</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/pages/careers.css" />
+</head>
+<body>
+
+  <!-- 🌿 HEADER -->
+  <header id="header-section">
+    <!-- Header loads here -->
+  </header>
+
+  <!-- 🌱 CAREERS SECTION -->
+  <section class="careers-container">
+    <h1>Careers at Nectar</h1>
+    <p>Join our passionate team and help bring sustainable, delicious meals to our community.</p>
+  
+    <div class="job-grid">
+      <div class="job-card">
+        <h3>Line Cook</h3>
+        <p>Prepare fresh vegetarian dishes with locally sourced ingredients in a fast-paced kitchen.</p>
+        <button onclick="openForm('Line Cook')">Apply Now</button>
+      </div>
+  
+      <div class="job-card">
+        <h3>Barista</h3>
+        <p>Serve organic, fair-trade coffee and smoothies with a smile. Experience preferred.</p>
+        <button onclick="openForm('Barista')">Apply Now</button>
+      </div>
+  
+      <div class="job-card">
+        <h3>Server</h3>
+        <p>Provide exceptional service with a focus on hospitality and sustainability knowledge.</p>
+        <button onclick="openForm('Server')">Apply Now</button>
+      </div>
+  
+      <div class="job-card">
+        <h3>Kitchen Assistant</h3>
+        <p>Support chefs in daily food prep, cleaning, and inventory. Great for culinary beginners!</p>
+        <button onclick="openForm('Kitchen Assistant')">Apply Now</button>
+      </div>
+  
+      <div class="job-card">
+        <h3>Marketing Intern</h3>
+        <p>Help us spread the word on social media and local outreach campaigns. Part-time.</p>
+        <button onclick="openForm('Marketing Intern')">Apply Now</button>
+      </div>
+  
+      <div class="job-card">
+        <h3>Pastry Chef</h3>
+        <p>Create mouthwatering, plant-based desserts and baked goods using seasonal ingredients.</p>
+        <button onclick="openForm('Pastry Chef')">Apply Now</button>
+      </div>
+  
+      <div class="job-card">
+        <h3>Dishwasher</h3>
+        <p>Keep the kitchen running smoothly by maintaining cleanliness and supporting the kitchen staff.</p>
+        <button onclick="openForm('Dishwasher')">Apply Now</button>
+      </div>
+  
+      <div class="job-card">
+        <h3>Delivery Driver</h3>
+        <p>Deliver meals to customers using eco-friendly vehicles. Must have a valid license.</p>
+        <button onclick="openForm('Delivery Driver')">Apply Now</button>
+      </div>
+  
+      <div class="job-card">
+        <h3>Event Coordinator</h3>
+        <p>Plan and manage community events, pop-ups, and catering opportunities.</p>
+        <button onclick="openForm('Event Coordinator')">Apply Now</button>
+      </div>
+  
+      <div class="job-card">
+        <h3>Host / Hostess</h3>
+        <p>Welcome guests with warmth and manage reservations with professionalism and charm.</p>
+        <button onclick="openForm('Host / Hostess')">Apply Now</button>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- ✨ APPLICATION MODAL -->
+  <div id="applyModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeForm()">&times;</span>
+      <h2>Apply for <span id="jobTitleText">Job</span></h2>
+      <form onsubmit="submitApplication(event)">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" placeholder="John" required>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" placeholder="Doe" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="123-456-7890" required pattern="[0-9]{10}">
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openForm(jobTitle) {
+      document.getElementById('applyModal').style.display = 'flex';
+      document.getElementById('jobTitleText').textContent = jobTitle;
+    }
+
+    function closeForm() {
+      document.getElementById('applyModal').style.display = 'none';
+    }
+
+    function submitApplication(event) {
+      event.preventDefault();
+      const first = document.getElementById('firstName').value;
+      const last = document.getElementById('lastName').value;
+      const phone = document.getElementById('phone').value;
+      const job = document.getElementById('jobTitleText').textContent;
+
+      alert(`Thanks, ${first} ${last}! Your application for ${job} has been received. We’ll reach out at ${phone}.`);
+      closeForm();
+      event.target.reset();
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('applyModal');
+      if (event.target === modal) {
+        closeForm();
+      }
+    }
+  </script>
+    <footer id="footer-section">
+    <!-- Footer loads here -->
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script> 
+  <script src="web-parts/header/header.js"></script>
+  <script src="web-parts/footer/footer.js"></script>
+  <script src="js/global.js"></script>
+</body>
+</html>

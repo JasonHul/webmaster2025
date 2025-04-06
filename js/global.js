@@ -18,13 +18,15 @@ const cartLabels = document.querySelectorAll(".cart-label"); // Select all eleme
 
 // Function to update all cart labels
 function updateCartLabel() {
-    foodItems = JSON.parse(localStorage.getItem('foodItems')) || [];
-    console.log("Global.js - foodItems: ", foodItems);
-    const totalItems = getNumberOfItems();
+    const foodItems = JSON.parse(localStorage.getItem('foodItems')) || [];
+    const totalItems = foodItems.length; // or use getNumberOfItems() if it's a separate function
 
-    // Update the inner text for all cart label elements
-    cartLabels.forEach(label => {
-        label.innerText = `Cart (${totalItems})`;
+    // Find the cart label (span) where we want to update the count
+    const cartLabelSpans = document.querySelectorAll('.cart-count-text');
+    
+    // Update the text of the cart count
+    cartLabelSpans.forEach(span => {
+        span.innerText = `(${totalItems})`; // Update the count
     });
 }
 
