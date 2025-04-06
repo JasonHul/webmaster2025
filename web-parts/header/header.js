@@ -66,8 +66,10 @@ function loadHeader() {
             <a href="reservation.html">Reservation</a>
             <a href="reference.html">Reference Page</a>
             <a onclick="direct()" style="cursor: pointer;">Profile</a>
+            <a href="careers.html">Careers</a>
         </div>
     </header>
+    <div class="loader"></div>
     `;
     }
     catch (error) {
