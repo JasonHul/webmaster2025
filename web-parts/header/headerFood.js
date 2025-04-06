@@ -18,7 +18,7 @@ function loadHeader() {
         <img src="../images/toWEBP/nectar-removebg-preview.webp" alt="Logo" id="homelogo" width="65px" onclick="location.href='../index.html'">
         <h2 id="user-greeting"></h2>
         <nav class="navbar">
-            <a href="cart.html" class="cart-label">
+            <a href="../cart.html" class="cart-label">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5" stroke="currentColor" class="icon-cart" style="width: 25px; height: 25px; vertical-align: middle;">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -44,7 +44,7 @@ function loadHeader() {
   			<div class="bar3"></div>
    		</div>
         <div id="mySidenav" class="sidenav">
-           <a href="cart.html" class="cart-label">
+           <a href="../cart.html" class="cart-label">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5" stroke="currentColor" class="icon-cart" style="width: 25px; height: 25px; vertical-align: middle;">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -65,7 +65,7 @@ function loadHeader() {
             <a href="../reservation.html">Reservations</a>
             <a href="../reference.html">Reference Page</a>
             <a onclick="direct()" style="cursor: pointer;">Profile</a>
-            <a href="careers.html">Careers</a>
+            <a href="../careers.html">Careers</a>
         </div>
     </header>
     <div class="loader"></div>
