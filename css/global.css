@@ -14,7 +14,7 @@ body {
 .loader {
     z-index: 100;
     position: fixed;
-    top: 0;
+    top: 95px;
     left: 0;
     width: 100vw;
     height: 100vh;
