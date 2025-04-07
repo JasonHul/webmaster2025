@@ -1,4 +1,29 @@
-/* Container Layout */
+/* ================== GLOBAL VARIABLES & BASE STYLES ================== */
+
+:root {
+    --primary-color: #635bff;
+    --secondary-color: #fbfcf7;
+    --border-color: #e6e8eb;
+    --text-color: #1a1f36;
+    --error-color: #ff5b5b;
+    --success-color: #36b37e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #FFFDD0;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ================== YOUR ORIGINAL LAYOUT ================== */
+
 .checkout-container {
     display: flex;
     margin-top: 135px;
@@ -8,7 +33,6 @@
 }
 
 /* Cart Section */
-
 .remove-btn {
     margin-top: 10px;
     background-color: #f06464;
@@ -22,10 +46,10 @@
 }
 
 .remove-btn:hover {
-    background-color: #d9534f; /* Darker red on hover */
+    background-color: #d9534f;
 }
 
-.cart-section .empty-cart{
+.cart-section .empty-cart {
     margin-top: 40px;
     font-size: 2rem;
     color: #4A2C22;
@@ -91,7 +115,7 @@
     padding-top: 20px;
     border-top: 1px solid #d4d4d4;
     font-size: 1rem;
-    color: #FF8C42
+    color: #FF8C42;
 }
 
 .cart-total p {
@@ -177,28 +201,187 @@
     text-align: center;
 }
 
-/* Card Input section */
+/* ================== PAYMENT FORM INTEGRATED ================== */
 
 .payment-form {
-    /* background-color: white; */
     margin-top: 30px;
 }
 
-.payment-form label {
-    display: block;
-    margin-top: 10px;
+.payment-header {
+    margin-bottom: 24px;
+    text-align: center;
 }
 
-.payment-form input {
+.payment-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.payment-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.payment-option {
+    flex: 1;
+    min-width: 120px;
+    height: 48px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.payment-option:hover {
+    border-color: var(--primary-color);
+}
+
+.payment-option.active {
+    border-color: var(--primary-color);
+    background-color: rgba(99, 91, 255, 0.05);
+}
+
+.payment-option img {
+    max-height: 12%;
+    max-width: 80%;
+}
+
+svg {
+    max-width: 50%;
+}
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.form-column {
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #4f566b;
+}
+
+input {
     width: 100%;
-    padding: 7px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.2s;
 }
 
-.payment-form .payment-button {
-    display: block;
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(99, 91, 255, 0.2);
 }
+
+input::placeholder {
+    color: #aab7c4;
+}
+
+.card-element {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: white;
+}
+
+.card-info {
+    display: flex;
+    gap: 16px;
+}
+
+.card-info > div {
+    flex: 1;
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 24px;
+}
+
+.secure-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #697386;
+}
+
+.secure-badge svg {
+    margin-right: 6px;
+    fill: #697386;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-input-container {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.card-icons {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 4px;
+}
+
+.card-icon {
+    height: 20px;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+}
+
+.card-icon.active {
+    opacity: 1;
+}
+
+/* ================== RESPONSIVE ================== */
 
 @media screen and (max-width: 768px) {
 
@@ -223,9 +406,9 @@
     }
 
     .item-image {
-         margin-bottom: 10px;
+        margin-bottom: 10px;
         margin-right: 0px;
-    }   
+    }
 
     .item-details {
         text-align: center;
@@ -233,5 +416,14 @@
 
     .item-summary {
         text-align: center;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .payment-option {
+        min-width: 100px;
     }
 }
