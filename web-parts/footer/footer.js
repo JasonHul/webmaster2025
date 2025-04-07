@@ -13,12 +13,12 @@ function loadFooter() {
     return `
     <footer class="footer-content">
   <div class="footer-links">
-    <a href="../menu.html">Menu</a>
-    <a href="../about.html">About</a>
-    <a href="../reservation.html">Reservation</a>
-    <a href="../reference.html">Reference</a>
-    <a href="../careers.html">Careers</a>
-    <a href="../privacy.html" target="_blank">Privacy Policy</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="reservation.html">Reservation</a>
+    <a href="reference.html">Reference</a>
+    <a href="careers.html">Careers</a>
+    <a href="privacy.html" target="_blank">Privacy Policy</a>
   </div>
 
   <div class="social-icons">
