@@ -12,21 +12,16 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+const cartLabels = document.querySelectorAll(".cart-label");
 
-
-const cartLabels = document.querySelectorAll(".cart-label"); // Select all elements with class "cart-label"
-
-// Function to update all cart labels
 function updateCartLabel() {
     const foodItems = JSON.parse(localStorage.getItem('foodItems')) || [];
-    const totalItems = foodItems.length; // or use getNumberOfItems() if it's a separate function
+    const totalItems = foodItems.length;
 
-    // Find the cart label (span) where we want to update the count
     const cartLabelSpans = document.querySelectorAll('.cart-count-text');
     
-    // Update the text of the cart count
     cartLabelSpans.forEach(span => {
-        span.innerText = `(${totalItems})`; // Update the count
+        span.innerText = `(${totalItems})`; 
     });
 }
 
